@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ## Inference Demos
 
 ## Evaluation
-For evaluation, the ["MSCOCO"](hhttps://cocodataset.org/#download)dataset is used. To evaluate first the MSCOCO dataset was downloaded and stored in the dataset folder. Ensuring the data was organized we stored it as followed: 
+For evaluation, the [MSCOCO](hhttps://cocodataset.org/#download) dataset is used. To evaluate first the MSCOCO dataset was downloaded and stored in the dataset folder. Ensuring the data was organized we stored it as followed: 
 
 ```setup
 coco/
@@ -40,7 +40,7 @@ coco/
       ...
 ```
 
-Moreover, the customized ["instances_val2017.json"](https://drive.google.com/file/d/1sYpb7jRZJyBJYPFHyjxosIDaiQhkrEhU/view) file needed to be downloaded. This resizes all images to 512x512 and adjusts the corresponding masks/boxes accordingly.
+Moreover, the customized [instances_val2017.json](https://drive.google.com/file/d/1sYpb7jRZJyBJYPFHyjxosIDaiQhkrEhU/view) file needed to be downloaded. This resizes all images to 512x512 and adjusts the corresponding masks/boxes accordingly.
 
 ###  Evaluating different location formats for Boxes and Instance Masks
 
@@ -87,6 +87,7 @@ yolo val segment model=yolov8m-seg.pt data=coco.yaml device=0
 
 # Please indicate the file path for predictions.json generated in the previous step
 python eval/eval_pim.py --pred_json /path/to/predictions.json
+``` 
 
 ###  Evaluating Attribute Binding for colors and texture
 
