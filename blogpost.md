@@ -79,9 +79,10 @@ This purpose of this blog is to:
     <td>+17.9</td>
     <td>..</td>
   </tr>
+    <tr align="left">
+    <td colspan=7><b>Table 2.</b> Evaluating different location formats as input when generating images of reproduction experiments Instance Maks.</td>
+  </tr>
 </table>
-
-**Table 2:** Evaluating different location formats as input when generating images of reproduction experiments Instance Maks.
 
 <table align="center">
   <tr align="center">
@@ -116,9 +117,10 @@ This purpose of this blog is to:
     <td>+..</td>
     <td>+..</td>
   </tr>
+      <tr align="left">
+        <td colspan=7><b>Table 3.</b> Evaluating different location formats as input when generating images of reproduction experiments for points and scribbles.</td>
+      </tr>
 </table>
-
-**Table 3:** Evaluating different location formats as input when generating images of reproduction experiments for points and scribbles.
 
 <table align="center">
   <tr align="center">
@@ -153,8 +155,9 @@ This purpose of this blog is to:
     <td style="color:green;">+0.1</td>
     <td style="color:green;">+0.001</td>
   </tr>
+    <tr align="left">
+    <td colspan=7><b>Table 4.</b> Attribute binding reproduction results for color and texture.</td>
+  </tr>  
 </table>
-
-**Table 4:** Attribute binding reproduction results for color and texture.
 
 --- 
