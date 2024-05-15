@@ -45,9 +45,10 @@ This purpose of this blog is to:
     <td>+15.7</td>
     <td>..</td>
   </tr>
+    <tr align="left">
+    <td colspan=7><b>Table 1.</b> Evaluating different location formats as input when generating images of reproduction experiments Boxes.</td>
+  </tr>
 </table>
-
-**Table 1:**  Evaluating different location formats as input when generating images of reproduction experiments Boxes.
 
 <table align="center">
   <tr align="center">
