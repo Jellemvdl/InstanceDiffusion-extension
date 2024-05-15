@@ -177,3 +177,75 @@ As part of our reproduction study, we succesfully replicated the YOLO results ac
     <td colspan=4><b>Table 2.</b> Evaluating different location formats as input when generating images of reproduction experiments Instance Masks.</td>
   </tr>
 </table>
+
+In the same manner we reproduced the PiM values for scribble-/point-based image generation:**NOT YET ACTUALLY**
+<table align="center">
+  <tr align="center">
+      <th align="left" rowspan="2">Method</th>
+      <th colspan="1">Points</th>
+      <th colspan="1">Scribble</th>
+  </tr>
+  <tr align="center">
+      <th>PiM</th>
+      <th>PiM</th>
+  </tr>
+  <tr align="center">
+    <td align="left">InstanceDiffusion</td>
+    <td>81.1</td>
+    <td>72.4</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Our Reproduction</td>
+    <td>..</td>
+    <td>..</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Difference</td>
+    <td>+..</td>
+    <td>+..</td>
+  </tr>
+  <tr align="left">
+    <td colspan=3><b>Table 3.</b> Evaluating different location formats as input when generating images of reproduction experiments for points and scribbles.</td>
+  </tr>
+</table>
+
+Moreover, succesfully replicated the attribute binding results for colors and texture:
+
+<table align="center">
+  <tr align="center">
+      <th align="left" rowspan="2">Methods</th>
+      <th colspan="2">Color</th>
+      <th colspan="2">Texture</th>
+  </tr>
+  <tr align="center">
+      <th>A<sub>cc</sub><sup>color</sup></th>
+      <th>CLIP<sub>local</sub></th>
+      <th>A<sub>cc</sub><sup>texture</sup></th>
+      <th>CLIP<sub>local</sub></th>
+  </tr>
+  <tr align="center">
+    <td align="left">InstanceDiffusion</td>
+    <td>54.4</td>
+    <td>0.250</td>
+    <td>26.8</td>
+    <td>0.225</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Our Reproduction</td>
+    <td>53.3</td>
+    <td>0.248</td>
+    <td>26.9</td>
+    <td>0.226</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Difference</td>
+    <td style="color:red;">-1.1</td>
+    <td style="color:red;">-0.002</td>
+    <td style="color:green;">+0.1</td>
+    <td style="color:green;">+0.001</td>
+  </tr>
+    <tr align="left">
+    <td colspan=7><b>Table 4.</b> Attribute binding reproduction results for color and texture.</td>
+  </tr>  
+</table>
+
