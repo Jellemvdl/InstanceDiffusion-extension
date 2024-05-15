@@ -13,6 +13,38 @@ This purpose of this blog is to:
 3. Provide an extension to the original model.
 
 
+## <a name="introduction">Introduction</a>
+Existing and previous work which focus on text-conditioned diffusion models enable a high quality image production, however, according to the authors this text-based control does not always allow precise or intuitive control over the output image. The reason why control is such a favorable and desired attribute is due to the broad range of design applications for generative models. Therefore, authors proposed and studied instance-conditioned image generation where the user can specify **every** instance in terms of its *location* (via single point, bounding box, instance mask,scribble) and _instance-level text prompt_. This in return, allows for flexible input through various instance location specification and more fine-grained contol over the instance's attributes. Moreover, the author's method presents a unified way to parameterize their information during the generation process which is a simpler & better performing method. In more detail, the superiority of the InstanceDiffusion method over existing models can be accredited to the **3** major changes proposed by the authors which altered the text-to-image models and enabled the precise instance-level control:
+1. **UniFusion**: enables instance-level conditions for text-to-image models
+
+    a. projects various forms of instance-level conditions into the same feature space
+
+    b. injects the instance-level layout and descriptions into the visual tokens
+
+2. **ScaleU**: improves image fidelity
+
+    a. recalibrates the main features/ low frequency components within the skip connection features of UNet
+
+3. **Multi-instance Sampler** : improves generations for multiple instances
+
+
+   a. reduces information leakage and confusion between the conditions on multiple instances
+
+
+#### Model Architecture & Details
+To enable a more generic and flexible scene-layout control in terms of location and attributes of the instances, the authors focused on 2 conditioning inputs for each instance (1.Location + 2. Text Caption describing the instance). The authors then used a pretrained text-to-image UNet model that is kept frozen and added the 3 above-mentioned learnable blocks (UniFusion, ScaleU,Multi-Instance
+Sampler). 
+##### UniFusion Block
+This block is added between the self-attention and cross-attention layers of the backbone. The main aim of this block is to tokenize the per-instance conditions and fuse them together with the visual tokens obtained through the frozen text-to-image model. One of the key operations in this block is the *location parmeterization* which is responsible for converting the 4 location formats into 2D points. The *instance tokenizer* then converts these 2D point coordinates for each location using the Fourier mapping. Moreover, it encodes the text prompt using a CLIP text encoder , concatenates the location & text embeddings and feeds them into a MLP network to obtain a single token embedding for the instances.
+
+##### ScaleU Block
+This block contains 2 learnable,channel-wise scaling vectors for the main & skip connected features. These vectors are then incorporated into each of the UNet's decoder blocks which lead to an increase in the number of parameters and performance gains. 
+
+##### Multi-Instance Sampler Block
+This block is used as a strategy to minimize information leakage across multi-instance conditioning during model inference. For each n amount of instances, a seperate denoising operation for a number of steps is used to retrieve the instance latents. The denoised instance latents for each of the n 
+objects  are then integrated with the global latent by averaging the latents togther.
+
+
 
 ## <a name="reproduction">Reproduction of the Experiments</a>
 To reproduce the experiments described in the paper, we followed a process designed to ensure comparability with the original study. Our approach involved utilizing the same datasets, model configurations, and evaluation metrics as outlined by the authors. To verify our results, we conducted extensive evaluations using the same metrics and datasets as the original study, measuring alignment to instance locations and constancy to specified attributes. However, we were unable to reproduce the FID values reported in the paper because the author did not mention this metric on the project's GitHub page, nor was there any code provided for its computation.
