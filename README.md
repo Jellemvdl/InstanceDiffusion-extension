@@ -114,3 +114,74 @@ python eval/eval_attribute_binding.py --folder eval-cocoval17-colors --test_rand
 In order to evaluate the texture attribute binding performance of InstanceDiffusion, we changed the `test_attribute` to `textures` and substituted `--test_random_textures` for `--test_random_colors`.
 
 ## Results
+
+### Reproduction
+
+As part of our reproduction study, we succesfully replicated the results achieved by the original authors for different location formats as input when generating images for Boxes and Instance masks: 
+<table align="center">
+  <tr align="center">
+      <th align="left">Method</th>
+      <th>AP<sub>box</sub></th>
+      <th>AP<sub>box</sub><sup>50</sup></th>
+      <th>AR<sub>box</sub></th>
+      <th>FID (↓)</th>
+  </tr>
+  <tr align="center">
+    <td align="left">InstanceDiffusion</td>
+    <td>38.8</td>
+    <td>55.4</td>
+    <td>52.9</td>
+    <td>23.9</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Our Reproduction</td>
+    <td>49.9</td>
+    <td>66.8</td>
+    <td>68.6</td>
+    <td>..</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Difference</td>
+    <td>+11.1</td>
+    <td>+11.4</td>
+    <td>+15.7</td>
+    <td>..</td>
+  </tr>
+    <tr align="left">
+    <td colspan=7><b>Table 1.</b> Evaluating different location formats as input when generating images of reproduction experiments Boxes.</td>
+  </tr>
+</table>
+
+<table align="center">
+  <tr align="center">
+      <th align="left">Method</th>
+      <th>AP<sub>mask</sub></th>
+      <th>AP<sub>mask</sub><sup>50</sup></th>
+      <th>AR<sub>mask</sub></th>
+      <th>FID (↓)</th>
+  </tr>
+  <tr align="center">
+    <td align="left">InstanceDiffusion</td>
+    <td>27.1</td>
+    <td>50.0</td>
+    <td>38.1</td>
+    <td>25.5</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Our Reproduction</td>
+    <td>40.8</td>
+    <td>63.5</td>
+    <td>56.0</td>
+    <td>..</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Difference</td>
+    <td>+13.7</td>
+    <td>+13.5</td>
+    <td>+17.9</td>
+    <td>..</td>
+  </tr>
+    <tr align="left">
+    <td colspan=7><b>Table 2.</b> Evaluating different location formats as input when generating images of reproduction experiments Instance Maks.</td>
+  </tr>
+</table>
