@@ -47,6 +47,113 @@ This purpose of this blog is to:
   </tr>
 </table>
 
-**Table 1:** ..
+**Table 1:**  Evaluating different location formats as input when generating images of reproduction experiments Boxes.
+
+<table align="center">
+  <tr align="center">
+      <th align="left">Method</th>
+      <th>AP<sub>mask</sub></th>
+      <th>AP<sub>mask</sub><sup>50</sup></th>
+      <th>AR<sub>mask</sub></th>
+      <th>FID (↓)</th>
+  </tr>
+  <tr align="center">
+    <td align="left">InstanceDiffusion</td>
+    <td>27.1</td>
+    <td>50.0</td>
+    <td>38.1</td>
+    <td>25.5</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Our Reproduction</td>
+    <td>40.8</td>
+    <td>63.5</td>
+    <td>56.0</td>
+    <td>..</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Difference</td>
+    <td>+13.7</td>
+    <td>+13.5</td>
+    <td>+17.9</td>
+    <td>..</td>
+  </tr>
+</table>
+
+**Table 2:** Evaluating different location formats as input when generating images of reproduction experiments Instance Maks.
+
+<table align="center">
+  <tr align="center">
+      <th align="left" rowspan="2">Method</th>
+      <th colspan="2">Points</th>
+      <th colspan="2">Scribble</th>
+  </tr>
+  <tr align="center">
+      <th>PiM</th>
+      <th>FID (↓)</th>
+      <th>PiM</th>
+      <th>FID (↓)</th>
+  </tr>
+  <tr align="center">
+    <td align="left">InstanceDiffusion</td>
+    <td>81.1</td>
+    <td>27.5</td>
+    <td>72.4</td>
+    <td>27.3</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Our Reproduction</td>
+    <td>..</td>
+    <td>..</td>
+    <td>..</td>
+    <td>..</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Difference</td>
+    <td>+..</td>
+    <td>+..</td>
+    <td>+..</td>
+    <td>+..</td>
+  </tr>
+</table>
+
+**Table 3:** Evaluating different location formats as input when generating images of reproduction experiments for points and scribbles.
+
+<table align="center">
+  <tr align="center">
+      <th align="left" rowspan="2">Methods</th>
+      <th colspan="2">Color</th>
+      <th colspan="2">Texture</th>
+  </tr>
+  <tr align="center">
+      <th>A<sub>cc</sub><sup>color</sup></th>
+      <th>CLIP<sub>local</sub></th>
+      <th>A<sub>cc</sub><sup>texture</sup></th>
+      <th>CLIP<sub>local</sub></th>
+  </tr>
+  <tr align="center">
+    <td align="left">InstanceDiffusion</td>
+    <td>54.4</td>
+    <td>0.250</td>
+    <td>26.8</td>
+    <td>0.225</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Our Reproduction</td>
+    <td>53.3</td>
+    <td>0.248</td>
+    <td>26.9</td>
+    <td>0.226</td>
+  </tr>
+  <tr align="center">
+    <td align="left">Difference</td>
+    <td style="color:red;">-1.1</td>
+    <td style="color:red;">-0.002</td>
+    <td style="color:green;">+0.1</td>
+    <td style="color:green;">+0.001</td>
+  </tr>
+</table>
+
+**Table 4:** Attribute binding reproduction results for color and texture.
 
 --- 
