@@ -27,7 +27,7 @@ pip install -r requirements.txt
 ## Inference Demos
 
 ## Evaluation
-For evaluation, the [MSCOCO](hhttps://cocodataset.org/#download) dataset is used. To evaluate first the MSCOCO dataset was downloaded and stored in the dataset folder. Ensuring the data was organized we stored it as followed: 
+For evaluation, the [MSCOCO](https://cocodataset.org/#download) dataset is used. To evaluate first the MSCOCO dataset was downloaded and stored in the dataset folder. Ensuring the data was organized we stored it as followed: 
 
 ```setup
 coco/
