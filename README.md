@@ -66,7 +66,7 @@ yolo val segment model=yolov8m-seg.pt data=coco.yaml device=0
 
 ###  Evaluating PiM for Scribble-/Point-based Image Generation
 
-To reproduce the PiM(Points in Mask) results for scribble-/point-based image generation. This command was used, with the same `--test_config` file for both:
+To reproduce the PiM(Points in Mask) results for scribble-/point-based image generation. This command was used, with different `--test_config` files for both:
 
 ```setup
 python eval_local.py \
