@@ -44,6 +44,14 @@ This block contains 2 learnable,channel-wise scaling vectors for the main & skip
 This block is used as a strategy to minimize information leakage across multi-instance conditioning during model inference. For each n amount of instances, a seperate denoising operation for a number of steps is used to retrieve the instance latents. The denoised instance latents for each of the n 
 objects  are then integrated with the global latent by averaging the latents togther.
 
+## Leveraging LLM's for a modular efficiency in InstanceDiffusion. 
+The Instance Diffusion Model utilizes bounding boxes for image generation. This approach is adopted to circumvent the necessity of retraining the entire model. Instead, a submodule incorporating a LLM is devised to facilitate bounding box generation. Subsequently, these bounding boxes are inputted into the Instance Diffusion Model, thereby enhancing the efficiency of the overall process.
+
+Similarly, a comparable technique is employed in the treatment of single points within the model. Herein, a Large Language Model (LLM) once again furnishes the requisite captions for the generation of single points. These captions are then seamlessly integrated into the model, thereby ensuring a comprehensive and cohesive treatment of both bounding boxes and single points. 
+
+![image](https://github.com/Jellemvdl/InstanceDiffusion-extension/assets/71041391/7ab2afaa-8746-4e78-9ebb-e8abe6450181)
+
+Our modular approach, facilitated by a dedicated language generator submodule, not only enhances efficiency but also opens avenues for scalability and adaptability within the model architecture.The incorporation of a Language and Linear Model (LLM) for generating captions, further enriches the model's capabilities, enabling it to produce nuanced and contextually relevant single points. Overall, this amalgamation of methodologies represents a robust and comprehensive solution for image generation tasks, promising advancements in both research and practical applications.
 
 
 ## <a name="reproduction">Reproduction of the Experiments</a>
