@@ -208,9 +208,12 @@ To reproduce the experiments described in the paper, we followed a process desig
 
 
 ## Bibliography
+
 [1] L. Yang, Z. Zhang, Y. Song, S. Hong, R. Xu, Y. Zhao, W. Zhang, B. Cui, and M.-H. Yang, "Diffusion models: A comprehensive survey of methods and applications," ACM Computing Surveys, vol. 56, no. 4, pp. 1-39, 2023.
 
 [2] [Haipeng Liu, Yang Wang, Biao Qian, Meng Wang, Yong Rui. CVPR 2024, Seattle, USA], "[StrDiffusion]," GitHub repository, [https://github.com/htyjers/StrDiffusion]. Accessed on: [03, 2024].
 
 [3] J. Ren, Y. Li, S. Zen, H. Xu, L. Lyu, Y. Xing, and J. Tang, "Unveiling and Mitigating Memorization in Text-to-image Diffusion Models through Cross Attention," arXiv preprint arXiv:2403.11052, 2024.
+
+
 --- 
