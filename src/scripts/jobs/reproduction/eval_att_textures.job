@@ -1,0 +1,15 @@
+test_attribute="textures"
+CUDA_VISIBLE_DEVICES=0 python eval_local.py \
+    --job_index 0 \
+    --num_jobs 1 \
+    --use_captions \
+    --save_dir "eval-cocoval17-textures" \
+    --ckpt_path pretrained/instancediffusion_sd15.pth \
+    --test_config configs/test_mask.yaml \
+    --test_dataset cocoval17 \
+    --mis 0.36 \
+    --alpha 1.0
+    --add_random_${test_attribute}
+
+# Eval instance-level CLIP score and attribute binding performance
+python eval/eval_attribute_binding.py --folder eval-cocoval17-colors --test_random_textures
