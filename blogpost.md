@@ -44,6 +44,11 @@ This block contains 2 learnable,channel-wise scaling vectors for the main & skip
 This block is used as a strategy to minimize information leakage across multi-instance conditioning during model inference. For each n amount of instances, a seperate denoising operation for a number of steps is used to retrieve the instance latents. The denoised instance latents for each of the n 
 objects  are then integrated with the global latent by averaging the latents togther.
 
+## <a name="related work">Image Diffusion Models</a>
+Image diffusion models have the ability to produce high-quality images through reiterated denoising. This has drawn significant interest in recent years. These models, including Denoising Diffusion Probabilistic Models (DDPMs) and score-based generative models (SGMs), work by progressively adding noise to an image and then learning to reverse this process to generate new samples \[1\]. Recent developments have aimed at enhancing the efficiency and quality of these models by tackling challenges such as computational complexity and inference speed, which are crucial for practical uses like deployment on mobile devices.
+
+Diffusion models have also been applied to a range of image editing tasks, showcasing impressive capabilities in creating and altering visual content. For instance, techniques such as StrDiffusion use structure-guided denoising to improve semantic consistency in image inpainting \[2\]. Moreover, new methods are being developed to reduce memorization in text-to-image models, ensuring that the generated images do not too closely resemble the training data. This enhances both originality and privacy \[3\].
+
 ## Leveraging LLM's for a modular efficiency in InstanceDiffusion. 
 The Instance Diffusion Model utilizes bounding boxes for image generation. This approach is adopted to circumvent the necessity of retraining the entire model. Instead, a submodule incorporating a LLM is devised to facilitate bounding box generation. Subsequently, these bounding boxes are inputted into the Instance Diffusion Model, thereby enhancing the efficiency of the overall process.
 
@@ -201,4 +206,11 @@ To reproduce the experiments described in the paper, we followed a process desig
   </tr>  
 </table>
 
+
+## Bibliography
+[1] L. Yang, Z. Zhang, Y. Song, S. Hong, R. Xu, Y. Zhao, W. Zhang, B. Cui, and M.-H. Yang, "Diffusion models: A comprehensive survey of methods and applications," ACM Computing Surveys, vol. 56, no. 4, pp. 1-39, 2023.
+
+[2] [Haipeng Liu, Yang Wang, Biao Qian, Meng Wang, Yong Rui. CVPR 2024, Seattle, USA], "[StrDiffusion]," GitHub repository, [https://github.com/htyjers/StrDiffusion]. Accessed on: [03, 2024].
+
+[3] J. Ren, Y. Li, S. Zen, H. Xu, L. Lyu, Y. Xing, and J. Tang, "Unveiling and Mitigating Memorization in Text-to-image Diffusion Models through Cross Attention," arXiv preprint arXiv:2403.11052, 2024.
 --- 
