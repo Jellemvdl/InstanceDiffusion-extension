@@ -26,6 +26,28 @@ pip install -r requirements.txt
 
 ## Inference Demos
 
+In order to run the Inference Demos of InstanceDiffusion locally, we provide [`src/scripts/inference.py/`](src/scripts/inference.py/) and different json files in [`src/lib/instancediff/`](src/lib/instancediff/), specifying text prompts and location conditions for generating specific images. In order to run these demos, please install the pretrained InstanceDiffusion from [Hugging Face](https://huggingface.co/xudongw/InstanceDiffusion/tree/main) or [Google Drive](https://drive.google.com/drive/folders/1Jm3bsBmq5sHBnaN5DemRUqNR0d4cVzqG?usp=sharing) and [SD1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt), place them under the [`src/lib/instancediff/pretrained`](src/lib/instancediff/pretrained) folder. Run the inference demos using the notebooks in [`demos/`](demos)
+
+### Image Generation Using Single Points
+
+InstanceDiffusion supports image generation by using points, with each point representing an instance, along with corresponding instance captions.
+
+<p align="center">
+  <img src="src/data/images/InstDiff-points.png" width=95%>
+</p>
+
+### Iterative Image Generation
+  InstanceDiffusion supports iterative image generation with minimal changes to pre-generated instances and the overall scene. By using the same initial noise and image caption, InstanceDiffusion can selectively introduce new instances, replace existing ones, reposition instances, or adjust their sizes by modifying the bounding boxes.
+
+https://github.com/frank-xwang/InstanceDiffusion/assets/58996472/b161455a-6b21-4607-a59d-3a6dd19edab1
+
+### Add more/different demo examples 
+...
+
+### Extension/GPT4 demo
+
+*Add visualisation of gpt bounding box demo*
+
 ## Evaluation
 For evaluation, the [MSCOCO](https://cocodataset.org/#download) dataset is used. To evaluate first the MSCOCO dataset was downloaded and stored in the dataset folder. Ensuring the data was organized we stored it as followed: 
 
