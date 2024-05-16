@@ -24,9 +24,21 @@ conda activate instdiff
 pip install -r requirements.txt
 ```
 
+Run the following script to download the needed [MSCOCO dataset](https://cocodataset.org/#home) (to [`src/data/`](src/data/)) and weights for the InstanceDiffusion model (to [`src/lib/pretrained/`](src/lib/pretrained/)):
+```bash
+TODO: add script
+```
+
 ## Inference Demos
 
 In order to run the Inference Demos of InstanceDiffusion locally, we provide [`src/lib/instancediffusion/inference.py`](src/lib/instancediffusion/inference.py) and multiple json files in [`src/lib/instancediffusion/demos`](src/lib/instancediffusion/demos), specifying text prompts and location conditions for generating specific images. In order to run these demos, please install the pretrained InstanceDiffusion from [Hugging Face](https://huggingface.co/xudongw/InstanceDiffusion/tree/main) or [Google Drive](https://drive.google.com/drive/folders/1Jm3bsBmq5sHBnaN5DemRUqNR0d4cVzqG?usp=sharing) and [SD1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt) and place them under the [`src/lib/instancediffusion/pretrained`](src/lib/instancediffusion/pretrained) folder. To run the different inference demos locally, use the bash scripts specified in [`src/scripts/inference_demos/`](src/scripts/inference_demos/). 
+
+
+### InstanceDiffusion Demos
+
+InstanceDiffusion enables image compositions with a granularity that ranges from entire instances to individual parts and subparts. The placement of these parts and subparts can inherently modify the object's overall pose.
+
+https://github.com/frank-xwang/InstanceDiffusion/assets/58996472/1c4205a5-c3c4-4605-9fbd-c7023d4a4768
 
 ### Image Generation Using Single Points
 
@@ -42,7 +54,8 @@ InstanceDiffusion supports image generation by using points, with each point rep
 https://github.com/frank-xwang/InstanceDiffusion/assets/58996472/b161455a-6b21-4607-a59d-3a6dd19edab1
 
 ### Add more/different demo examples 
-...
+
+*Add additional self-created demo examples*
 
 ### Extension/GPT4 demo
 
