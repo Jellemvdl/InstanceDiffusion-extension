@@ -3,11 +3,11 @@
 sh_file_name="demo_cat_dog_robin.sh"
 gpu="0"
 
-base_path="InstanceDiffusion-extension/src/lib/instancediffusion"
+base_path="src/lib/instancediffusion"
 
-python inference.py \
+python ${base_path}/inference.py \
   --num_images 8 \
-  --output InstanceDiffusion-extension/src/data/demo_outputs \
+  --output src/data/demo_outputs \
   --input_json ${base_path}/demos/demo_cat_dog_robin.json \
   --ckpt ${base_path}/pretrained/instancediffusion_sd15.pth \
   --test_config ${base_path}/configs/test_box.yaml \
