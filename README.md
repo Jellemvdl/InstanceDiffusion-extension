@@ -24,9 +24,9 @@ conda activate instdiff
 pip install -r requirements.txt
 ```
 
-Run the following script to download the needed [MSCOCO dataset](https://cocodataset.org/#home) (to [`src/data/`](src/data/)) and weights for the InstanceDiffusion model (to [`src/lib/pretrained/`](src/lib/pretrained/)):
+Run the following script to download the needed [MSCOCO dataset](https://cocodataset.org/#home) (to [`src/data/`](src/data/)):
 ```bash
-TODO: add script
+bash src/scripts/download_coco.sh
 ```
 
 ## Inference Demos
