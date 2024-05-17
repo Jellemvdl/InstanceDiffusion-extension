@@ -7,7 +7,7 @@ base_path="InstanceDiffusion-extension/src/lib/instancediffusion"
 
 python inference.py \
   --num_images 8 \
-  --output OUTPUT/ \
+  --output InstanceDiffusion-extension/src/data/demo_outputs \
   --input_json ${base_path}/demos/demo_iterative_r4.json \
   --ckpt ${base_path}/pretrained/instancediffusion_sd15.pth \
   --test_config ${base_path}/configs/test_box.yaml \
