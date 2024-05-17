@@ -24,7 +24,7 @@ conda activate instdiff
 pip install -r requirements.txt
 ```
 
-Run the following script to download the needed [MSCOCO dataset](https://cocodataset.org/#home) (to [`src/data/`](src/data/)):
+Run the following script to download the [MSCOCO dataset](https://cocodataset.org/#home) (to [`src/lib/instancediffusion/datasets/`](src/lib/instancediffusion/datasets/)):
 ```bash
 bash src/scripts/download_coco.sh
 ```
