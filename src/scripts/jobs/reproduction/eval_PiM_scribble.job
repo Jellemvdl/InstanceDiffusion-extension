@@ -1,0 +1,39 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu
+#SBATCH --gpus=1
+#SBATCH --job-name=Eval_PiM
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=18
+#SBATCH --time=06:00:00
+#SBATCH --output=slurm_outputs/eval_output_%A.out
+
+module purge
+module load 2023
+module load CUDA/12.1.1
+
+# Your job starts in the directory where you call sbatch
+cd $HOME/DL2_InstanceDiffusion
+# Activate your environment
+source activate instdiff_orig
+
+base_path="src/lib/instancediffusion"
+
+python ${base_path}/eval_local.py \
+    --job_index 0 \
+    --num_jobs 1 \
+    --use_captions \
+    --save_dir "${base_path}/eval-cocoval17-scribble" \
+    --ckpt_path ${base_path}/pretrained/instancediffusion_sd15.pth \
+    --test_config ${base_path}/configs/test_scribble.yaml \
+    --test_dataset cocoval17 \
+    --mis 0.36 \
+    --alpha 1.0
+
+pip install ultralytics
+mv $HOME/DL2_InstanceDiffusion/datasets/coco/images/val2017 $HOME/DL2_InstanceDiffusion/datasets/coco/images/val2017-official
+ln -s $HOME/DL2_InstanceDiffusion/generation_samples/eval-cocoval17-scribble $HOME/DL2_InstanceDiffusion/datasets/coco/images/val2017
+yolo val segment model=yolov8m-seg.pt data=coco.yaml device=0
+
+Please indicate the file path for predictions.json generated in the previous step
+python $HOME/DL2_InstanceDiffusion/eval/eval_pim.py --pred_json $HOME/DL2_InstanceDiffusion/runs/segment/val6/predictions.json

@@ -1,11 +1,34 @@
+#!/bin/bash
+
+#SBATCH --partition=gpu
+#SBATCH --gpus=1
+#SBATCH --job-name=Eval_att
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=18
+#SBATCH --time=06:00:00
+#SBATCH --output=slurm_outputs/eval_output_%A.out
+
+module purge
+module load 2023
+module load CUDA/12.1.1
+
+# Your job starts in the directory where you call sbatch
+cd DL2_InstanceDiffusion
+# Activate your environment
+source activate instdiff_orig
+
+rsync -av $HOME/DL2_InstanceDiffusion/dataset $TMPDIR
+
+base_path="src/lib/instancediffusion"
+
 test_attribute="textures"
-CUDA_VISIBLE_DEVICES=0 python eval_local.py \
+CUDA_VISIBLE_DEVICES=0 python ${base_path}/eval_local.py \
     --job_index 0 \
     --num_jobs 1 \
     --use_captions \
-    --save_dir "eval-cocoval17-textures" \
-    --ckpt_path pretrained/instancediffusion_sd15.pth \
-    --test_config configs/test_mask.yaml \
+    --save_dir "${base_path}/eval-cocoval17-textures" \
+    --ckpt_path ${base_path}/pretrained/instancediffusion_sd15.pth \
+    --test_config ${base_path}/configs/test_mask.yaml \
     --test_dataset cocoval17 \
     --mis 0.36 \
     --alpha 1.0
