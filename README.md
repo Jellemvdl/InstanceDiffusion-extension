@@ -31,8 +31,15 @@ bash src/scripts/download_coco.sh
 
 ## Inference Demos
 
-In order to run the Inference Demos of InstanceDiffusion locally, we provide [`src/lib/instancediffusion/inference.py`](src/lib/instancediffusion/inference.py) and multiple json files in [`src/lib/instancediffusion/demos`](src/lib/instancediffusion/demos), specifying text prompts and location conditions for generating specific images. In order to run these demos, please install the pretrained InstanceDiffusion from [Hugging Face](https://huggingface.co/xudongw/InstanceDiffusion/tree/main) or [Google Drive](https://drive.google.com/drive/folders/1Jm3bsBmq5sHBnaN5DemRUqNR0d4cVzqG?usp=sharing) and [SD1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt) and place them under the [`src/lib/instancediffusion/pretrained`](src/lib/instancediffusion/pretrained) folder. To run the different inference demos locally, use the bash scripts specified in [`src/scripts/inference_demos/`](src/scripts/inference_demos/). 
+In order to run the Inference Demos of InstanceDiffusion locally, we provide [`src/lib/instancediffusion/inference.py`](src/lib/instancediffusion/inference.py) and multiple json files in [`src/lib/instancediffusion/demos`](src/lib/instancediffusion/demos), specifying text prompts and location conditions for generating specific images. In order to run these demos, please install the pretrained InstanceDiffusion from [Hugging Face](https://huggingface.co/xudongw/InstanceDiffusion/tree/main) or [Google Drive](https://drive.google.com/drive/folders/1Jm3bsBmq5sHBnaN5DemRUqNR0d4cVzqG?usp=sharing) and [SD1.5](https://huggingface.co/runwayml/stable-diffusion-v1-5/resolve/main/v1-5-pruned-emaonly.ckpt) and place them under the [`src/lib/instancediffusion/pretrained`](src/lib/instancediffusion/pretrained) folder. To run the different inference demos locally, use the bash scripts specified in [`src/scripts/inference_demos/`](src/scripts/inference_demos/) by running it using the following format:
 
+```bash
+bash src/scripts/inference_demos/bbox_demos/demo_cat_dog_robin.sh
+bash src/scripts/inference_demos/iterative_generation/demo_iterative_r1.sh
+bash src/scripts/inference_demos/point_demos/demo_corgi_kitchen.sh
+```
+
+The demo outputs are saved in the folder [`src/data/demo_outputs/`](src/data/demo_outputs/).
 
 ### InstanceDiffusion Demos
 
