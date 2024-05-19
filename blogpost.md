@@ -218,6 +218,8 @@ To evaluate the LLM submodule, we used two approaches: CogVLM (...) and a multip
 
 For the manual raters' assessment, we generated 100 images that were scored between 1 and 5, with five being the highest. The raters perceived the image quality similarly, with an average score of 2.38 and individual raters' averages ranging between 2.20 and 2.48. Points were typically lost on criteria 2 and 3, as some generated images displayed instances with unrealistic features, such as distorted physical characteristics of humans or animals or unsmooth transitions between different types of flooring. Additionally, many images had objects that were not arranged logically in space, with object sizes not matching perspective or objects being cut off. However, the instances matched each other and the global scene well.
 
+![image](https://github.com/Jellemvdl/InstanceDiffusion-extension/images/ratings_freq.png)
+
 The errors in criterion 3 indicate that the LLM struggles with generating bounding boxes for realistic scenes. While the length and width of the bounding boxes matched the proportions of the instances (e.g., a traffic light would be taller than it is wide), their relative size and arrangement were often flawed. For example, a tractor in the distance might appear larger than a nearby car, violating perspective rules. Figure [3] shows examples of differently scoring images that illustrate these generation issues.
 
 Errors in criterion 2 could be due to the LLM's difficulty in maintaining consistent instance quality across different scenes. The LLM might generate high-quality instances in isolation but fail to integrate them smoothly into a coherent scene, leading to mismatched textures and inconsistent lighting.
@@ -226,7 +228,20 @@ The bounding box arrangement issues could stem from the LLM's limited understand
 
 In conclusion, while the LLM submodule significantly enhances the efficiency and scalability of the Instance Diffusion Model, there are areas for improvement in generating realistic and well-arranged scenes. Further refinements in spatial reasoning and perspective understanding are necessary to address these challenges and improve overall image quality.
 
-XXX image of ratings XXX
+<div style="display: flex; justify-content: space-between;">
+  <div style="text-align: center; margin: 10px;">
+    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/images/poor_image.png" alt="Poor Quality Image" style="width: 300px;"/>
+    <p>Poor Quality Image</p>
+  </div>
+  <div style="text-align: center; margin: 10px;">
+    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/images/medi_image.png" alt="Medium Quality Image" style="width: 300px;"/>
+    <p>Medium Quality Image</p>
+  </div>
+  <div style="text-align: center; margin: 10px;">
+    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/images/good_image.png" alt="Good Quality Image" style="width: 300px;"/>
+    <p>Good Quality Image</p>
+  </div>
+</div>
 
 [CogVLM section]
 
