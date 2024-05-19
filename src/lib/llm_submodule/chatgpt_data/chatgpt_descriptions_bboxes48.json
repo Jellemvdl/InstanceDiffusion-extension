@@ -1,0 +1,84 @@
+{
+    "caption": "An industrial scene featuring various elements including vehicles and infrastructure.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                350,
+                150,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person wearing a hard hat and safety vest standing next to some machinery."
+        },
+        {
+            "bbox": [
+                200,
+                100,
+                300,
+                200
+            ],
+            "mask": [],
+            "category_name": "Truck",
+            "caption": "A large blue truck parked near a loading area."
+        },
+        {
+            "bbox": [
+                320,
+                220,
+                420,
+                320
+            ],
+            "mask": [],
+            "category_name": "Forklift",
+            "caption": "A yellow forklift carrying a wooden pallet."
+        },
+        {
+            "bbox": [
+                400,
+                50,
+                470,
+                120
+            ],
+            "mask": [],
+            "category_name": "Traffic light",
+            "caption": "A traffic light with red, yellow, and green lights."
+        },
+        {
+            "bbox": [
+                150,
+                250,
+                250,
+                350
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A white car parked next to a stack of shipping containers."
+        },
+        {
+            "bbox": [
+                50,
+                50,
+                120,
+                120
+            ],
+            "mask": [],
+            "category_name": "Stop sign",
+            "caption": "A red stop sign at the intersection of two pathways."
+        },
+        {
+            "bbox": [
+                300,
+                400,
+                350,
+                450
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A metal bench placed near a small green park within the industrial area."
+        }
+    ]
+}

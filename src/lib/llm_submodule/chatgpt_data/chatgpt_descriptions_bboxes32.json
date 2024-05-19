@@ -1,0 +1,84 @@
+{
+    "caption": "A bustling commercial street with various people and vehicles.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                100,
+                150,
+                300
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person walking on the sidewalk"
+        },
+        {
+            "bbox": [
+                200,
+                120,
+                300,
+                320
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "Another person standing next to a shop"
+        },
+        {
+            "bbox": [
+                400,
+                150,
+                460,
+                350
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person buying something from a street vendor"
+        },
+        {
+            "bbox": [
+                20,
+                350,
+                170,
+                400
+            ],
+            "mask": [],
+            "category_name": "Bicycle",
+            "caption": "A bicycle parked near a bench"
+        },
+        {
+            "bbox": [
+                310,
+                250,
+                450,
+                350
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A car driving down the street"
+        },
+        {
+            "bbox": [
+                100,
+                400,
+                250,
+                450
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A bench on the sidewalk"
+        },
+        {
+            "bbox": [
+                450,
+                50,
+                500,
+                100
+            ],
+            "mask": [],
+            "category_name": "Traffic light",
+            "caption": "A traffic light at the intersection"
+        }
+    ]
+}

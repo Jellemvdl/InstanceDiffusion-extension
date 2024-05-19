@@ -1,0 +1,84 @@
+{
+    "caption": "A serene agricultural scene featuring a farmer tending to his crops, a cow grazing, and a tractor in the background.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                350,
+                120,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A farmer wearing a hat and overalls, holding a hoe."
+        },
+        {
+            "bbox": [
+                320,
+                300,
+                420,
+                370
+            ],
+            "mask": [],
+            "category_name": "Cow",
+            "caption": "A brown and white cow grazing on the field."
+        },
+        {
+            "bbox": [
+                200,
+                200,
+                350,
+                300
+            ],
+            "mask": [],
+            "category_name": "Tractor",
+            "caption": "A red tractor parked in the background."
+        },
+        {
+            "bbox": [
+                80,
+                400,
+                150,
+                420
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small brown dog sitting next to the farmer."
+        },
+        {
+            "bbox": [
+                150,
+                350,
+                250,
+                400
+            ],
+            "mask": [],
+            "category_name": "Sheep",
+            "caption": "A sheep grazing near the crops."
+        },
+        {
+            "bbox": [
+                250,
+                420,
+                270,
+                440
+            ],
+            "mask": [],
+            "category_name": "Bird",
+            "caption": "A small bird perched on a fence post."
+        },
+        {
+            "bbox": [
+                400,
+                350,
+                450,
+                400
+            ],
+            "mask": [],
+            "category_name": "Horse",
+            "caption": "A horse standing beside the cow."
+        }
+    ]
+}

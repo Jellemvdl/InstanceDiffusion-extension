@@ -1,0 +1,84 @@
+{
+    "caption": "A serene nature scene with a variety of animals and a person enjoying the view.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                300,
+                150,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person standing in the foreground, admiring the scenery."
+        },
+        {
+            "bbox": [
+                200,
+                350,
+                250,
+                400
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A dog sitting next to the person."
+        },
+        {
+            "bbox": [
+                300,
+                100,
+                400,
+                220
+            ],
+            "mask": [],
+            "category_name": "Bird",
+            "caption": "A bird perched on a tree branch."
+        },
+        {
+            "bbox": [
+                100,
+                150,
+                200,
+                250
+            ],
+            "mask": [],
+            "category_name": "Bird",
+            "caption": "Another bird flying in the sky."
+        },
+        {
+            "bbox": [
+                350,
+                400,
+                450,
+                500
+            ],
+            "mask": [],
+            "category_name": "Cow",
+            "caption": "A cow grazing in the meadow."
+        },
+        {
+            "bbox": [
+                250,
+                300,
+                320,
+                370
+            ],
+            "mask": [],
+            "category_name": "Sheep",
+            "caption": "A sheep standing near a small stream."
+        },
+        {
+            "bbox": [
+                50,
+                50,
+                150,
+                150
+            ],
+            "mask": [],
+            "category_name": "Tree",
+            "caption": "A large tree with green leaves."
+        }
+    ]
+}

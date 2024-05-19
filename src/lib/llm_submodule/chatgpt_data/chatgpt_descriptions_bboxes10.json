@@ -1,0 +1,84 @@
+{
+    "caption": "A vibrant street festival with people enjoying various activities and food stalls.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                100,
+                150,
+                300
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person wearing a colorful outfit, standing by a food stall."
+        },
+        {
+            "bbox": [
+                200,
+                110,
+                240,
+                310
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person holding a balloon, smiling."
+        },
+        {
+            "bbox": [
+                300,
+                120,
+                350,
+                320
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person with a camera, taking photos of the event."
+        },
+        {
+            "bbox": [
+                400,
+                130,
+                460,
+                330
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person eating a slice of pizza."
+        },
+        {
+            "bbox": [
+                60,
+                320,
+                140,
+                370
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A wooden bench where two people are sitting."
+        },
+        {
+            "bbox": [
+                250,
+                340,
+                290,
+                380
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small dog on a leash."
+        },
+        {
+            "bbox": [
+                350,
+                250,
+                400,
+                300
+            ],
+            "mask": [],
+            "category_name": "Bicycle",
+            "caption": "A parked bicycle with a basket filled with flowers."
+        }
+    ]
+}

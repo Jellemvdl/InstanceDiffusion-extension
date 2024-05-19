@@ -1,0 +1,84 @@
+{
+    "caption": "An agricultural scene with a farmer working in the field, a tractor, and livestock grazing.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                100,
+                300,
+                160,
+                460
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A farmer wearing a hat and working in the field."
+        },
+        {
+            "bbox": [
+                200,
+                350,
+                320,
+                460
+            ],
+            "mask": [],
+            "category_name": "Cow",
+            "caption": "A brown cow grazing on the grass."
+        },
+        {
+            "bbox": [
+                350,
+                320,
+                450,
+                420
+            ],
+            "mask": [],
+            "category_name": "Sheep",
+            "caption": "A white sheep standing near the cow."
+        },
+        {
+            "bbox": [
+                50,
+                50,
+                150,
+                150
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A dog sitting on the ground, watching the livestock."
+        },
+        {
+            "bbox": [
+                300,
+                100,
+                420,
+                220
+            ],
+            "mask": [],
+            "category_name": "Horse",
+            "caption": "A horse grazing in the background."
+        },
+        {
+            "bbox": [
+                10,
+                200,
+                100,
+                300
+            ],
+            "mask": [],
+            "category_name": "Tractor",
+            "caption": "A red tractor parked near the field."
+        },
+        {
+            "bbox": [
+                400,
+                50,
+                460,
+                100
+            ],
+            "mask": [],
+            "category_name": "Bird",
+            "caption": "A bird flying above the field."
+        }
+    ]
+}

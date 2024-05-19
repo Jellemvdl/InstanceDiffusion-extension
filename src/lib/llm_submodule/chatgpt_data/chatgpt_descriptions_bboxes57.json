@@ -1,0 +1,84 @@
+{
+    "caption": "A lively outdoor festival with people enjoying various activities and attractions.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                100,
+                130,
+                300
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person in a red shirt holding a balloon."
+        },
+        {
+            "bbox": [
+                200,
+                120,
+                260,
+                310
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person wearing a blue hat and sunglasses, carrying a backpack."
+        },
+        {
+            "bbox": [
+                300,
+                50,
+                350,
+                250
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A child holding a colorful kite string."
+        },
+        {
+            "bbox": [
+                380,
+                200,
+                460,
+                350
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A wooden bench with people sitting and talking."
+        },
+        {
+            "bbox": [
+                150,
+                350,
+                220,
+                400
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small brown dog on a leash."
+        },
+        {
+            "bbox": [
+                20,
+                20,
+                100,
+                80
+            ],
+            "mask": [],
+            "category_name": "Balloon",
+            "caption": "Colorful balloons floating in the air."
+        },
+        {
+            "bbox": [
+                400,
+                50,
+                480,
+                100
+            ],
+            "mask": [],
+            "category_name": "Stand",
+            "caption": "A food stand selling snacks and drinks."
+        }
+    ]
+}

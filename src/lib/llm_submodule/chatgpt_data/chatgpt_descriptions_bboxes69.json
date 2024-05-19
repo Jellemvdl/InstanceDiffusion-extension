@@ -1,0 +1,84 @@
+{
+    "caption": "A busy city street with various people and vehicles during the day.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                30,
+                300,
+                90,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person walking on the sidewalk."
+        },
+        {
+            "bbox": [
+                200,
+                320,
+                270,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person standing near a bus stop."
+        },
+        {
+            "bbox": [
+                350,
+                310,
+                420,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person talking on a cell phone."
+        },
+        {
+            "bbox": [
+                100,
+                350,
+                200,
+                420
+            ],
+            "mask": [],
+            "category_name": "Bicycle",
+            "caption": "A bicycle parked by the curb."
+        },
+        {
+            "bbox": [
+                10,
+                270,
+                130,
+                350
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A red car driving down the street."
+        },
+        {
+            "bbox": [
+                150,
+                250,
+                290,
+                320
+            ],
+            "mask": [],
+            "category_name": "Bus",
+            "caption": "A city bus picking up passengers."
+        },
+        {
+            "bbox": [
+                360,
+                270,
+                500,
+                330
+            ],
+            "mask": [],
+            "category_name": "Truck",
+            "caption": "A delivery truck making a stop."
+        }
+    ]
+}

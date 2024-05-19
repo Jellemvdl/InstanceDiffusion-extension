@@ -1,0 +1,84 @@
+{
+    "caption": "A busy commercial street with various vehicles and pedestrians.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                20,
+                300,
+                80,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person walking on the sidewalk"
+        },
+        {
+            "bbox": [
+                120,
+                300,
+                180,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "Another person walking with a backpack"
+        },
+        {
+            "bbox": [
+                200,
+                320,
+                300,
+                370
+            ],
+            "mask": [],
+            "category_name": "Bicycle",
+            "caption": "A bicycle parked near a bench"
+        },
+        {
+            "bbox": [
+                350,
+                150,
+                450,
+                250
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A red car driving down the street"
+        },
+        {
+            "bbox": [
+                400,
+                320,
+                500,
+                400
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A bench on the sidewalk"
+        },
+        {
+            "bbox": [
+                50,
+                100,
+                100,
+                150
+            ],
+            "mask": [],
+            "category_name": "Traffic light",
+            "caption": "A traffic light showing green"
+        },
+        {
+            "bbox": [
+                250,
+                50,
+                300,
+                100
+            ],
+            "mask": [],
+            "category_name": "Stop sign",
+            "caption": "A stop sign at the corner of the street"
+        }
+    ]
+}

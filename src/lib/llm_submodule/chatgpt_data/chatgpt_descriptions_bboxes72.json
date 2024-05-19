@@ -1,0 +1,84 @@
+{
+    "caption": "A cozy living room with a person sitting on a couch watching TV.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                100,
+                300,
+                200,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on the couch with a remote in hand."
+        },
+        {
+            "bbox": [
+                50,
+                320,
+                250,
+                480
+            ],
+            "mask": [],
+            "category_name": "Couch",
+            "caption": "A large, comfortable couch with a person sitting on it."
+        },
+        {
+            "bbox": [
+                300,
+                100,
+                400,
+                200
+            ],
+            "mask": [],
+            "category_name": "TV",
+            "caption": "A flat-screen TV mounted on the wall."
+        },
+        {
+            "bbox": [
+                350,
+                420,
+                380,
+                480
+            ],
+            "mask": [],
+            "category_name": "Remote",
+            "caption": "A TV remote held by the person sitting on the couch."
+        },
+        {
+            "bbox": [
+                150,
+                250,
+                200,
+                290
+            ],
+            "mask": [],
+            "category_name": "Cup",
+            "caption": "A coffee cup on the coffee table in front of the couch."
+        },
+        {
+            "bbox": [
+                120,
+                240,
+                300,
+                260
+            ],
+            "mask": [],
+            "category_name": "Coffee table",
+            "caption": "A wooden coffee table in front of the couch."
+        },
+        {
+            "bbox": [
+                20,
+                20,
+                80,
+                80
+            ],
+            "mask": [],
+            "category_name": "Potted plant",
+            "caption": "A potted plant placed on the window sill."
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "caption": "A busy commercial street with various shops and people.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                100,
+                100,
+                200
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person walking with a backpack."
+        },
+        {
+            "bbox": [
+                120,
+                150,
+                170,
+                220
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person standing next to a bicycle."
+        },
+        {
+            "bbox": [
+                200,
+                120,
+                290,
+                220
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A parked car on the side of the street."
+        },
+        {
+            "bbox": [
+                300,
+                140,
+                350,
+                210
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person holding a cell phone."
+        },
+        {
+            "bbox": [
+                400,
+                130,
+                480,
+                230
+            ],
+            "mask": [],
+            "category_name": "Truck",
+            "caption": "A delivery truck parked in front of a shop."
+        },
+        {
+            "bbox": [
+                350,
+                80,
+                370,
+                160
+            ],
+            "mask": [],
+            "category_name": "Stop sign",
+            "caption": "A stop sign at the corner of the street."
+        },
+        {
+            "bbox": [
+                420,
+                250,
+                460,
+                290
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A bench placed near the sidewalk."
+        }
+    ]
+}

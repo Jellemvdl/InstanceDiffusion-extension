@@ -1,0 +1,84 @@
+{
+    "caption": "A lively beach scene with people enjoying various activities.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                380,
+                120,
+                460
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on a beach towel."
+        },
+        {
+            "bbox": [
+                300,
+                340,
+                360,
+                460
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person standing with a surfboard."
+        },
+        {
+            "bbox": [
+                400,
+                300,
+                460,
+                380
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person flying a kite."
+        },
+        {
+            "bbox": [
+                200,
+                400,
+                260,
+                450
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A dog playing on the sand."
+        },
+        {
+            "bbox": [
+                340,
+                100,
+                450,
+                180
+            ],
+            "mask": [],
+            "category_name": "Kite",
+            "caption": "A colorful kite flying in the sky."
+        },
+        {
+            "bbox": [
+                20,
+                100,
+                100,
+                150
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A beach bench with a backpack on it."
+        },
+        {
+            "bbox": [
+                160,
+                120,
+                220,
+                150
+            ],
+            "mask": [],
+            "category_name": "Umbrella",
+            "caption": "A beach umbrella providing shade."
+        }
+    ]
+}
