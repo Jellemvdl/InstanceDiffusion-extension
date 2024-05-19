@@ -50,15 +50,6 @@ Image diffusion models have the ability to produce high-quality images through r
 
 Diffusion models have also been applied to a range of image editing tasks, showcasing impressive capabilities in creating and altering visual content. For instance, techniques such as StrDiffusion use structure-guided denoising to improve semantic consistency in image inpainting \[2\]. Moreover, new methods are being developed to reduce memorization in text-to-image models, ensuring that the generated images do not too closely resemble the training data. This enhances both originality and privacy \[3\].
 
-## Leveraging LLM's for a modular efficiency in InstanceDiffusion. 
-The Instance Diffusion Model utilizes bounding boxes for image generation. This approach is adopted to circumvent the necessity of retraining the entire model. Instead, a submodule incorporating a LLM is devised to facilitate bounding box generation. Subsequently, these bounding boxes are inputted into the Instance Diffusion Model, thereby enhancing the efficiency of the overall process.
-
-Similarly, a comparable technique is employed in the treatment of single points within the model. Herein, a Large Language Model (LLM) once again furnishes the requisite captions for the generation of single points. These captions are then seamlessly integrated into the model, thereby ensuring a comprehensive and cohesive treatment of both bounding boxes and single points. 
-
-![image](https://github.com/Jellemvdl/InstanceDiffusion-extension/assets/71041391/7ab2afaa-8746-4e78-9ebb-e8abe6450181)
-
-Our modular approach, facilitated by a dedicated language generator submodule, not only enhances efficiency but also opens avenues for scalability and adaptability within the model architecture.The incorporation of a Language and Linear Model (LLM) for generating captions, further enriches the model's capabilities, enabling it to produce nuanced and contextually relevant single points. Overall, this amalgamation of methodologies represents a robust and comprehensive solution for image generation tasks, promising advancements in both research and practical applications.
-
 
 ## <a name="reproduction">Reproduction of the Experiments</a>
 To reproduce the experiments described in the paper, we followed a process designed to ensure comparability with the original study. Our approach involved utilizing the same datasets, model configurations, and evaluation metrics as outlined by the authors. To verify our results, we conducted extensive evaluations using the same metrics and datasets as the original study, measuring alignment to instance locations and constancy to specified attributes. However, we were unable to reproduce the FID values reported in the paper because the author did not mention this metric on the project's GitHub page, nor was there any code provided for its computation.
@@ -208,6 +199,39 @@ To reproduce the experiments described in the paper, we followed a process desig
 </table>
 
 
+## Leveraging LLM's for Modular Efficiency in InstanceDiffusion. 
+The Instance Diffusion Model uses global descriptions combined with instance descriptions and instance bounding boxes as input for image generation. We adopt this approach but automate the input generation using a Large Language Model (LLM). This automation streamlines the process, eliminating the need for manually generated input data. Specifically, we implement a GPT-4o LLM submodule that generates image descriptions and bounding boxes similar to the original COCO input. The generated data is then fed into the Instance Diffusion Model to produce images, enhancing the overall process's efficiency.
+
+Our approach aligns closely with the techniques presented by Derakhshani et al \[4\]. They propose CompFuser to enhance spatial comprehension and attribute assignment in text-to-image generative models by interpreting instructions that define spatial relationships between objects and generate images accordingly. This is achieved through an iterative process that first generates a single object and then edits the image to place additional objects in their designated positions, improving spatial comprehension and attribute assignment.
+
+Similarly, our methodology leverages a Large Language Model (LLM) to automate the generation of image descriptions and bounding boxes. By integrating these into the Instance Diffusion Model, we enable precise control over the spatial arrangement and attributes of individual instances in the generated images. Like CompFuser, our approach addresses the challenge of understanding and executing complex prompts involving multiple objects and their spatial relationships. 
+
+![image](https://github.com/Jellemvdl/InstanceDiffusion-extension/assets/71041391/7ab2afaa-8746-4e78-9ebb-e8abe6450181)
+
+Our modular approach, facilitated by a dedicated language generation submodule, enhances efficiency and allows for scalability and adaptability within the model architecture. Incorporating an LLM for generating image descriptions enriches the model's capabilities, enabling it to produce nuanced and contextually relevant single points. This methodology represents a robust and comprehensive solution for image generation tasks, promising advancements in both research and practical applications.
+
+
+
+## Evaluation of LLM Submodule
+
+To evaluate the LLM submodule, we used two approaches: CogVLM (...) and a multiple raters' assessment of the realism of the generated images. The raters' evaluation focused on three main criteria: (1) how well instance types fit the global scene description (e.g., a coffee table fitting a living room scene), (2) the quality of generations, and (3) the object sizes and their arrangement into a realistic perspective.
+
+For the manual raters' assessment, we generated 100 images that were scored between 1 and 5, with five being the highest. The raters perceived the image quality similarly, with an average score of 2.38 and individual raters' averages ranging between 2.20 and 2.48. Points were typically lost on criteria 2 and 3, as some generated images displayed instances with unrealistic features, such as distorted physical characteristics of humans or animals or unsmooth transitions between different types of flooring. Additionally, many images had objects that were not arranged logically in space, with object sizes not matching perspective or objects being cut off. However, the instances matched each other and the global scene well.
+
+The errors in criterion 3 indicate that the LLM struggles with generating bounding boxes for realistic scenes. While the length and width of the bounding boxes matched the proportions of the instances (e.g., a traffic light would be taller than it is wide), their relative size and arrangement were often flawed. For example, a tractor in the distance might appear larger than a nearby car, violating perspective rules. Figure [3] shows examples of differently scoring images that illustrate these generation issues.
+
+Errors in criterion 2 could be due to the LLM's difficulty in maintaining consistent instance quality across different scenes. The LLM might generate high-quality instances in isolation but fail to integrate them smoothly into a coherent scene, leading to mismatched textures and inconsistent lighting.
+
+The bounding box arrangement issues could stem from the LLM's limited understanding of spatial relationships and perspective in three-dimensional space. Despite explicit instructions to ensure realistic arrangements, the LLM might lack the necessary spatial reasoning to accurately place objects relative to each other in a way that maintains a realistic perspective. This is especially problematic in complex scenes with multiple objects at varying distances and orientations.
+
+In conclusion, while the LLM submodule significantly enhances the efficiency and scalability of the Instance Diffusion Model, there are areas for improvement in generating realistic and well-arranged scenes. Further refinements in spatial reasoning and perspective understanding are necessary to address these challenges and improve overall image quality.
+
+XXX image of ratings XXX
+
+[CogVLM section]
+
+
+
 ## Bibliography
 
 [1] L. Yang, Z. Zhang, Y. Song, S. Hong, R. Xu, Y. Zhao, W. Zhang, B. Cui, and M.-H. Yang, "Diffusion models: A comprehensive survey of methods and applications," ACM Computing Surveys, vol. 56, no. 4, pp. 1-39, 2023.
@@ -215,6 +239,10 @@ To reproduce the experiments described in the paper, we followed a process desig
 [2] [Haipeng Liu, Yang Wang, Biao Qian, Meng Wang, Yong Rui. CVPR 2024, Seattle, USA], "[StrDiffusion]," GitHub repository, [https://github.com/htyjers/StrDiffusion]. Accessed on: [03, 2024].
 
 [3] J. Ren, Y. Li, S. Zen, H. Xu, L. Lyu, Y. Xing, and J. Tang, "Unveiling and Mitigating Memorization in Text-to-image Diffusion Models through Cross Attention," arXiv preprint arXiv:2403.11052, 2024.
+
+[4] M. M. Derakhshani, M. Xia, H. Behl, C. G. M. Snoek, and V. Rühle, "Unlocking Spatial Comprehension in Text-to-Image Diffusion Models," arXiv preprint arXiv:2311.17937, 2023.
+
+
 
 
 --- 
