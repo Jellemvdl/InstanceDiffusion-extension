@@ -44,7 +44,7 @@ This block contains 2 learnable,channel-wise scaling vectors for the main & skip
 This block is used as a strategy to minimize information leakage across multi-instance conditioning during model inference. For each n amount of instances, a seperate denoising operation for a number of steps is used to retrieve the instance latents. The denoised instance latents for each of the n 
 objects  are then integrated with the global latent by averaging the latents togther.
 
-#### Related work
+### Related work
 ##### Image Diffusion Models
 Image diffusion models have the ability to produce high-quality images through reiterated denoising. This has drawn significant interest in recent years. These models, including Denoising Diffusion Probabilistic Models (DDPMs) and score-based generative models (SGMs), work by progressively adding noise to an image and then learning to reverse this process to generate new samples \[1\]. Recent developments have aimed at enhancing the efficiency and quality of these models by tackling challenges such as computational complexity and inference speed, which are crucial for practical uses like deployment on mobile devices.
 
