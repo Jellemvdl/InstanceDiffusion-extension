@@ -1,0 +1,233 @@
+[
+    {
+        "description_id": 0,
+        "pred_box": "person [62, 198, 181, 498]",
+        "gt_box": "Person [50, 100, 150, 300]",
+        "iou": 0.2598870056497175,
+        "label": "person"
+    },
+    {
+        "description_id": 0,
+        "pred_box": "person [62, 198, 181, 498]",
+        "gt_box": "Person [200, 120, 300, 320]",
+        "iou": 0.059215168552113444,
+        "label": "person"
+    },
+    {
+        "description_id": 0,
+        "pred_box": "person [62, 198, 181, 498]",
+        "gt_box": "Person [400, 150, 460, 350]",
+        "iou": 0.0,
+        "label": "person"
+    },
+    {
+        "description_id": 0,
+        "pred_box": "bicycle [100, 91, 222, 295]",
+        "gt_box": "Bicycle [20, 350, 170, 400]",
+        "iou": 0.024875239923224567,
+        "label": "bicycle"
+    },
+    {
+        "description_id": 3,
+        "pred_box": "person [32, 196, 112, 444]",
+        "gt_box": "Person [50, 100, 120, 300]",
+        "iou": 0.288135593220339,
+        "label": "person"
+    },
+    {
+        "description_id": 3,
+        "pred_box": "person [32, 196, 112, 444]",
+        "gt_box": "Person [150, 150, 200, 300]",
+        "iou": 0.0,
+        "label": "person"
+    },
+    {
+        "description_id": 3,
+        "pred_box": "person [32, 196, 112, 444]",
+        "gt_box": "Person [220, 180, 280, 320]",
+        "iou": 0.0,
+        "label": "person"
+    },
+    {
+        "description_id": 6,
+        "pred_box": "person [13, 10, 121, 246]",
+        "gt_box": "Person [100, 300, 160, 460]",
+        "iou": 0.0,
+        "label": "person"
+    },
+    {
+        "description_id": 6,
+        "pred_box": "bird [198, 253, 493, 440]",
+        "gt_box": "Bird [400, 50, 460, 100]",
+        "iou": 0.0,
+        "label": "bird"
+    },
+    {
+        "description_id": 9,
+        "pred_box": "person [59, 98, 179, 399]",
+        "gt_box": "Person [50, 300, 150, 450]",
+        "iou": 0.2499190239689052,
+        "label": "person"
+    },
+    {
+        "description_id": 12,
+        "pred_box": "person [44, 305, 219, 510]",
+        "gt_box": "Person [50, 300, 150, 450]",
+        "iou": 0.593649946638207,
+        "label": "person"
+    },
+    {
+        "description_id": 21,
+        "pred_box": "car [103, 145, 307, 349]",
+        "gt_box": "Car [50, 50, 150, 150]",
+        "iou": 0.042917591788139135,
+        "label": "car"
+    },
+    {
+        "description_id": 27,
+        "pred_box": "person [49, 98, 196, 407]",
+        "gt_box": "Person [50, 100, 150, 300]",
+        "iou": 0.5641077069648498,
+        "label": "person"
+    },
+    {
+        "description_id": 27,
+        "pred_box": "person [49, 98, 196, 407]",
+        "gt_box": "Person [200, 120, 280, 320]",
+        "iou": 0.09292001135689028,
+        "label": "person"
+    },
+    {
+        "description_id": 27,
+        "pred_box": "person [49, 98, 196, 407]",
+        "gt_box": "Person [400, 100, 500, 300]",
+        "iou": 0.0,
+        "label": "person"
+    },
+    {
+        "description_id": 30,
+        "pred_box": "person [30, 96, 159, 403]",
+        "gt_box": "Person [50, 350, 150, 500]",
+        "iou": 0.17497423246540392,
+        "label": "person"
+    },
+    {
+        "description_id": 30,
+        "pred_box": "person [30, 96, 159, 403]",
+        "gt_box": "Person [100, 200, 200, 300]",
+        "iou": 0.2730285432868898,
+        "label": "person"
+    },
+    {
+        "description_id": 30,
+        "pred_box": "person [30, 96, 159, 403]",
+        "gt_box": "Person [350, 200, 450, 300]",
+        "iou": 0.0,
+        "label": "person"
+    },
+    {
+        "description_id": 33,
+        "pred_box": "person [313, 200, 423, 480]",
+        "gt_box": "Person [50, 300, 150, 450]",
+        "iou": 0.0,
+        "label": "person"
+    },
+    {
+        "description_id": 33,
+        "pred_box": "person [313, 200, 423, 480]",
+        "gt_box": "Person [200, 320, 270, 470]",
+        "iou": 0.20671494404213298,
+        "label": "person"
+    },
+    {
+        "description_id": 33,
+        "pred_box": "person [313, 200, 423, 480]",
+        "gt_box": "Person [350, 280, 400, 450]",
+        "iou": 0.675297410776767,
+        "label": "person"
+    },
+    {
+        "description_id": 36,
+        "pred_box": "dog [256, 150, 377, 379]",
+        "gt_box": "Dog [300, 200, 400, 350]",
+        "iou": 0.6320863574997404,
+        "label": "dog"
+    },
+    {
+        "description_id": 42,
+        "pred_box": "person [219, 249, 483, 400]",
+        "gt_box": "Person [50, 300, 150, 500]",
+        "iou": 0.0,
+        "label": "person"
+    },
+    {
+        "description_id": 42,
+        "pred_box": "person [219, 249, 483, 400]",
+        "gt_box": "Person [200, 350, 270, 500]",
+        "iou": 0.2964594254022303,
+        "label": "person"
+    },
+    {
+        "description_id": 42,
+        "pred_box": "person [219, 249, 483, 400]",
+        "gt_box": "Person [350, 320, 450, 500]",
+        "iou": 0.38297309452631023,
+        "label": "person"
+    },
+    {
+        "description_id": 42,
+        "pred_box": "bench [50, 308, 206, 391]",
+        "gt_box": "Bench [30, 400, 100, 450]",
+        "iou": 0.23537283765965403,
+        "label": "bench"
+    },
+    {
+        "description_id": 48,
+        "pred_box": "dog [261, 54, 490, 210]",
+        "gt_box": "Dog [420, 200, 500, 350]",
+        "iou": 0.08251920410102993,
+        "label": "dog"
+    },
+    {
+        "description_id": 54,
+        "pred_box": "person [156, 64, 409, 350]",
+        "gt_box": "Person [50, 200, 120, 350]",
+        "iou": 0.016447621243563137,
+        "label": "person"
+    },
+    {
+        "description_id": 54,
+        "pred_box": "person [156, 64, 409, 350]",
+        "gt_box": "Person [140, 190, 200, 340]",
+        "iou": 0.24254122188614402,
+        "label": "person"
+    },
+    {
+        "description_id": 54,
+        "pred_box": "person [156, 64, 409, 350]",
+        "gt_box": "Person [220, 180, 280, 330]",
+        "iou": 0.3853437628653767,
+        "label": "person"
+    },
+    {
+        "description_id": 54,
+        "pred_box": "person [156, 64, 409, 350]",
+        "gt_box": "Person [300, 190, 360, 340]",
+        "iou": 0.28788981036907707,
+        "label": "person"
+    },
+    {
+        "description_id": 54,
+        "pred_box": "person [156, 64, 409, 350]",
+        "gt_box": "Person [380, 200, 450, 350]",
+        "iou": 0.15165096146479737,
+        "label": "person"
+    },
+    {
+        "description_id": 57,
+        "pred_box": "person [249, 154, 420, 454]",
+        "gt_box": "Person [50, 350, 150, 500]",
+        "iou": 0.0,
+        "label": "person"
+    }
+]
