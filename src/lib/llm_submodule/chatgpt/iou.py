@@ -8,15 +8,6 @@ def load_json(filename):
         for line in file:
             data.append(json.loads(line))
     return data  
-
-def load_json_files_from_folder(folder_path):
-    json_files = [f for f in os.listdir(folder_path) if f.endswith('.json')]
-    data = []
-    for file in json_files[:20]:  # Limit to only the first 20 JSON files
-        with open(os.path.join(folder_path, file), 'r') as json_file:
-            data.append(json.load(json_file))
-    return data    
-
 # Function to calculate IoU
 def calculate_iou(box1, box2):
     x1, y1, w1, h1 = box1
