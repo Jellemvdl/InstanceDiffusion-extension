@@ -67,7 +67,7 @@ model = AutoModelForCausalLM.from_pretrained(
     trust_remote_code=True
 ).to('cuda').eval()
 
-query = "Can you provide a global caption and detailed instance-level descriptions with bounding boxes for the image's major instances, including each instance's attributes and precise location with coordinates [[x0,y0,x1,y1]], normalized for an image size of 512 pixels width and 512 pixels height?"
+query = "Can you provide a global caption and detailed instance-level descriptions with bounding boxes for the image's major instances, including each instance's attributes and precise location with coordinates [[x1,y1,x2,y2]]?"
 image = Image.open('/home/scur0403/DL2_InstanceDiffusion/llm_submodule/chatgpt_output/gc7.5-seed0-alpha0.8/0.png').convert('RGB')
 inputs = model.build_conversation_input_ids(tokenizer, query=query, images=[image])
 inputs = {
