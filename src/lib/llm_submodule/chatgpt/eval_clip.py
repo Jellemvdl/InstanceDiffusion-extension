@@ -32,7 +32,7 @@ def get_clip_score(image_path, text):
     
     return clip_score
 
-script_dir = os.path.dirname(__file__)
+script_dir = os.path.abspath(os.path.dirname(__file__))
 image_path = os.path.join(script_dir, "chatgpt_output/2024-05-19 10:12/gc7.5-seed0-alpha0.8/72_xl_s0.4_n20.png")
 
 text = """

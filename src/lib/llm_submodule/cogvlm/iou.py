@@ -33,9 +33,9 @@ def calculate_iou(box1, box2):
 
     return iou    
 
-script_dir = os.path.dirname(__file__)
+script_dir = os.path.abspath(os.path.dirname(__file__))
 parent_dir = os.path.dirname(script_dir)
-cogvlm_bboxes_data = load_json(os.path.join(parent_dir, "cogvlm/cogvlm_data/converted_cogvlm_bboxes.json"))  
+cogvlm_bboxes_data = load_json(os.path.join(script_dir, "cogvlm_data/converted_cogvlm_bboxes.json"))  
 chatgpt_bboxes_data = load_json(os.path.join(script_dir, "bounding_boxes_chatgpt.json"))
 
 
@@ -80,6 +80,6 @@ average_iou = sum(result['iou'] for result in filtered_iou_results) / len(filter
 print(f"Average IoU: {average_iou}")
 
 # Save the filtered results to a JSON file
-with open(os.path.join(parent_dir, 'cogvlm/cogvlm_data/filtered_iou_results.json'), 'w') as outfile:
+with open(os.path.join(script_dir, 'cogvlm_data/filtered_iou_results.json'), 'w') as outfile:
     json.dump(filtered_iou_results, outfile, indent=4)
 

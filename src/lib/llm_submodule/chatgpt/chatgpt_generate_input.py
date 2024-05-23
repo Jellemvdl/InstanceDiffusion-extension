@@ -71,7 +71,7 @@ now_utc = datetime.utcnow()
 now_amsterdam = now_utc.replace(tzinfo=pytz.utc).astimezone(amsterdam)
 timestamp = now_amsterdam.strftime('%Y-%m-%d %H:%M')
 
-script_dir = os.path.dirname(__file__)
+script_dir = os.path.abspath(os.path.dirname(__file__))
 output_directory = os.path.join(script_dir, f"chatgpt_data/{timestamp}")
 os.makedirs(output_directory, exist_ok=True)
 

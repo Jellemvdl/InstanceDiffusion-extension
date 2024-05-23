@@ -111,7 +111,7 @@ def convert_category_names(data, synonym_to_category):
 
     return data
 
-script_dir = os.path.dirname(__file__)
+script_dir = os.path.dirname(os.path.realpath(__file__))
 file_path = os.path.join(script_dir,'cogvlm_data/cogvlm_bboxes.json')
 output_json_path = os.path.join(script_dir, 'cogvlm_data')
 

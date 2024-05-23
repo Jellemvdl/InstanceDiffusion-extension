@@ -69,7 +69,7 @@ model = AutoModelForCausalLM.from_pretrained(
 
 query = "Can you provide a global caption and detailed instance-level descriptions with bounding boxes for the image's major instances, including each instance's attributes and precise location with coordinates [[x1,y1,x2,y2]]?"
 
-script_dir = os.path.dirname(os.path.realpath(__file__))
+script_dir = os.path.abspath(os.path.dirname(__file__))
 parent_dir = os.path.dirname(script_dir)
 image = Image.open(os.path.join(parent_dir, 'chatgpt/chatgpt_output/2024-05-19 10:12/gc7.5-seed0-alpha0.8/0_xl_s0.4_n20.png')).convert('RGB') #TODO is this the correct image?
 

@@ -4,8 +4,10 @@ import os
 # Directory containing the JSON files
 timestamp = input("Enter the timestamp (folder name in chatgpt_data) at which your input descriptions were generated: ")
 
-script_dir = os.path.dirname(__file__)
-input_dir = os.path.join(script_dir, f'chatgpt_data/{timestamp}')
+script_dir = os.path.abspath(os.path.dirname(__file__))
+parent_dir = os.path.dirname(script_dir)
+
+input_dir = os.path.join(parent_dir, f"chatgpt/chatgpt_data/{timestamp}")
 output_file = os.path.join(script_dir, 'bounding_boxes_chatgpt.json')
 
 # Prepare to collect all bounding box data
