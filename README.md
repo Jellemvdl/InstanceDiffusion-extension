@@ -133,7 +133,7 @@ python eval/eval_pim.py --pred_json /path/to/predictions.json
 
 ###  Evaluating Attribute Binding for colors and texture
 
-To reproduce the attribute binding results for colors and texture. This command was used:
+To reproduce the attribute binding results for colors and texture. The following command was used:
 
 ```setup
 test_attribute="colors" # colors, textures
@@ -290,4 +290,33 @@ Moreover, succesfully replicated the attribute binding results for colors and te
     <td colspan=7><b>Table 4.</b> Attribute binding reproduction results for color and texture.</td>
   </tr>  
 </table>
+
+
+## Reproduction Instructions for the Snellius Cluster
+
+To reproduce the results from the InstanceDiffusion paper non-locally, we ran multiple job files located in the folder [`src/scripts/jobs`](src/scripts/jobs). These jobs were run on the [Snellius Cluster](https://www.surf.nl/diensten/snellius-de-nationale-supercomputer), provided by the UvA. In order to reproduce our results in full, make sure to run the different scripts in the following manner:
+
+```repository
+git clone https://github.com/Jellemvdl/InstanceDiffusion-extension.git
+cd InstanceDiffusion-extension/
+```
+
+To install the requirements, run the following:
+
+```requirements
+sbatch src/jobs/install_env.job
+```
+
+To download datasets (to [`src/lib/instancediffusion/datasets/`](src/lib/instancediffusion/datasets/) and pretrained models (to [`src/lib/instancediffusion/pretrained/`](src/lib/instancediffusion/pretrained/), run the following:
+
+```downloads
+TODO
+```
+
+In order to replicate the results from the paper, run each evaluation in [`src/scripts/jobs/reproduction`](src/scripts/jobs/reproduction) jobs as follows:
+```evaluation
+sbatch src/scripts/jobs/reproduction/eval_box.job
+```
+
+
 
