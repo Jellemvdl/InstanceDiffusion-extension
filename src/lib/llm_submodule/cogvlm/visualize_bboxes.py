@@ -2,13 +2,17 @@ import json
 import os
 from PIL import Image, ImageDraw, ImageFont
 
+script_dir = os.path.dirname(os.path.realpath(__file__))
+parent_dir = os.path.dirname(script_dir)
+
 # Load the filtered IoU results
-with open('DL2_InstanceDiffusion/llm_submodule/cogvlm/cogvlm_data/filtered_iou_results.json', 'r') as file:
+#with open('./cogvlm_data/filtered_iou_results.json', 'r') as file:
+with open(os.path.join(script_dir, 'cogvlm_data/filtered_iou_results.json'), 'r') as file:
     filtered_iou_results = json.load(file)
 
 # Directory containing the images
-image_dir = 'DL2_InstanceDiffusion/llm_submodule/chatgpt/chatgpt_output/2024-05-19 10:12/gc7.5-seed0-alpha0.8'
-output_dir = 'DL2_InstanceDiffusion/llm_submodule/cogvlm/output_images'
+image_dir = os.path.join(parent_dir, 'chatgpt/chatgpt_output/2024-05-19 10:12/gc7.5-seed0-alpha0.8')
+output_dir = os.path.join(script_dir, 'output_images')
 
 # Function to parse bounding box from string
 def parse_bbox(bbox_str):

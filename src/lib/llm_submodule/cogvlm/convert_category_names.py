@@ -111,8 +111,10 @@ def convert_category_names(data, synonym_to_category):
 
     return data
 
-file_path = 'DL2_InstanceDiffusion/llm_submodule/cogvlm/cogvlm_data/cogvlm_bboxes.json'
-output_json_path = 'DL2_InstanceDiffusion/llm_submodule/cogvlm/cogvlm_data'
+script_dir = os.path.dirname(__file__)
+file_path = os.path.join(script_dir,'cogvlm_data/cogvlm_bboxes.json')
+output_json_path = os.path.join(script_dir, 'cogvlm_data')
+
 data = load_json(file_path)
 converted_data = convert_category_names(data, synonym_to_category)
 output_json = os.path.join(output_json_path, 'converted_cogvlm_bboxes.json')

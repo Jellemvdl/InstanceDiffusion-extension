@@ -1,0 +1,106 @@
+{
+    "caption": "A cozy living room with a person reading on a couch and various household items.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                150,
+                200,
+                250,
+                350
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on the couch reading a book."
+        },
+        {
+            "bbox": [
+                100,
+                200,
+                300,
+                400
+            ],
+            "mask": [],
+            "category_name": "Couch",
+            "caption": "A comfortable grey couch with cushions."
+        },
+        {
+            "bbox": [
+                50,
+                50,
+                100,
+                100
+            ],
+            "mask": [],
+            "category_name": "Potted plant",
+            "caption": "A small potted plant on a side table."
+        },
+        {
+            "bbox": [
+                350,
+                50,
+                450,
+                100
+            ],
+            "mask": [],
+            "category_name": "TV",
+            "caption": "A flat-screen TV mounted on the wall."
+        },
+        {
+            "bbox": [
+                260,
+                150,
+                290,
+                200
+            ],
+            "mask": [],
+            "category_name": "Book",
+            "caption": "A book being held by the person."
+        },
+        {
+            "bbox": [
+                150,
+                370,
+                200,
+                400
+            ],
+            "mask": [],
+            "category_name": "Cup",
+            "caption": "A coffee cup on the coffee table."
+        },
+        {
+            "bbox": [
+                130,
+                370,
+                180,
+                400
+            ],
+            "mask": [],
+            "category_name": "Remote",
+            "caption": "A TV remote on the coffee table."
+        },
+        {
+            "bbox": [
+                50,
+                400,
+                120,
+                450
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small dog lying on the floor."
+        },
+        {
+            "bbox": [
+                350,
+                150,
+                400,
+                200
+            ],
+            "mask": [],
+            "category_name": "Laptop",
+            "caption": "A laptop on a small desk."
+        }
+    ]
+}

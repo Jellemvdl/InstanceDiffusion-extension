@@ -1,0 +1,117 @@
+{
+    "caption": "A bustling commercial street with various people and vehicles.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                400,
+                120,
+                512
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person walking on the sidewalk"
+        },
+        {
+            "bbox": [
+                200,
+                380,
+                270,
+                512
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person standing near a bus stop"
+        },
+        {
+            "bbox": [
+                300,
+                390,
+                370,
+                512
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person waiting at the crosswalk"
+        },
+        {
+            "bbox": [
+                400,
+                410,
+                470,
+                512
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on a bench"
+        },
+        {
+            "bbox": [
+                50,
+                250,
+                200,
+                400
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A parked car"
+        },
+        {
+            "bbox": [
+                220,
+                200,
+                370,
+                380
+            ],
+            "mask": [],
+            "category_name": "Bus",
+            "caption": "A bus stopped at the bus stop"
+        },
+        {
+            "bbox": [
+                50,
+                150,
+                100,
+                250
+            ],
+            "mask": [],
+            "category_name": "Traffic light",
+            "caption": "A traffic light displaying green"
+        },
+        {
+            "bbox": [
+                350,
+                270,
+                450,
+                370
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A bench on the sidewalk"
+        },
+        {
+            "bbox": [
+                150,
+                50,
+                250,
+                150
+            ],
+            "mask": [],
+            "category_name": "Clock",
+            "caption": "A large clock on a building"
+        },
+        {
+            "bbox": [
+                420,
+                100,
+                480,
+                150
+            ],
+            "mask": [],
+            "category_name": "Stop sign",
+            "caption": "A stop sign at the corner"
+        }
+    ]
+}

@@ -4,9 +4,9 @@ import os
 # Directory containing the JSON files
 timestamp = input("Enter the timestamp (folder name in chatgpt_data) at which your input descriptions were generated: ")
 
-
-input_dir = f'DL2_InstanceDiffusion/llm_submodule/chatgpt/chatgpt_data/{timestamp}'
-output_file = 'DL2_InstanceDiffusion/llm_submodule/chatgpt/bounding_boxes_chatgpt.json'
+script_dir = os.path.dirname(__file__)
+input_dir = os.path.join(script_dir, f'chatgpt_data/{timestamp}')
+output_file = os.path.join(script_dir, 'bounding_boxes_chatgpt.json')
 
 # Prepare to collect all bounding box data
 all_bboxes = []
@@ -14,11 +14,13 @@ all_bboxes = []
 # Loop over the first 20 input JSON files
 for i in range(1, 21):
     file_path = os.path.join(input_dir, f'chatgpt_descriptions_bboxes{i}.json')
+    print(file_path)
     
     # Check if the file exists
     if os.path.isfile(file_path):
         with open(file_path, 'r') as file:
             data = json.load(file)
+            print(data)
             # Collect bounding boxes and category names
             bounding_boxes = [{'bbox': anno['bbox'], 'category_name': anno['category_name']} for anno in data['annos']]
             # Append the formatted data to the list

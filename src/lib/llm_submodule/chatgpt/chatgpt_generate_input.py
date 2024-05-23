@@ -71,7 +71,8 @@ now_utc = datetime.utcnow()
 now_amsterdam = now_utc.replace(tzinfo=pytz.utc).astimezone(amsterdam)
 timestamp = now_amsterdam.strftime('%Y-%m-%d %H:%M')
 
-output_directory = f"chatgpt_data/{timestamp}"
+script_dir = os.path.dirname(__file__)
+output_directory = os.path.join(script_dir, f"chatgpt_data/{timestamp}")
 os.makedirs(output_directory, exist_ok=True)
 
 
@@ -103,4 +104,4 @@ for i in range(n_prompts):
             print(f"An error occurred: {e}")
             break
 
-print(f"Responses saved to {output_filename}")
+print(f"{n_prompts} responses saved. Timestamp: {timestamp}")

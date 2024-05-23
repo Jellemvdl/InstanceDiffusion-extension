@@ -1,0 +1,117 @@
+{
+    "caption": "An industrial scene with various machinery, vehicles, and a few workers.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                100,
+                150,
+                300
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A worker in safety gear."
+        },
+        {
+            "bbox": [
+                200,
+                50,
+                400,
+                150
+            ],
+            "mask": [],
+            "category_name": "Truck",
+            "caption": "A large blue industrial truck."
+        },
+        {
+            "bbox": [
+                420,
+                60,
+                500,
+                140
+            ],
+            "mask": [],
+            "category_name": "Fork",
+            "caption": "A forklift lifting a pallet."
+        },
+        {
+            "bbox": [
+                50,
+                350,
+                150,
+                450
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A metal bench near the entrance."
+        },
+        {
+            "bbox": [
+                300,
+                300,
+                350,
+                350
+            ],
+            "mask": [],
+            "category_name": "Fire hydrant",
+            "caption": "A red fire hydrant."
+        },
+        {
+            "bbox": [
+                100,
+                50,
+                180,
+                100
+            ],
+            "mask": [],
+            "category_name": "Traffic light",
+            "caption": "A traffic light at the intersection."
+        },
+        {
+            "bbox": [
+                350,
+                250,
+                500,
+                400
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A red sedan parked near the building."
+        },
+        {
+            "bbox": [
+                150,
+                200,
+                250,
+                300
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "Another worker carrying tools."
+        },
+        {
+            "bbox": [
+                50,
+                400,
+                100,
+                450
+            ],
+            "mask": [],
+            "category_name": "Bottle",
+            "caption": "A water bottle placed on the ground."
+        },
+        {
+            "bbox": [
+                380,
+                380,
+                450,
+                420
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small dog walking near the car."
+        }
+    ]
+}

@@ -1,6 +1,7 @@
 import torch
 import clip
 from PIL import Image
+import os
 
 def get_clip_score(image_path, text):
 # Load the pre-trained CLIP model and the image
@@ -31,7 +32,9 @@ def get_clip_score(image_path, text):
     
     return clip_score
 
-image_path = "/home/scur0403/DL2_InstanceDiffusion/OUTPUT/gc7.5-seed0-alpha0.8/72_xl_s0.4_n20.png"
+script_dir = os.path.dirname(__file__)
+image_path = os.path.join(script_dir, "chatgpt_output/2024-05-19 10:12/gc7.5-seed0-alpha0.8/72_xl_s0.4_n20.png")
+
 text = """
 A city street scene with people walking, cars parked and a sky scraper in the background. Midday light. High resolution.
 """
