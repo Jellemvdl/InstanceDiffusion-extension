@@ -324,6 +324,7 @@ Subsequently, we calculate the IoU of the bounding boxes with the generated capt
   </div>
 </div>
 
+As shown in the images Instance Diffusion can generate an instance a majority of the time at the specified location. However, one limitation is the creation of the bounding boxes by ChatGPT. ChatGPT creates rather small bounding boxes that are not really aligned with the size of the instance wanted to be created. As shown in the forklift image the bounding box that ChatGPT created for the forklift is rather small. It is not a realistic size of a forklift and the Instance Diffusion model generates a much larger forklift. Therefor the IoU is very low, however the forklift is generated at the specified location. For many instances this is the case, therefor the IoU value is not very high. It is possible that ChatGPT may not effectively conceptualize a scene and accurately determine the scale of instances within it. 
 
 
 ## Bibliography
