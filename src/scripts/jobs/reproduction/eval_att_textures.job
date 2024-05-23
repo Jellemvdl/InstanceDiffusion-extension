@@ -33,4 +33,4 @@ CUDA_VISIBLE_DEVICES=0 python ${base_path}/eval_local.py \
     --add_random_${test_attribute}
 
 # Eval instance-level CLIP score and attribute binding performance
-python eval/eval_attribute_binding.py --folder eval-cocoval17-textures --test_random_textures
+python ${base_path}/eval/eval_attribute_binding.py --folder eval-cocoval17-textures --test_random_textures

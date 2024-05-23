@@ -59,7 +59,7 @@ For the evaluation, we measure how well the objects in the generated image adher
 ### Bounding Box & Instance Mask
 For the inputs of 'Bounding boxes' and 'Instance Masks', we evaluate the results using a pretrained YOLOv8m-Det \[4\] detection model. We compare the bounding boxes on the generated image that are detected by the model with the bounding boxes specified in the input using COCO’s official evaluation metrics of AP and AR. In the InstanceDiffusion paper, the authors also report the FID values of these methods. We were however unable to reproduce these values while the author provided insufficient ellaboration on how to reproduce the metric, nor did they provide any code for its computation. 
 
-As seen from Table 1 and Table 2, our reproduction of the results from the paper resulted in significantly better values than the results from the paper. We believe this is caused by the fact that we only utilize 10% of the images used in the original experiments, which might not be a fair representation of the evaluation. Due to time constraints and limited resources, we were unable to run our experiments on the entire dataset. 
+As seen from Table 1 and Table 2, our reproduction of the results from the paper resulted in significantly better values than the results from the paper. We believe this is caused by the fact that we only utilize 10% of the images used in the original experiments, which might not be a fair representation of the evaluation. Due to time constraints and limited resources, we were unable to run our experiments on the entire dataset while the generation of new images using InstanceDiffusion is computationally expensive. 
 
 
 <table align="center">
@@ -176,7 +176,7 @@ We measure the alignment performance of using scribbles as input by reporting "P
 
 ### Compositional attribute binding
 
-Using YOLOv8-Det to detect bounding boxes, we measure how well the generated images adhere to the attribute specified in the instance prompt (color or texture). The cropped bounding box is fed to the CLIP model that predicts its attribute and measures the accuracy of the prediction with respect to the attribute specified in the instance prompt. For the attributes, the 8 common colors of *black, white, red, green, yellow, blue, pink & purple* and the 8 common textures of *rubber, fluffy, metallic, wooden, plastic, fabric, leather & glass* are used. We report the local-CLIP score that measures the distance between the instance text prompt’s features and these cropped object images. See table 4 for the measured Accuracy and local CLIP scores. 
+Using YOLOv8-Det to detect bounding boxes, we measure how well the generated images adhere to the attribute specified in the instance prompt (color or texture). The cropped bounding box is fed to the CLIP model that predicts its attribute and measures the accuracy of the prediction with respect to the attribute specified in the instance prompt. For the attributes, the 8 common colors of *black, white, red, green, yellow, blue, pink & purple* and the 8 common textures of *rubber, fluffy, metallic, wooden, plastic, fabric, leather & glass* are used. We report the local-CLIP score that measures the distance between the instance text prompt’s features and these cropped object images. See table 4 for the measured Accuracy and local CLIP scores. As seen from the table, we were able to closely replicate the results from the paper, providing a solid justification for the original results of the compositional attribute binding.
 
 <table align="center">
   <tr align="center">

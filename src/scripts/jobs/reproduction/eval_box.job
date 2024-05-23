@@ -31,7 +31,6 @@ CUDA_VISIBLE_DEVICES=0 python ${base_path}/eval_local.py \
     --mis 0.36 \
     --alpha 1.0
 
-mv datasets/coco/images/val2017-official datasets/coco/images/val2017
-mv datasets/coco/images/val2017 datasets/coco/images/val2017-official
-ln -s generation_samples/eval-cocoval17-box datasets/coco/images/val2017
+mv ${base_path}/datasets/coco/images/val2017 ${base_path}/datasets/coco/images/val2017-official
+ln -s ${base_path}/generation_samples/eval-cocoval17-box ${base_path}/datasets/coco/images/val2017
 yolo val segment model=yolov8m-seg.pt data=coco.yaml device=0

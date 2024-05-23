@@ -32,9 +32,11 @@ python ${base_path}/eval_local.py \
     --alpha 1.0
 
 pip install ultralytics
-mv datasets/coco/images/val2017 datasets/coco/images/val2017-official
-ln -s generation_samples/eval-cocoval17-point datasets/coco/images/val2017
+mv ${base_path}/datasets/coco/images/val2017 ${base_path}/datasets/coco/images/val2017-official
+ln -s ${base_path}/generation_samples/eval-cocoval17-point ${base_path}/datasets/coco/images/val2017
 yolo val segment model=yolov8m-seg.pt data=coco.yaml device=0
 
-# Please indicate the file path for predictions.json generated in the previous step
-python $HOME/DL2_InstanceDiffusion/eval/eval_pim.py --pred_json $HOME/DL2_InstanceDiffusion/runs/segment/val6/predictions.json
+# Please indicate the val number of the ran experiment
+val_number=0
+
+python ${base_path}/eval/eval_pim.py --pred_json ${base_path}/runs/segment/val${val_number}/predictions.json
