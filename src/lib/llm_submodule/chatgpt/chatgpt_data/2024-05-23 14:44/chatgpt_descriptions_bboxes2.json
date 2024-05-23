@@ -1,0 +1,95 @@
+{
+    "caption": "A cozy living room scene with various furniture and a cat lounging on a couch.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                350,
+                150,
+                450
+            ],
+            "mask": [],
+            "category_name": "Potted plant",
+            "caption": "A green potted plant placed on the floor near the window."
+        },
+        {
+            "bbox": [
+                200,
+                100,
+                350,
+                250
+            ],
+            "mask": [],
+            "category_name": "Couch",
+            "caption": "A large gray couch with comfortable cushions."
+        },
+        {
+            "bbox": [
+                230,
+                150,
+                290,
+                200
+            ],
+            "mask": [],
+            "category_name": "Cat",
+            "caption": "A small tabby cat lounging on the couch."
+        },
+        {
+            "bbox": [
+                100,
+                300,
+                180,
+                360
+            ],
+            "mask": [],
+            "category_name": "Chair",
+            "caption": "A wooden chair with a cushioned seat."
+        },
+        {
+            "bbox": [
+                400,
+                50,
+                500,
+                120
+            ],
+            "mask": [],
+            "category_name": "TV",
+            "caption": "A flat-screen TV mounted on the wall."
+        },
+        {
+            "bbox": [
+                350,
+                200,
+                450,
+                300
+            ],
+            "mask": [],
+            "category_name": "Dining table",
+            "caption": "A small round dining table with a vase of flowers on it."
+        },
+        {
+            "bbox": [
+                370,
+                220,
+                390,
+                250
+            ],
+            "mask": [],
+            "category_name": "Vase",
+            "caption": "A decorative vase filled with fresh flowers."
+        },
+        {
+            "bbox": [
+                300,
+                400,
+                350,
+                450
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small dog lying on a rug near the couch."
+        }
+    ]
+}

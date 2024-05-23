@@ -1,0 +1,117 @@
+{
+    "caption": "A lively outdoor festival with people enjoying various activities and attractions.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                60,
+                120,
+                200
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person wearing a blue shirt and jeans, holding a balloon."
+        },
+        {
+            "bbox": [
+                200,
+                100,
+                270,
+                250
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person in a red dress taking a photograph with a camera."
+        },
+        {
+            "bbox": [
+                300,
+                150,
+                370,
+                290
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A child eating ice cream, wearing a yellow t-shirt and shorts."
+        },
+        {
+            "bbox": [
+                150,
+                300,
+                220,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on a bench, reading a book."
+        },
+        {
+            "bbox": [
+                400,
+                50,
+                460,
+                150
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person with a backpack, talking on a cell phone."
+        },
+        {
+            "bbox": [
+                320,
+                320,
+                380,
+                400
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A wooden bench with metal armrests."
+        },
+        {
+            "bbox": [
+                50,
+                250,
+                90,
+                350
+            ],
+            "mask": [],
+            "category_name": "Bicycle",
+            "caption": "A red bicycle parked near a tree."
+        },
+        {
+            "bbox": [
+                220,
+                50,
+                280,
+                150
+            ],
+            "mask": [],
+            "category_name": "Umbrella",
+            "caption": "A colorful umbrella providing shade."
+        },
+        {
+            "bbox": [
+                350,
+                60,
+                410,
+                160
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small brown dog with a leash."
+        },
+        {
+            "bbox": [
+                100,
+                400,
+                140,
+                450
+            ],
+            "mask": [],
+            "category_name": "Bottle",
+            "caption": "A water bottle placed on the ground."
+        }
+    ]
+}
