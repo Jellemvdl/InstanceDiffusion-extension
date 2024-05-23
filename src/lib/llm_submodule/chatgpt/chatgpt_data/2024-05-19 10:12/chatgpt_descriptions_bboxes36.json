@@ -1,0 +1,84 @@
+{
+    "caption": "An industrial scene depicting various elements and activities.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                300,
+                90,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A worker wearing a hard hat and safety vest, operating a machine."
+        },
+        {
+            "bbox": [
+                400,
+                200,
+                512,
+                300
+            ],
+            "mask": [],
+            "category_name": "Truck",
+            "caption": "A large industrial truck parked near a loading dock."
+        },
+        {
+            "bbox": [
+                150,
+                150,
+                250,
+                250
+            ],
+            "mask": [],
+            "category_name": "Fork",
+            "caption": "A forklift carrying a pallet of goods."
+        },
+        {
+            "bbox": [
+                300,
+                50,
+                350,
+                100
+            ],
+            "mask": [],
+            "category_name": "Traffic light",
+            "caption": "A traffic light positioned at the entrance of the industrial area."
+        },
+        {
+            "bbox": [
+                100,
+                50,
+                150,
+                100
+            ],
+            "mask": [],
+            "category_name": "Fire hydrant",
+            "caption": "A bright red fire hydrant situated near the corner of a building."
+        },
+        {
+            "bbox": [
+                200,
+                300,
+                250,
+                350
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A metal bench where workers can take breaks."
+        },
+        {
+            "bbox": [
+                350,
+                350,
+                400,
+                400
+            ],
+            "mask": [],
+            "category_name": "Bottle",
+            "caption": "A plastic water bottle left on the ground near the bench."
+        }
+    ]
+}

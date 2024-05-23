@@ -1,0 +1,84 @@
+{
+    "caption": "A vibrant recreational scene in a park with people engaged in various activities.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                300,
+                150,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person jogging on a path."
+        },
+        {
+            "bbox": [
+                200,
+                350,
+                250,
+                400
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on a bench."
+        },
+        {
+            "bbox": [
+                180,
+                360,
+                280,
+                410
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A wooden bench beside the path."
+        },
+        {
+            "bbox": [
+                300,
+                150,
+                350,
+                200
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person flying a kite in the open field."
+        },
+        {
+            "bbox": [
+                280,
+                70,
+                450,
+                200
+            ],
+            "mask": [],
+            "category_name": "Kite",
+            "caption": "A colorful kite flying in the sky."
+        },
+        {
+            "bbox": [
+                50,
+                50,
+                120,
+                120
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A dog playing fetch with a ball."
+        },
+        {
+            "bbox": [
+                400,
+                250,
+                450,
+                300
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person riding a bicycle on the path."
+        }
+    ]
+}

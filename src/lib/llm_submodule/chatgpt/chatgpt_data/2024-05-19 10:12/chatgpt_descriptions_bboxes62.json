@@ -1,0 +1,84 @@
+{
+    "caption": "A busy city street with various forms of transportation and pedestrians.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                300,
+                150,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person walking on the sidewalk"
+        },
+        {
+            "bbox": [
+                200,
+                350,
+                300,
+                500
+            ],
+            "mask": [],
+            "category_name": "Bicycle",
+            "caption": "A bicycle parked near the curb"
+        },
+        {
+            "bbox": [
+                350,
+                250,
+                450,
+                400
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A car driving down the street"
+        },
+        {
+            "bbox": [
+                50,
+                50,
+                150,
+                200
+            ],
+            "mask": [],
+            "category_name": "Bus",
+            "caption": "A bus stopping at a bus stop"
+        },
+        {
+            "bbox": [
+                400,
+                100,
+                480,
+                200
+            ],
+            "mask": [],
+            "category_name": "Traffic light",
+            "caption": "A traffic light signaling red"
+        },
+        {
+            "bbox": [
+                300,
+                100,
+                350,
+                150
+            ],
+            "mask": [],
+            "category_name": "Stop sign",
+            "caption": "A stop sign at the corner of the street"
+        },
+        {
+            "bbox": [
+                50,
+                400,
+                100,
+                450
+            ],
+            "mask": [],
+            "category_name": "Fire hydrant",
+            "caption": "A fire hydrant on the sidewalk"
+        }
+    ]
+}

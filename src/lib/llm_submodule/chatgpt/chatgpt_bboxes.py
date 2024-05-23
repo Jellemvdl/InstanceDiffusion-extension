@@ -2,13 +2,16 @@ import json
 import os
 
 # Directory containing the JSON files
-input_dir = 'DL2_InstanceDiffusion/llm_submodule/chatgpt_data'
+timestamp = input("Enter the timestamp (folder name in chatgpt_data) at which your input descriptions were generated: ")
+
+
+input_dir = f'DL2_InstanceDiffusion/llm_submodule/chatgpt/chatgpt_data/{timestamp}'
 output_file = 'DL2_InstanceDiffusion/llm_submodule/chatgpt/bounding_boxes_chatgpt.json'
 
 # Prepare to collect all bounding box data
 all_bboxes = []
 
-# Loop over the first 20 JSON files
+# Loop over the first 20 input JSON files
 for i in range(1, 21):
     file_path = os.path.join(input_dir, f'chatgpt_descriptions_bboxes{i}.json')
     

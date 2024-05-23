@@ -1,0 +1,84 @@
+{
+    "caption": "A serene nature scene with various animals and a person enjoying the outdoors.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                300,
+                100,
+                350
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on a bench."
+        },
+        {
+            "bbox": [
+                60,
+                310,
+                90,
+                340
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A wooden bench near the person."
+        },
+        {
+            "bbox": [
+                200,
+                100,
+                280,
+                180
+            ],
+            "mask": [],
+            "category_name": "Bird",
+            "caption": "A colorful bird perched on a tree branch."
+        },
+        {
+            "bbox": [
+                350,
+                200,
+                400,
+                250
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A dog playing in the grass."
+        },
+        {
+            "bbox": [
+                100,
+                50,
+                200,
+                150
+            ],
+            "mask": [],
+            "category_name": "Giraffe",
+            "caption": "A giraffe towering in the background."
+        },
+        {
+            "bbox": [
+                400,
+                50,
+                460,
+                110
+            ],
+            "mask": [],
+            "category_name": "Bird",
+            "caption": "Another bird flying in the sky."
+        },
+        {
+            "bbox": [
+                270,
+                300,
+                310,
+                340
+            ],
+            "mask": [],
+            "category_name": "Potted plant",
+            "caption": "A potted plant next to the bench."
+        }
+    ]
+}

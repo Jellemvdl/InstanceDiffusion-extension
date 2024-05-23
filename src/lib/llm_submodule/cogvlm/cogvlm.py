@@ -68,7 +68,7 @@ model = AutoModelForCausalLM.from_pretrained(
 ).to('cuda').eval()
 
 query = "Can you provide a global caption and detailed instance-level descriptions with bounding boxes for the image's major instances, including each instance's attributes and precise location with coordinates [[x1,y1,x2,y2]]?"
-image = Image.open('/home/scur0403/DL2_InstanceDiffusion/llm_submodule/chatgpt_output/gc7.5-seed0-alpha0.8/0.png').convert('RGB')
+image = Image.open('/home/scur0403/DL2_InstanceDiffusion/llm_submodule/chatgpt_output/2024-05-19 10:12/gc7.5-seed0-alpha0.8/0.png').convert('RGB')
 inputs = model.build_conversation_input_ids(tokenizer, query=query, images=[image])
 inputs = {
     'input_ids': inputs['input_ids'].unsqueeze(0).to('cuda'),
@@ -79,7 +79,7 @@ inputs = {
 gen_kwargs = {"max_length": 2048, "do_sample": False}
 
 # Directory containing the images
-image_dir = '/home/scur0403/DL2_InstanceDiffusion/llm_submodule/chatgpt_output/gc7.5-seed0-alpha0.8'
+image_dir = '/home/scur0403/DL2_InstanceDiffusion/llm_submodule/chatgpt_output/2024-05-19 10:12/gc7.5-seed0-alpha0.8'
 output_dir = 'DL2_InstanceDiffusion/llm_submodule/cogvlm/cogvlm_bbox_images'
 output_json_path = 'DL2_InstanceDiffusion/llm_submodule/cogvlm/cogvlm_data'
 

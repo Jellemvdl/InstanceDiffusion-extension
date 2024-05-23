@@ -1,0 +1,84 @@
+{
+    "caption": "A busy commercial street scene with people, vehicles, and various objects.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                100,
+                150,
+                300
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person walking on the sidewalk wearing a red jacket."
+        },
+        {
+            "bbox": [
+                200,
+                150,
+                260,
+                300
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person standing near a bus stop holding a handbag."
+        },
+        {
+            "bbox": [
+                300,
+                100,
+                400,
+                220
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A parked blue car on the street."
+        },
+        {
+            "bbox": [
+                410,
+                100,
+                480,
+                220
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A moving yellow taxi car."
+        },
+        {
+            "bbox": [
+                60,
+                350,
+                100,
+                400
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A wooden bench on the sidewalk."
+        },
+        {
+            "bbox": [
+                450,
+                50,
+                500,
+                100
+            ],
+            "mask": [],
+            "category_name": "Traffic light",
+            "caption": "A traffic light showing red."
+        },
+        {
+            "bbox": [
+                340,
+                350,
+                370,
+                380
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small dog on a leash near a person."
+        }
+    ]
+}

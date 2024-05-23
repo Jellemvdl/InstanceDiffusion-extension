@@ -1,0 +1,84 @@
+{
+    "caption": "A lively street festival with various activities and participants.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                300,
+                150,
+                500
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person wearing a colorful costume"
+        },
+        {
+            "bbox": [
+                200,
+                350,
+                270,
+                500
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person holding a balloon"
+        },
+        {
+            "bbox": [
+                350,
+                320,
+                450,
+                500
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person playing a guitar"
+        },
+        {
+            "bbox": [
+                120,
+                220,
+                180,
+                280
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small dog sitting on the ground"
+        },
+        {
+            "bbox": [
+                250,
+                150,
+                300,
+                200
+            ],
+            "mask": [],
+            "category_name": "Umbrella",
+            "caption": "A vibrant umbrella providing shade"
+        },
+        {
+            "bbox": [
+                100,
+                50,
+                400,
+                150
+            ],
+            "mask": [],
+            "category_name": "Banner",
+            "caption": "A large banner with the event name"
+        },
+        {
+            "bbox": [
+                30,
+                400,
+                100,
+                450
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A wooden bench with people sitting"
+        }
+    ]
+}

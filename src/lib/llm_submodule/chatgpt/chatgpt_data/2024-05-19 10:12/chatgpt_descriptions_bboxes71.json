@@ -1,0 +1,84 @@
+{
+    "caption": "A lively park scene with people enjoying various activities on a sunny day.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                30,
+                100,
+                80,
+                180
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person jogging in the park wearing sports attire."
+        },
+        {
+            "bbox": [
+                100,
+                200,
+                150,
+                250
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on a bench reading a book."
+        },
+        {
+            "bbox": [
+                180,
+                110,
+                230,
+                190
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person walking a dog on a leash."
+        },
+        {
+            "bbox": [
+                240,
+                260,
+                300,
+                320
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small dog with a brown coat."
+        },
+        {
+            "bbox": [
+                320,
+                50,
+                370,
+                130
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person flying a kite."
+        },
+        {
+            "bbox": [
+                370,
+                30,
+                470,
+                130
+            ],
+            "mask": [],
+            "category_name": "Kite",
+            "caption": "A colorful kite flying high in the sky."
+        },
+        {
+            "bbox": [
+                50,
+                300,
+                120,
+                350
+            ],
+            "mask": [],
+            "category_name": "Bicycle",
+            "caption": "A bicycle parked near a tree."
+        }
+    ]
+}

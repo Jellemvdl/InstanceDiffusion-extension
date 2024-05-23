@@ -8,6 +8,9 @@ from langchain_core.prompts import PromptTemplate
 from langchain_openai import OpenAI
 from langchain_openai import ChatOpenAI
 
+from datetime import datetime
+import pytz
+
 
 OPENAI_API_KEY = getpass("Enter your API Key: ")
 os.environ["OPENAI_API_KEY"] = OPENAI_API_KEY
@@ -62,34 +65,42 @@ chain = prompt | model
 
 n_prompts = int(input("Enter the number of descriptions you would like to generate: "))
 
-output_directory = "../chatgpt_data"
+#get timestamp to create data with unique name
+amsterdam = pytz.timezone('Europe/Amsterdam')
+now_utc = datetime.utcnow()
+now_amsterdam = now_utc.replace(tzinfo=pytz.utc).astimezone(amsterdam)
+timestamp = now_amsterdam.strftime('%Y-%m-%d %H:%M')
+
+output_directory = f"chatgpt_data/{timestamp}"
 os.makedirs(output_directory, exist_ok=True)
 
-redo = []
 
+
+
+#create image descriptions
 for i in range(n_prompts):
-  file_nr = redo[i]
-  chosen_scene = random.choice(scenes)
-  print(chosen_scene)
-  retries = 3
-  for attempt in range(retries):
-    try:
-      response = chain.invoke({"chosen_scene": chosen_scene})  # Execute prompt with chosen_scene
-      response_dict = json.loads(response.content)
-      output_filename = os.path.join(output_directory, f'chatgpt_descriptions_bboxes{file_nr}.json')
-      with open(output_filename, 'w') as json_file: 
-        json.dump(response_dict, json_file, indent=4)
-      break  #exit retry loop if successful
+    chosen_scene = random.choice(scenes)
+    #print(f"Generating description for: {chosen_scene}")
+    retries = 20
+    for attempt in range(retries):
+        try:
+            response = chain.invoke({"chosen_scene": chosen_scene})  #execute prompt with chosen_scene
+            response_dict = json.loads(response.content)
+            output_filename = os.path.join(output_directory, f'chatgpt_descriptions_bboxes{i+1}.json')
+            with open(output_filename, 'w') as json_file: 
+                json.dump(response_dict, json_file, indent=4)
+            print(f"Response saved to {output_filename}")
+            break  
 
-    except json.JSONDecodeError as e:
-      print(e)
-      if attempt < retries - 1:
-        print("Retrying...")
-        time.sleep(2)  #wait before retrying
-      else:
-        print(f"Failed after {retries} attempts")
-    except Exception as e:
-      print(f"An error occurred: {e}")
-      break
+        except json.JSONDecodeError as e:
+            #print(f"JSON error: {e}")
+            if attempt < retries - 1:
+                #print("Retrying...")
+                time.sleep(2)  
+            else:
+                print(f"Failed after {retries} attempts")
+        except Exception as e:
+            print(f"An error occurred: {e}")
+            break
 
 print(f"Responses saved to {output_filename}")

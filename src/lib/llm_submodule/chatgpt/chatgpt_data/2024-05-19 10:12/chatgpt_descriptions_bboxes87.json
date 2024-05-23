@@ -1,0 +1,84 @@
+{
+    "caption": "A serene nature scene with a variety of animals and a person enjoying the environment.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                400,
+                120,
+                500
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on a bench, enjoying the nature."
+        },
+        {
+            "bbox": [
+                30,
+                410,
+                80,
+                460
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A wooden bench where the person is sitting."
+        },
+        {
+            "bbox": [
+                200,
+                100,
+                270,
+                160
+            ],
+            "mask": [],
+            "category_name": "Bird",
+            "caption": "A bird perched on a tree branch."
+        },
+        {
+            "bbox": [
+                300,
+                300,
+                380,
+                380
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A dog playing with a Frisbee on the grass."
+        },
+        {
+            "bbox": [
+                320,
+                320,
+                360,
+                340
+            ],
+            "mask": [],
+            "category_name": "Frisbee",
+            "caption": "A red Frisbee being caught by the dog."
+        },
+        {
+            "bbox": [
+                100,
+                50,
+                180,
+                130
+            ],
+            "mask": [],
+            "category_name": "Giraffe",
+            "caption": "A giraffe grazing on leaves from a tall tree."
+        },
+        {
+            "bbox": [
+                400,
+                200,
+                450,
+                250
+            ],
+            "mask": [],
+            "category_name": "Elephant",
+            "caption": "An elephant spraying water with its trunk near a small pond."
+        }
+    ]
+}

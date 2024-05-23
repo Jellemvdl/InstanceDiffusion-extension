@@ -1,0 +1,84 @@
+{
+    "caption": "A bustling agricultural scene with farmers working in the fields and various farm animals.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                300,
+                100,
+                400
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A farmer wearing a hat is tending to the crops."
+        },
+        {
+            "bbox": [
+                200,
+                350,
+                250,
+                450
+            ],
+            "mask": [],
+            "category_name": "Cow",
+            "caption": "A cow grazing near the field."
+        },
+        {
+            "bbox": [
+                350,
+                200,
+                400,
+                300
+            ],
+            "mask": [],
+            "category_name": "Sheep",
+            "caption": "A sheep wandering near a fence."
+        },
+        {
+            "bbox": [
+                150,
+                100,
+                200,
+                200
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "Another farmer is carrying a basket of vegetables."
+        },
+        {
+            "bbox": [
+                75,
+                75,
+                125,
+                125
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A dog sitting near the barn."
+        },
+        {
+            "bbox": [
+                300,
+                50,
+                400,
+                150
+            ],
+            "mask": [],
+            "category_name": "Horse",
+            "caption": "A horse standing near the fence."
+        },
+        {
+            "bbox": [
+                50,
+                200,
+                150,
+                250
+            ],
+            "mask": [],
+            "category_name": "Sheep",
+            "caption": "Another sheep lying on the grass."
+        }
+    ]
+}

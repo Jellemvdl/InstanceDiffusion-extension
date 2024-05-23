@@ -1,0 +1,84 @@
+{
+    "caption": "A lively parade scene with colorful costumes and floats.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                20,
+                50,
+                100,
+                200
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person dressed in a bright costume holding a flag."
+        },
+        {
+            "bbox": [
+                120,
+                60,
+                200,
+                210
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person wearing a large, ornate mask and dancing."
+        },
+        {
+            "bbox": [
+                240,
+                70,
+                320,
+                220
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A child in a colorful outfit waving at the crowd."
+        },
+        {
+            "bbox": [
+                340,
+                80,
+                420,
+                230
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A performer on stilts towering above the crowd."
+        },
+        {
+            "bbox": [
+                50,
+                250,
+                150,
+                350
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A small float decorated as a giant flower."
+        },
+        {
+            "bbox": [
+                200,
+                260,
+                300,
+                360
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A float designed to look like a dragon."
+        },
+        {
+            "bbox": [
+                350,
+                270,
+                450,
+                370
+            ],
+            "mask": [],
+            "category_name": "Bus",
+            "caption": "A large bus equipped with a sound system for the parade."
+        }
+    ]
+}

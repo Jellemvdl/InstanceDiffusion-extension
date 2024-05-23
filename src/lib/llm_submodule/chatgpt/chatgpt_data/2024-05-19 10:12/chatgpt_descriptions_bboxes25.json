@@ -1,0 +1,84 @@
+{
+    "caption": "A busy park scene with people and various objects.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                30,
+                50,
+                90,
+                180
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person jogging with a backpack."
+        },
+        {
+            "bbox": [
+                120,
+                60,
+                220,
+                180
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on a bench reading a book."
+        },
+        {
+            "bbox": [
+                240,
+                100,
+                300,
+                160
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A dog sitting near the person on the bench."
+        },
+        {
+            "bbox": [
+                60,
+                250,
+                180,
+                320
+            ],
+            "mask": [],
+            "category_name": "Bicycle",
+            "caption": "A bicycle parked near a tree."
+        },
+        {
+            "bbox": [
+                350,
+                200,
+                400,
+                250
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A bench under a tree."
+        },
+        {
+            "bbox": [
+                450,
+                100,
+                490,
+                200
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person walking with an umbrella."
+        },
+        {
+            "bbox": [
+                200,
+                300,
+                260,
+                330
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small dog playing with a ball."
+        }
+    ]
+}

@@ -1,0 +1,84 @@
+{
+    "caption": "A vibrant agricultural scene with various farm activities and animals.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                300,
+                150,
+                450
+            ],
+            "mask": [],
+            "category_name": "Cow",
+            "caption": "A brown cow grazing in the field."
+        },
+        {
+            "bbox": [
+                200,
+                350,
+                270,
+                450
+            ],
+            "mask": [],
+            "category_name": "Sheep",
+            "caption": "A sheep with a thick white fleece."
+        },
+        {
+            "bbox": [
+                300,
+                280,
+                380,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A farmer wearing a hat and overalls."
+        },
+        {
+            "bbox": [
+                400,
+                350,
+                450,
+                400
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A dog sitting near the farmer."
+        },
+        {
+            "bbox": [
+                100,
+                50,
+                200,
+                200
+            ],
+            "mask": [],
+            "category_name": "Tractor",
+            "caption": "A red tractor parked near the barn."
+        },
+        {
+            "bbox": [
+                220,
+                100,
+                280,
+                180
+            ],
+            "mask": [],
+            "category_name": "Potted plant",
+            "caption": "A potted plant near the barn door."
+        },
+        {
+            "bbox": [
+                350,
+                50,
+                450,
+                150
+            ],
+            "mask": [],
+            "category_name": "Bird",
+            "caption": "A bird perched on a wooden fence."
+        }
+    ]
+}

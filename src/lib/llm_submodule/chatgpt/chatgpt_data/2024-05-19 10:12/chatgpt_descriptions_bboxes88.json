@@ -1,0 +1,84 @@
+{
+    "caption": "A cozy living room scene with various items and a person relaxing on the couch.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                150,
+                300,
+                250,
+                400
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on the couch, reading a book."
+        },
+        {
+            "bbox": [
+                100,
+                280,
+                300,
+                420
+            ],
+            "mask": [],
+            "category_name": "Couch",
+            "caption": "A large, comfortable couch."
+        },
+        {
+            "bbox": [
+                350,
+                350,
+                400,
+                400
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small dog lying on a rug."
+        },
+        {
+            "bbox": [
+                50,
+                50,
+                150,
+                150
+            ],
+            "mask": [],
+            "category_name": "Potted plant",
+            "caption": "A leafy potted plant on a side table."
+        },
+        {
+            "bbox": [
+                200,
+                450,
+                300,
+                500
+            ],
+            "mask": [],
+            "category_name": "Coffee table",
+            "caption": "A wooden coffee table with some magazines on it."
+        },
+        {
+            "bbox": [
+                400,
+                80,
+                450,
+                130
+            ],
+            "mask": [],
+            "category_name": "Lamp",
+            "caption": "A floor lamp providing warm light."
+        },
+        {
+            "bbox": [
+                280,
+                100,
+                380,
+                150
+            ],
+            "mask": [],
+            "category_name": "TV",
+            "caption": "A flat-screen TV mounted on the wall."
+        }
+    ]
+}
