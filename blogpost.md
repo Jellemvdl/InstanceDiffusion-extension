@@ -200,7 +200,7 @@ To reproduce the experiments described in the paper, we followed a process desig
 
 ### Strengths, Weaknesses, and Potential of InstanceDiffusion
 
-# Strengths 
+#### Strengths 
 
 1. Precision Control : InstanceDiffusion excels in providing precise instance-level control, allowing users to specify exact locations and detailed descriptions for each instance in the generated image. This level of control is a significant advancement over traditional text-conditioned diffusion models, which often lack the ability to fine-tune individual elements within an image.
 
@@ -212,7 +212,7 @@ To reproduce the experiments described in the paper, we followed a process desig
 
 5. Superior Image Quality : Empirical results demonstrate that InstanceDiffusion outperforms state-of-the-art models in generating high-quality images that accurately reflect the specified instance-level conditions. This superiority is particularly evident in scenarios involving multiple instances, where the model maintains clarity and coherence.
 
-# Weaknesses 
+#### Weaknesses 
 
 1. Computational Complexity : The enhanced capabilities of InstanceDiffusion come at the cost of increased computational complexity. The additional blocks (UniFusion, ScaleU, and Multi-Instance Sampler) add to the model's parameter count, potentially leading to longer training times and higher resource requirements.
 
@@ -222,7 +222,7 @@ To reproduce the experiments described in the paper, we followed a process desig
 
 4.  Complexity of Input Specification : The requirement for precise input specifications (e.g., bounding boxes, scribbles) might pose a challenge for users who lack the technical expertise or tools to provide such detailed inputs. Simplifying the input specification process could enhance user accessibility and adoption.
 
-# Potential 
+#### Potential 
 
 1. Integration with Large Language Models (LLMs) : Extending InstanceDiffusion with LLMs like ChatGPT can further enhance its capabilities. For instance, an LLM can be used to generate bounding boxes and scribble points based on textual descriptions provided by the user. This integration can automate and simplify the input specification process, making the model more user-friendly and accessible.
 
