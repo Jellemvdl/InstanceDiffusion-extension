@@ -2,7 +2,7 @@
 
 #SBATCH --partition=gpu
 #SBATCH --gpus=1
-#SBATCH --job-name=Eval_att
+#SBATCH --job-name=Eval_att_textures
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=18
 #SBATCH --time=06:00:00
@@ -13,11 +13,9 @@ module load 2023
 module load CUDA/12.1.1
 
 # Your job starts in the directory where you call sbatch
-cd DL2_InstanceDiffusion
+cd ../../../..
 # Activate your environment
-source activate instdiff_orig
-
-rsync -av $HOME/DL2_InstanceDiffusion/dataset $TMPDIR
+source activate instdiff
 
 base_path="src/lib/instancediffusion"
 
@@ -31,8 +29,8 @@ CUDA_VISIBLE_DEVICES=0 python ${base_path}/eval_local.py \
     --test_config ${base_path}/configs/test_mask.yaml \
     --test_dataset cocoval17 \
     --mis 0.36 \
-    --alpha 1.0
+    --alpha 1.0 \
     --add_random_${test_attribute}
 
 # Eval instance-level CLIP score and attribute binding performance
-python eval/eval_attribute_binding.py --folder eval-cocoval17-colors --test_random_textures
+python eval/eval_attribute_binding.py --folder eval-cocoval17-textures --test_random_textures

@@ -69,7 +69,8 @@ https://github.com/frank-xwang/InstanceDiffusion/assets/58996472/b161455a-6b21-4
 *Add visualisation of gpt bounding box demo*
 
 ## Evaluation
-For evaluation, the [MSCOCO](https://cocodataset.org/#download) dataset is used. To evaluate first the MSCOCO dataset was downloaded and stored in the dataset folder. Ensuring the data was organized we stored it as followed: 
+For evaluation, the [MSCOCO](https://cocodataset.org/#download) dataset is used. To evaluate, first make sure the MSCOCO dataset is installed using the script described in the environment installation above.
+Ensure the data is organized as followed: 
 
 ```setup
 coco/
@@ -82,78 +83,37 @@ coco/
       ...
 ```
 
-Moreover, the customized [instances_val2017.json](https://drive.google.com/file/d/1sYpb7jRZJyBJYPFHyjxosIDaiQhkrEhU/view) file needed to be downloaded. This resizes all images to 512x512 and adjusts the corresponding masks/boxes accordingly.
+Moreover, the customized [instances_val2017.json](https://drive.google.com/file/d/1sYpb7jRZJyBJYPFHyjxosIDaiQhkrEhU/view) file needs to be downloaded. This resizes all images to 512x512 and adjusts the corresponding masks/boxes accordingly.
 
-###  Evaluating different location formats for Boxes and Instance Masks
+### Reproducing results
 
-To reproduce the results for evaluating different location formats as input when generating images. This command was used, with different `--test_config` files for boxes and instance masks:
+To reproduce the results from the paper, please refer to the job files in [`src/scripts/jobs/reproduction`](src/scripts/jobs/reproduction). We reproduced three categories of evaluation studies from the paper: different location formats used as input when generating images (eval_mask & eval_box), results from using scribble- and point-based image generation (eval_PiM_point & eval_PiM_scribble) and attribution binding (eval_att_textures & eval_att_colors). All the scripts are found in the reproduction folder and can be run on the Snellius Cluster as follows:
 
-```setup
-CUDA_VISIBLE_DEVICES=0 python eval_local.py \
-    --job_index 0 \
-    --num_jobs 1 \
-    --use_captions \
-    --save_dir "eval-cocoval17" \
-    --ckpt_path pretrained/instancediffusion_sd15.pth \
-    --test_config configs/test_mask.yaml \
-    --test_dataset cocoval17 \
-    --mis 0.36 \
-    --alpha 1.0
+#### Reproduction Instructions for the Snellius Cluster
 
-pip install ultralytics
-mv datasets/coco/images/val2017 datasets/coco/images/val2017-official
-ln -s generation_samples/eval-cocoval17 datasets/coco/images/val2017
-yolo val segment model=yolov8m-seg.pt data=coco.yaml device=0
+To reproduce the results from the InstanceDiffusion paper, we ran multiple job files located in the folder [`src/scripts/jobs`](src/scripts/jobs). These jobs were run on the [Snellius Cluster](https://www.surf.nl/diensten/snellius-de-nationale-supercomputer), provided by the UvA. In order to reproduce our results in full, make sure to run the different scripts in the following manner:
+
+```repository
+git clone https://github.com/Jellemvdl/InstanceDiffusion-extension.git
+cd InstanceDiffusion-extension/
 ```
 
-###  Evaluating PiM for Scribble-/Point-based Image Generation
+To install the requirements, run the following:
 
-To reproduce the PiM(Points in Mask) results for scribble-/point-based image generation. This command was used, with different `--test_config` files for both:
-
-```setup
-python eval_local.py \
-    --job_index 0 \
-    --num_jobs 1 \
-    --use_captions \
-    --save_dir "eval-cocoval17-point" \
-    --ckpt_path pretrained/instancediffusion_sd15.pth \
-    --test_config configs/test_point.yaml \
-    --test_dataset cocoval17 \
-    --mis 0.36 \
-    --alpha 1.0
-
-pip install ultralytics
-mv datasets/coco/images/val2017 datasets/coco/images/val2017-official
-ln -s generation_samples/eval-cocoval17-point datasets/coco/images/val2017
-yolo val segment model=yolov8m-seg.pt data=coco.yaml device=0
-
-# Please indicate the file path for predictions.json generated in the previous step
-python eval/eval_pim.py --pred_json /path/to/predictions.json
-``` 
-
-###  Evaluating Attribute Binding for colors and texture
-
-To reproduce the attribute binding results for colors and texture. This command was used:
-
-```setup
-test_attribute="colors" # colors, textures
-CUDA_VISIBLE_DEVICES=0 python eval_local.py \
-    --job_index 0 \
-    --num_jobs 1 \
-    --use_captions \
-    --save_dir "eval-cocoval17-colors" \
-    --ckpt_path pretrained/instancediffusion_sd15.pth \
-    --test_config configs/test_mask.yaml \
-    --test_dataset cocoval17 \
-    --mis 0.36 \
-    --alpha 1.0
-    --add_random_${test_attribute}
-
-# Eval instance-level CLIP score and attribute binding performance
-python eval/eval_attribute_binding.py --folder eval-cocoval17-colors --test_random_colors
+```requirements
+sbatch src/jobs/install_env.job
 ```
 
-In order to evaluate the texture attribute binding performance of InstanceDiffusion, we changed the `test_attribute` to `textures` and substituted `--test_random_textures` for `--test_random_colors`.
+To download datasets (to [`src/lib/instancediffusion/datasets/`](src/lib/instancediffusion/datasets/) and pretrained models (to [`src/lib/instancediffusion/pretrained/`](src/lib/instancediffusion/pretrained/), run the following:
+
+```downloads
+TODO
+```
+
+In order to replicate the results from the paper, run each evaluation in [`src/scripts/jobs/reproduction`](src/scripts/jobs/reproduction) jobs as follows:
+```evaluation
+sbatch src/scripts/jobs/reproduction/eval_box.job
+```
 
 ## Results
 
@@ -290,4 +250,8 @@ Moreover, succesfully replicated the attribute binding results for colors and te
     <td colspan=7><b>Table 4.</b> Attribute binding reproduction results for color and texture.</td>
   </tr>  
 </table>
+
+
+
+
 

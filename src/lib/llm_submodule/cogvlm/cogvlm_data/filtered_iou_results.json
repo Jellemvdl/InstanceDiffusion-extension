@@ -1,0 +1,226 @@
+[
+    {
+        "description_id": 0,
+        "pred_box": "person [62, 198, 181, 498]",
+        "gt_box": "Person [60, 200, 130, 300]",
+        "iou": 0.4231964557296833,
+        "label": "person"
+    },
+    {
+        "description_id": 0,
+        "pred_box": "bicycle [100, 91, 222, 295]",
+        "gt_box": "Bicycle [80, 100, 150, 200]",
+        "iou": 0.3741545546121744,
+        "label": "bicycle"
+    },
+    {
+        "description_id": 3,
+        "pred_box": "person [32, 196, 112, 444]",
+        "gt_box": "Person [50, 300, 150, 450]",
+        "iou": 0.3748182201998405,
+        "label": "person"
+    },
+    {
+        "description_id": 3,
+        "pred_box": "sheep [32, 301, 195, 453]",
+        "gt_box": "Sheep [30, 200, 80, 250]",
+        "iou": 0.12016998748875539,
+        "label": "sheep"
+    },
+    {
+        "description_id": 6,
+        "pred_box": "person [13, 10, 121, 246]",
+        "gt_box": "Person [20, 50, 100, 200]",
+        "iou": 0.6719075455217363,
+        "label": "person"
+    },
+    {
+        "description_id": 9,
+        "pred_box": "person [59, 98, 179, 399]",
+        "gt_box": "Person [50, 100, 130, 300]",
+        "iou": 0.4897397498684583,
+        "label": "person"
+    },
+    {
+        "description_id": 9,
+        "pred_box": "bicycle [206, 151, 454, 350]",
+        "gt_box": "Bicycle [200, 150, 250, 200]",
+        "iou": 0.30282392855360973,
+        "label": "bicycle"
+    },
+    {
+        "description_id": 12,
+        "pred_box": "person [44, 305, 219, 510]",
+        "gt_box": "Person [50, 300, 150, 450]",
+        "iou": 0.593649946638207,
+        "label": "person"
+    },
+    {
+        "description_id": 12,
+        "pred_box": "truck [37, 97, 197, 300]",
+        "gt_box": "Truck [350, 100, 500, 250]",
+        "iou": 0.0,
+        "label": "truck"
+    },
+    {
+        "description_id": 15,
+        "pred_box": "laptop [45, 51, 203, 193]",
+        "gt_box": "Laptop [50, 50, 150, 150]",
+        "iou": 0.5682829464263012,
+        "label": "laptop"
+    },
+    {
+        "description_id": 15,
+        "pred_box": "couch [46, 340, 510, 510]",
+        "gt_box": "Couch [220, 300, 450, 450]",
+        "iou": 0.4240857037310676,
+        "label": "couch"
+    },
+    {
+        "description_id": 18,
+        "pred_box": "bird [105, 165, 304, 382]",
+        "gt_box": "Bird [100, 150, 200, 250]",
+        "iou": 0.38091319418468367,
+        "label": "bird"
+    },
+    {
+        "description_id": 18,
+        "pred_box": "sheep [357, 403, 443, 453]",
+        "gt_box": "Sheep [250, 300, 320, 370]",
+        "iou": 0.21689269587503052,
+        "label": "sheep"
+    },
+    {
+        "description_id": 21,
+        "pred_box": "car [103, 145, 307, 349]",
+        "gt_box": "Car [100, 100, 200, 250]",
+        "iou": 0.345886363247058,
+        "label": "car"
+    },
+    {
+        "description_id": 21,
+        "pred_box": "bus [65, 53, 210, 239]",
+        "gt_box": "Bus [50, 50, 150, 200]",
+        "iou": 0.49622166246851385,
+        "label": "bus"
+    },
+    {
+        "description_id": 24,
+        "pred_box": "bus [104, 220, 336, 510]",
+        "gt_box": "Bus [100, 200, 250, 300]",
+        "iou": 0.3881000676132522,
+        "label": "bus"
+    },
+    {
+        "description_id": 27,
+        "pred_box": "person [49, 98, 196, 407]",
+        "gt_box": "Person [50, 100, 150, 300]",
+        "iou": 0.5641077069648498,
+        "label": "person"
+    },
+    {
+        "description_id": 30,
+        "pred_box": "person [30, 96, 159, 403]",
+        "gt_box": "Person [30, 100, 130, 300]",
+        "iou": 0.6086427267194157,
+        "label": "person"
+    },
+    {
+        "description_id": 30,
+        "pred_box": "forklift [105, 159, 500, 498]",
+        "gt_box": "Forklift [100, 350, 250, 500]",
+        "iou": 0.25173619826965876,
+        "label": "forklift"
+    },
+    {
+        "description_id": 33,
+        "pred_box": "person [313, 200, 423, 480]",
+        "gt_box": "Person [300, 200, 360, 280]",
+        "iou": 0.4700987033094639,
+        "label": "person"
+    },
+    {
+        "description_id": 33,
+        "pred_box": "tractor [99, 97, 251, 245]",
+        "gt_box": "Tractor [100, 100, 150, 150]",
+        "iou": 0.36588340515489065,
+        "label": "tractor"
+    },
+    {
+        "description_id": 36,
+        "pred_box": "dog [256, 150, 377, 379]",
+        "gt_box": "Dog [150, 150, 230, 230]",
+        "iou": 0.17050991552226136,
+        "label": "dog"
+    },
+    {
+        "description_id": 36,
+        "pred_box": "kite [33, 29, 134, 140]",
+        "gt_box": "Kite [30, 30, 110, 110]",
+        "iou": 0.6165531691985333,
+        "label": "kite"
+    },
+    {
+        "description_id": 39,
+        "pred_box": "person [43, 100, 198, 399]",
+        "gt_box": "Person [50, 100, 150, 300]",
+        "iou": 0.5696058327637274,
+        "label": "person"
+    },
+    {
+        "description_id": 42,
+        "pred_box": "person [219, 249, 483, 400]",
+        "gt_box": "Person [300, 250, 370, 450]",
+        "iou": 0.6961380676191824,
+        "label": "person"
+    },
+    {
+        "description_id": 42,
+        "pred_box": "bench [50, 308, 206, 391]",
+        "gt_box": "Bench [400, 100, 480, 180]",
+        "iou": 0.0,
+        "label": "bench"
+    },
+    {
+        "description_id": 45,
+        "pred_box": "car [225, 313, 510, 428]",
+        "gt_box": "Car [220, 300, 370, 370]",
+        "iou": 0.5794552529182879,
+        "label": "car"
+    },
+    {
+        "description_id": 48,
+        "pred_box": "bird [24, 49, 137, 195]",
+        "gt_box": "Bird [20, 50, 120, 150]",
+        "iou": 0.6370126304228446,
+        "label": "bird"
+    },
+    {
+        "description_id": 48,
+        "pred_box": "dog [261, 54, 490, 210]",
+        "gt_box": "Dog [250, 50, 350, 150]",
+        "iou": 0.4673389609653844,
+        "label": "dog"
+    },
+    {
+        "description_id": 51,
+        "pred_box": "bus [252, 189, 454, 417]",
+        "gt_box": "Bus [250, 180, 370, 250]",
+        "iou": 0.4592140009320147,
+        "label": "bus"
+    },
+    {
+        "description_id": 54,
+        "pred_box": "person [156, 64, 409, 350]",
+        "gt_box": "Person [250, 70, 320, 270]",
+        "iou": 0.5885813148788928,
+        "label": "person"
+    },
+    {
+        "description_id": 57,
+        "pred_box": "person [249, 154, 420, 454]",
+        "gt_box": "Person [200, 150, 300, 300]",
+        "iou": 0.3599891464454609,
+        "label": "person"
+    }
+]

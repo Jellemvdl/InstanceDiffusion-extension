@@ -2,7 +2,7 @@
 
 #SBATCH --partition=gpu
 #SBATCH --gpus=1
-#SBATCH --job-name=Eval
+#SBATCH --job-name=Eval_mask
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=18
 #SBATCH --time=06:00:00
@@ -13,9 +13,10 @@ module load 2023
 module load CUDA/12.1.1
 
 # Your job starts in the directory where you call sbatch
-cd $HOME/DL2_InstanceDiffusion
+cd ../../../..
+
 # Activate your environment
-source activate instdiff_orig
+source activate instdiff
 
 base_path="src/lib/instancediffusion"
 
