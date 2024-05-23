@@ -1,0 +1,84 @@
+{
+    "caption": "A vibrant park scene with people enjoying various recreational activities.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                100,
+                150,
+                300
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person jogging through the park wearing a blue tracksuit."
+        },
+        {
+            "bbox": [
+                200,
+                120,
+                280,
+                320
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on a bench reading a book."
+        },
+        {
+            "bbox": [
+                50,
+                320,
+                450,
+                370
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A wooden park bench with iron armrests."
+        },
+        {
+            "bbox": [
+                300,
+                50,
+                370,
+                250
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person flying a colorful kite."
+        },
+        {
+            "bbox": [
+                310,
+                20,
+                400,
+                160
+            ],
+            "mask": [],
+            "category_name": "Kite",
+            "caption": "A bright red and yellow kite in the sky."
+        },
+        {
+            "bbox": [
+                420,
+                200,
+                500,
+                350
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A small dog playing fetch."
+        },
+        {
+            "bbox": [
+                150,
+                250,
+                200,
+                350
+            ],
+            "mask": [],
+            "category_name": "Bicycle",
+            "caption": "A red bicycle parked next to a tree."
+        }
+    ]
+}

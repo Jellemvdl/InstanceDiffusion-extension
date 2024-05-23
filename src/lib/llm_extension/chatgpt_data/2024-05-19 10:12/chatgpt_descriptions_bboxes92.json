@@ -1,0 +1,84 @@
+{
+    "caption": "A busy city street with various modes of transport and pedestrians.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                30,
+                150,
+                120,
+                350
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A pedestrian walking on the sidewalk"
+        },
+        {
+            "bbox": [
+                150,
+                200,
+                300,
+                400
+            ],
+            "mask": [],
+            "category_name": "Bicycle",
+            "caption": "A cyclist riding a bicycle"
+        },
+        {
+            "bbox": [
+                350,
+                180,
+                480,
+                300
+            ],
+            "mask": [],
+            "category_name": "Car",
+            "caption": "A parked car on the side of the road"
+        },
+        {
+            "bbox": [
+                50,
+                50,
+                150,
+                130
+            ],
+            "mask": [],
+            "category_name": "Traffic light",
+            "caption": "A traffic light showing green"
+        },
+        {
+            "bbox": [
+                200,
+                50,
+                250,
+                100
+            ],
+            "mask": [],
+            "category_name": "Stop sign",
+            "caption": "A stop sign at the intersection"
+        },
+        {
+            "bbox": [
+                400,
+                50,
+                450,
+                120
+            ],
+            "mask": [],
+            "category_name": "Fire hydrant",
+            "caption": "A fire hydrant on the sidewalk"
+        },
+        {
+            "bbox": [
+                280,
+                340,
+                350,
+                400
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A bench near the bus stop"
+        }
+    ]
+}

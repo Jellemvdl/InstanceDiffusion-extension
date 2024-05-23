@@ -1,0 +1,84 @@
+{
+    "caption": "A vibrant agricultural scene with a farmer working in the field, surrounded by various elements of farm life.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                300,
+                150,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A farmer wearing a hat and holding a hoe"
+        },
+        {
+            "bbox": [
+                200,
+                350,
+                300,
+                400
+            ],
+            "mask": [],
+            "category_name": "Cow",
+            "caption": "A brown cow grazing on the field"
+        },
+        {
+            "bbox": [
+                350,
+                100,
+                450,
+                150
+            ],
+            "mask": [],
+            "category_name": "Sheep",
+            "caption": "A white sheep standing near a small mound"
+        },
+        {
+            "bbox": [
+                400,
+                350,
+                500,
+                420
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A dog sitting and watching the farmer"
+        },
+        {
+            "bbox": [
+                50,
+                50,
+                100,
+                150
+            ],
+            "mask": [],
+            "category_name": "Tree",
+            "caption": "A large green tree providing shade"
+        },
+        {
+            "bbox": [
+                150,
+                50,
+                200,
+                100
+            ],
+            "mask": [],
+            "category_name": "Bird",
+            "caption": "A bird perched on a branch of the tree"
+        },
+        {
+            "bbox": [
+                300,
+                250,
+                400,
+                300
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A wooden bench placed under the tree"
+        }
+    ]
+}

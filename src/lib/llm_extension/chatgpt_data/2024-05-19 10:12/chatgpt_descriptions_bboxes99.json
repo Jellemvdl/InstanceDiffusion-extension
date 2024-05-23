@@ -1,0 +1,84 @@
+{
+    "caption": "A lively park scene with people engaging in various recreational activities.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                350,
+                150,
+                500
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person jogging in the park"
+        },
+        {
+            "bbox": [
+                200,
+                100,
+                250,
+                150
+            ],
+            "mask": [],
+            "category_name": "Kite",
+            "caption": "A colorful kite flying in the sky"
+        },
+        {
+            "bbox": [
+                300,
+                400,
+                340,
+                450
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A dog playing fetch"
+        },
+        {
+            "bbox": [
+                400,
+                350,
+                480,
+                500
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A bench occupied by a couple"
+        },
+        {
+            "bbox": [
+                100,
+                200,
+                200,
+                300
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person riding a bicycle"
+        },
+        {
+            "bbox": [
+                50,
+                50,
+                100,
+                100
+            ],
+            "mask": [],
+            "category_name": "Bird",
+            "caption": "A bird perched on a tree branch"
+        },
+        {
+            "bbox": [
+                350,
+                200,
+                450,
+                300
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person flying a kite"
+        }
+    ]
+}

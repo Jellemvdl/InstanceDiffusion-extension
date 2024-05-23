@@ -1,0 +1,106 @@
+{
+    "caption": "A lively park scene with people enjoying various recreational activities.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                300,
+                130,
+                470
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person jogging"
+        },
+        {
+            "bbox": [
+                200,
+                320,
+                280,
+                460
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on a bench reading a book"
+        },
+        {
+            "bbox": [
+                350,
+                290,
+                420,
+                450
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person walking a dog"
+        },
+        {
+            "bbox": [
+                370,
+                320,
+                450,
+                500
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A brown dog on a leash"
+        },
+        {
+            "bbox": [
+                100,
+                150,
+                180,
+                290
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A child flying a kite"
+        },
+        {
+            "bbox": [
+                160,
+                70,
+                350,
+                220
+            ],
+            "mask": [],
+            "category_name": "Kite",
+            "caption": "A colorful kite flying in the sky"
+        },
+        {
+            "bbox": [
+                50,
+                350,
+                150,
+                400
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A wooden bench"
+        },
+        {
+            "bbox": [
+                260,
+                190,
+                330,
+                250
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person riding a bicycle"
+        },
+        {
+            "bbox": [
+                240,
+                250,
+                360,
+                300
+            ],
+            "mask": [],
+            "category_name": "Bicycle",
+            "caption": "A red bicycle"
+        }
+    ]
+}

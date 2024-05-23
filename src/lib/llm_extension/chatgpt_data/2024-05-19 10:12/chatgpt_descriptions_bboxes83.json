@@ -1,0 +1,84 @@
+{
+    "caption": "A bustling park scene with people enjoying various recreational activities.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                100,
+                150,
+                300
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person jogging in the park wearing a blue tracksuit."
+        },
+        {
+            "bbox": [
+                200,
+                150,
+                300,
+                350
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on a bench reading a book."
+        },
+        {
+            "bbox": [
+                400,
+                100,
+                500,
+                250
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person flying a colorful kite."
+        },
+        {
+            "bbox": [
+                100,
+                350,
+                180,
+                450
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A playful dog chasing a ball."
+        },
+        {
+            "bbox": [
+                350,
+                400,
+                450,
+                500
+            ],
+            "mask": [],
+            "category_name": "Bicycle",
+            "caption": "A red bicycle parked near a tree."
+        },
+        {
+            "bbox": [
+                150,
+                50,
+                200,
+                150
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "An empty bench facing the lake."
+        },
+        {
+            "bbox": [
+                300,
+                300,
+                340,
+                350
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A child playing with a frisbee."
+        }
+    ]
+}

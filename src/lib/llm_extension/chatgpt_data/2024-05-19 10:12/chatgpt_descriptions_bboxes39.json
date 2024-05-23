@@ -1,0 +1,84 @@
+{
+    "caption": "A serene nature scene with a variety of animals and objects.",
+    "width": 512,
+    "height": 512,
+    "annos": [
+        {
+            "bbox": [
+                50,
+                350,
+                150,
+                450
+            ],
+            "mask": [],
+            "category_name": "Dog",
+            "caption": "A brown dog sitting on the grass."
+        },
+        {
+            "bbox": [
+                300,
+                50,
+                400,
+                150
+            ],
+            "mask": [],
+            "category_name": "Bird",
+            "caption": "A small bird perched on a tree branch."
+        },
+        {
+            "bbox": [
+                200,
+                200,
+                250,
+                250
+            ],
+            "mask": [],
+            "category_name": "Cat",
+            "caption": "A black and white cat lying under the tree."
+        },
+        {
+            "bbox": [
+                100,
+                100,
+                200,
+                200
+            ],
+            "mask": [],
+            "category_name": "Person",
+            "caption": "A person sitting on a bench reading a book."
+        },
+        {
+            "bbox": [
+                400,
+                400,
+                450,
+                450
+            ],
+            "mask": [],
+            "category_name": "Potted plant",
+            "caption": "A potted plant placed on the porch."
+        },
+        {
+            "bbox": [
+                20,
+                20,
+                70,
+                70
+            ],
+            "mask": [],
+            "category_name": "Bird",
+            "caption": "A colorful bird flying in the sky."
+        },
+        {
+            "bbox": [
+                250,
+                300,
+                350,
+                350
+            ],
+            "mask": [],
+            "category_name": "Bench",
+            "caption": "A wooden bench placed near the tree."
+        }
+    ]
+}
