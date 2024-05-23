@@ -268,15 +268,15 @@ In conclusion, while the LLM submodule significantly enhances the efficiency and
 
 <div style="display: flex; justify-content: space-between;">
   <div style="text-align: center; margin: 10px;">
-    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/images/poor_image.png" alt="Poor Quality Image" style="width: 300px;"/>
+    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/images/poor_image.png" alt="Poor Quality Image" style="width: 350px;"/>
     <p>Poor Quality Image</p>
   </div>
   <div style="text-align: center; margin: 10px;">
-    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/images/medi_image.png" alt="Medium Quality Image" style="width: 300px;"/>
+    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/images/medi_image.png" alt="Medium Quality Image" style="width: 350px;"/>
     <p>Medium Quality Image</p>
   </div>
   <div style="text-align: center; margin: 10px;">
-    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/images/good_image.png" alt="Good Quality Image" style="width: 300px;"/>
+    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/images/good_image.png" alt="Good Quality Image" style="width: 350px;"/>
     <p>Good Quality Image</p>
   </div>
 </div>
