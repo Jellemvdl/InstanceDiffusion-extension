@@ -51,8 +51,16 @@ Image diffusion models have the ability to produce high-quality images through r
 Diffusion models have also been applied to a range of image editing tasks, showcasing impressive capabilities in creating and altering visual content. For instance, techniques such as StrDiffusion use structure-guided denoising to improve semantic consistency in image inpainting \[2\]. Moreover, new methods are being developed to reduce memorization in text-to-image models, ensuring that the generated images do not too closely resemble the training data. This enhances both originality and privacy \[3\].
 
 
+
 ## <a name="reproduction">Reproduction of the Experiments</a>
-To reproduce the experiments described in the paper, we followed a process designed to ensure comparability with the original study. Our approach involved utilizing the same datasets, model configurations, and evaluation metrics as outlined by the authors. To verify our results, we conducted extensive evaluations using the same metrics and datasets as the original study, measuring alignment to instance locations and constancy to specified attributes. However, we were unable to reproduce the FID values reported in the paper because the author did not mention this metric on the project's GitHub page, nor was there any code provided for its computation.
+To reproduce the experiments described in the paper, we followed a process designed to ensure comparability with the original study. Our approach involved utilizing the same datasets, model configurations, and evaluation metrics as outlined by the authors. To verify our results, we conducted extensive evaluations using the same metrics and datasets as the original study, measuring alignment to instance locations and constancy to specified attributes. Please refer to our [README.md](README.md) for an extensive explanation on how to reproduce our results.
+
+For the evaluation, we measure how well the objects in the generated image adhere to different location formats in the input. 
+### Bounding Box & Instance Mask
+For the inputs of 'Bounding boxes' and 'Instance Masks', we evaluate the results using a pretrained YOLOv8m-Det \[4\] detection model. We compare the bounding boxes on the generated image that are detected by the model with the bounding boxes specified in the input using COCO’s official evaluation metrics of AP and AR. In the InstanceDiffusion paper, the authors also report the FID values of these methods. We were however unable to reproduce these values while the author provided insufficient ellaboration on how to reproduce the metric, nor did they provide any code for its computation. 
+
+As seen from Table 1 and Table 2, our reproduction of the results from the paper resulted in significantly better values than the results from the paper. We believe this is caused by the fact that we only utilize 10% of the images used in the original experiments, which might not be a fair representation of the evaluation. Due to time constraints and limited resources, we were unable to run our experiments on the entire dataset. 
+
 
 <table align="center">
   <tr align="center">
@@ -122,6 +130,11 @@ To reproduce the experiments described in the paper, we followed a process desig
   </tr>
 </table>
 
+
+### Scribble & Single-point
+We measure the alignment performance of using scribbles as input by reporting "Points in Mask" (PiM), a new evaluation metric introduced by the authors of InstanceDiffusion that uses YOLOv8m-Seg and measures how many of randomly sampled points in the input scribble lie within the detected mask. Single-point evaulation is similar to scribble: the instance-level accuracy PiM is 1 if the input point is within the detected mask, and 0 otherwise. We calculate the average PiM score. 
+
+
 <table align="center">
   <tr align="center">
       <th align="left" rowspan="2">Method</th>
@@ -159,6 +172,11 @@ To reproduce the experiments described in the paper, we followed a process desig
         <td colspan=7><b>Table 3.</b> Evaluating different location formats as input when generating images of reproduction experiments for points and scribbles.</td>
       </tr>
 </table>
+
+
+### Compositional attribute binding
+
+Using YOLOv8-Det to detect bounding boxes, we measure how well the generated images adhere to the attribute specified in the instance prompt (color or texture). The cropped bounding box is fed to the CLIP model that predicts its attribute and measures the accuracy of the prediction with respect to the attribute specified in the instance prompt. For the attributes, the 8 common colors of *black, white, red, green, yellow, blue, pink & purple* and the 8 common textures of *rubber, fluffy, metallic, wooden, plastic, fabric, leather & glass* are used. We report the local-CLIP score that measures the distance between the instance text prompt’s features and these cropped object images. See table 4 for the measured Accuracy and local CLIP scores. 
 
 <table align="center">
   <tr align="center">
@@ -240,7 +258,7 @@ By addressing its current weaknesses and leveraging its strengths, InstanceDiffu
 ## Leveraging LLM's for Modular Efficiency in InstanceDiffusion. 
 The Instance Diffusion Model uses global descriptions combined with instance descriptions and instance bounding boxes as input for image generation. We adopt this approach but automate the input generation using a Large Language Model (LLM). This automation streamlines the process, eliminating the need for manually generated input data. Specifically, we implement a GPT-4o LLM submodule that generates image descriptions and bounding boxes similar to the original COCO input. The generated data is then fed into the Instance Diffusion Model to produce images, enhancing the overall process's efficiency.
 
-Our approach aligns closely with the techniques presented by Derakhshani et al \[4\]. They propose CompFuser to enhance spatial comprehension and attribute assignment in text-to-image generative models by interpreting instructions that define spatial relationships between objects and generate images accordingly. This is achieved through an iterative process that first generates a single object and then edits the image to place additional objects in their designated positions, improving spatial comprehension and attribute assignment.
+Our approach aligns closely with the techniques presented by Derakhshani et al \[5\]. They propose CompFuser to enhance spatial comprehension and attribute assignment in text-to-image generative models by interpreting instructions that define spatial relationships between objects and generate images accordingly. This is achieved through an iterative process that first generates a single object and then edits the image to place additional objects in their designated positions, improving spatial comprehension and attribute assignment.
 
 Similarly, our methodology leverages a Large Language Model (LLM) to automate the generation of image descriptions and bounding boxes. By integrating these into the Instance Diffusion Model, we enable precise control over the spatial arrangement and attributes of individual instances in the generated images. Like CompFuser, our approach addresses the challenge of understanding and executing complex prompts involving multiple objects and their spatial relationships. 
 
@@ -316,7 +334,9 @@ Subsequently, we calculate the IoU of the bounding boxes with the generated capt
 
 [3] J. Ren, Y. Li, S. Zen, H. Xu, L. Lyu, Y. Xing, and J. Tang, "Unveiling and Mitigating Memorization in Text-to-image Diffusion Models through Cross Attention," arXiv preprint arXiv:2403.11052, 2024.
 
-[4] M. M. Derakhshani, M. Xia, H. Behl, C. G. M. Snoek, and V. Rühle, "Unlocking Spatial Comprehension in Text-to-Image Diffusion Models," arXiv preprint arXiv:2311.17937, 2023.
+[4] G. Jocher, A. Chaurasia, and J. Qiu, "YOLO by Ultralytics," Jan. 2023. GitHub repository, [https://github.com/ultralytics/ultralytics].
+
+[5] M. M. Derakhshani, M. Xia, H. Behl, C. G. M. Snoek, and V. Rühle, "Unlocking Spatial Comprehension in Text-to-Image Diffusion Models," arXiv preprint arXiv:2311.17937, 2023.
 
 
 
