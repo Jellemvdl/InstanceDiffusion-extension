@@ -5,7 +5,7 @@
 #SBATCH --job-name=install_env
 #SBATCH --ntasks=1
 #SBATCH --cpus-per-task=18
-#SBATCH --time=00:30:00
+#SBATCH --time=00:45:00
 #SBATCH --output=slurm_outputs/install_env%A.out
 
 module purge
@@ -15,7 +15,19 @@ module load CUDA/12.1.1
 # Your job starts in the directory where you call sbatch
 cd ../../..
 
+#create environment for llm extension
+conda create --name instdiff_llm python=3.8
+source activate instdiff_llm
+pip install -r requirements_llm.txt
+source deactivate
+
+#create main environment for InstanceDiffusion
 conda create --name instdiff python=3.8 -y
 conda activate instdiff
-
 pip install -r requirements.txt
+
+#download COCO dataset
+bash src/scripts/download_coco.sh
+
+#download InstanceDiffusion model from huggingface
+wget "https://huggingface.co/xudongw/InstanceDiffusion/resolve/main/instancediffusion_sd15.pth" -O src/lib/instancediffusion/pretrained/instancediffusion_sd15.pth
