@@ -65,6 +65,13 @@ https://github.com/frank-xwang/InstanceDiffusion/assets/58996472/b161455a-6b21-4
 *Add additional self-created demo examples*
 
 ### Extension/GPT4 demo
+```bash
+conda deactivate
+conda create --name instdiff_llm python=3.8 -y
+conda activate instdiff_llm
+pip install -r requirements_llm.txt
+```
+
 Evaluating the alignment of the generated photos with the bounding boxes made by ChatGPT using CogVLM. Once the created photos are fed into CogVLM, it uses the bounding boxes to identify and outline the instances (predicted bounding boxes) within the images. The places where the instances have been deployed by the Instance Diffusion model are represented by these expected bounding boxes. On the other hand, ChatGPT's bounding boxes, which show the locations intended for instance generation, act as the ground truth.
 
 <div style="display: flex; justify-content: space-between;">
