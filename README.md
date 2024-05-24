@@ -64,13 +64,47 @@ https://github.com/frank-xwang/InstanceDiffusion/assets/58996472/b161455a-6b21-4
 
 *Add additional self-created demo examples*
 
-### Extension/GPT4 demo
+### Extension/GPT4o LLM Submodule
+
+## Demo: Generating images with LLM GPT4o submodule
+
+XXX Text
+
 ```bash
 conda deactivate
+
 conda create --name instdiff_llm python=3.8 -y
 conda activate instdiff_llm
+
 pip install -r requirements_llm.txt
 ```
+
+```bash
+python src/lib/llm_submodule/chatgpt/chatgpt_generate_input.py
+```
+XXX You will be prompted to enter your ChatGPT API key. To request one XXX click here.
+XXX Next, you are prompted to specify the number of image descriptions you would like to generate using ChatGPT.
+
+The images descriptions you have requested will be generated now. Their folder name (a timestamp) will be printed on the terminal and/or can be found in: src/lib/llm_submodule/chatgpt/chatgpt_data
+
+Next, create the images from the LLM-generated input descriptions.
+```bash
+./src/lib/llm_submodule/chatgpt/create_llm_images.sh
+```
+You will be prompted to enter the folder name (timestamp) at which your input descriptions were generated, so that your session/generated images can be chosen for the image generation.
+Images are now generated
+
+Navigate to the output directory to inspect the generated images:
+```bash
+cd src/lib/llm_submodule/chatgpt/chatgpt_output
+```
+Here you will find a folder, equally with your timestamp name, that contains, per image:
+(1) A visualisation of the ChatGPT-defined bounding boxes.
+(2) XXX
+(3) The InstanceDiffusion generated image.
+
+
+## Evaluation with CogVLM
 
 Evaluating the alignment of the generated photos with the bounding boxes made by ChatGPT using CogVLM. Once the created photos are fed into CogVLM, it uses the bounding boxes to identify and outline the instances (predicted bounding boxes) within the images. The places where the instances have been deployed by the Instance Diffusion model are represented by these expected bounding boxes. On the other hand, ChatGPT's bounding boxes, which show the locations intended for instance generation, act as the ground truth.
 
