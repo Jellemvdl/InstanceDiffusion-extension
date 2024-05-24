@@ -46,10 +46,32 @@ objects  are then integrated with the global latent by averaging the latents tog
 
 ### Related work
 ##### Image Diffusion Models
-Image diffusion models have the ability to produce high-quality images through reiterated denoising. This has drawn significant interest in recent years. These models, including Denoising Diffusion Probabilistic Models (DDPMs) and score-based generative models (SGMs), work by progressively adding noise to an image and then learning to reverse this process to generate new samples \[1\]. Recent developments have aimed at enhancing the efficiency and quality of these models by tackling challenges such as computational complexity and inference speed, which are crucial for practical uses like deployment on mobile devices.
+Image diffusion models have the ability to produce high-quality images through reiterated denoising. This has drawn significant interest in recent years. These models, including Denoising Diffusion Probabilistic Models (DDPMs) and score-based generative models (SGMs), work by progressively adding noise to an image and then learning to reverse this process to generate new samples \[1\]. 
 
-Diffusion models have also been applied to a range of image editing tasks, showcasing impressive capabilities in creating and altering visual content. For instance, techniques such as StrDiffusion use structure-guided denoising to improve semantic consistency in image inpainting \[2\]. Moreover, new methods are being developed to reduce memorization in text-to-image models, ensuring that the generated images do not too closely resemble the training data. This enhances both originality and privacy \[3\].
+Recent developments have aimed at enhancing the efficiency and quality of these models by tackling challenges such as computational complexity and inference speed, which are crucial for practical uses like deployment on mobile devices. Diffusion models have also been applied to a range of image editing tasks, showcasing impressive capabilities in creating and altering visual content. For instance, techniques such as StrDiffusion use structure-guided denoising to improve semantic consistency in image inpainting \[2\]. Moreover, new methods are being developed to reduce memorization in text-to-image models, ensuring that the generated images do not too closely resemble the training data. This enhances both originality and privacy \[3\].
 
+##### Text-to-Image Diffusion Models
+
+A proposed pipeline that enhances spatial comprehension and attribute assignment was extensively covered in [5]. Their pipeline (CompFuser) overcomes the limitation of existing text-to-image diffusion models by *iteratively* decoding the generation of multiple objects. The iterative steps firstly involve  generating a single object and then editing the image by placing additional objects in their designated positions. A previous work which the CompFuser was inspired from was the InstructPix2Pix [7], where it synthesizes a large dataset of image editing examples and uses it to train a text-to-image diffusion model. However, it fails at adhering to instructions that involve spatial reasoning. In more detail, the two enhancements that the CompFuser model focuses on is the attribute assignment where the accurate linking of attributes with their respective entities is enabled and the spatial comprehension feature which contains terms that aid in describing objects relative positioning. 
+
+As mentioned above, an iterative generation process was used. This was one of the main contributions of this pipeline, alongside the insertion of additional objects into existing scenes via LLM-grounded Diffusion [6]. During their dataset synthesis phase, the authors introduce a 3-stage generation process. The first stage, caption generation, aims at imitating spatial reasoning scenarios via captions. These captions contain 2 objects (placed left/right) and are preceded by an adjective. The generation of caption was enabled through the deployment of LLMs which were controlled through a detailed task description prompt. The second stage, layout generation, involved instance-level annotations that specified the location and contents  of bounding boxes where they ensured that every object instance was associated to a single bounding box. Lastly, the image synthesis stage, involved a *novel* energy function which preserved the background details of the input image. More specifically, the preservation of the background detail of the first and second image was enabled through the transfer of the reference cross attention map A^(1) to the target cross attention map A^(2). These maps are defined as : 
+$$
+\mathbf{A}_{u v}^{(i)}=\operatorname{Softmax}\left(\mathbf{q}_u^{\top} \mathbf{k}_v\right)
+$$
+
+Where *u* denotes the spatial location while k_v represents the key corresponding to the feature at token index v , these maps are then used by the model to inspect how these locations relate to the specific features in the text prompt which allows the careful alignment of the data with the elements in the text. These maps where then used in the author’s defined energy function : 
+
+
+E\left(\mathbf{A}^{(1)}, \mathbf{A}^{(2)}\right)=\frac{1}{2}\left\|\left(1-m_2\right) \cdot\left[\sum_{u, v \in V} \mathbf{A}_{u v}^{(1)}-\sum_{u, v \in V} \mathbf{A}_{u v}^{(2)}\right]\right\|^2
+
+The function above aims at aligning the target cross attention map A^(2)^ with the reference one A^(1)^ for identical tokens (V) and pixels that are associated with both images. 
+While this pipeline and existing work, effectively managed to outperform text-to-image and text-and-image-to-image models, it is currently limited to only generating up to 2 objects and therefore struggles with handling occlusions. Moreover, the authors suggested utilizing a multimodal modal such as GPT-4 to improve the image-layout generation process.
+
+##### LLM-grounded Diffusion
+
+As mentioned above, the data generation pipeline of the CompFuser method has been largely influenced and relied on the LLM-grounded diffusion model [7]. This approach essentially augments text-to-image generation with LLM. It uses the LLM to construct an image layout from text-description. This text description serves essentially as an  instruction-based scene specification which enables  broader language support in the prompts. The LMD method is composed of 2 main stages (text-grounded layout generation, layout-grounded image generation). The first stage , text-grounded layout generation, involves the layout representation, text-instruction, and in-context learning phase. As was the case in CompFuser [5] pipeline ,layout-representation  consists of background and bounding boxes for the objects.The text-instructions on the other hand consist of two parts (task specification, supporting details). Lastly, the in-context learning phase was used to provide the LLM with examples after the task description for it to ensure precise layout control.
+
+To generate images ,on the other hand, LMD method applies a layout-grounded stable diffusion. Previous methods that applied semantic guidance,highlighted in paper, were seen to lack the ability of controlling the amount of objects within a semantic region. This issue was seen to occur with instances that were indistinguishable from each-other. Therefore by initially generating masked latents per individual bounding box and then composing the masked latents as priors to guide the image generation overall, the LMD method enabled the precise placement and attribute binding per object instance. 
 
 
 ## <a name="reproduction">Reproduction of the Experiments</a>
@@ -345,7 +367,8 @@ As shown in the images Instance Diffusion can generate an instance a majority of
 
 [5] M. M. Derakhshani, M. Xia, H. Behl, C. G. M. Snoek, and V. Rühle, "Unlocking Spatial Comprehension in Text-to-Image Diffusion Models," arXiv preprint arXiv:2311.17937, 2023.
 
+[6] L. Lian, B. Li, A. Yala, and T. Darrell, "LLM-grounded Diffusion: Enhancing Prompt Understanding of Text-to-Image Diffusion Models with Large Language Models," arXiv preprint arXiv:2305.13655, 2024.
 
-
+[7] T. Brooks, A. Holynski, and A. A. Efros, "InstructPix2Pix: Learning to Follow Image Editing Instructions," arXiv preprint arXiv:2211.09800, 2023.
 
 --- 
