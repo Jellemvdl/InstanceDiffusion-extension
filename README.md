@@ -66,7 +66,15 @@ https://github.com/frank-xwang/InstanceDiffusion/assets/58996472/b161455a-6b21-4
 
 ### Extension/GPT4 demo
 
-*Add visualisation of gpt bounding box demo*
+<div style="display: flex; justify-content: space-between;">
+  <div style="text-align: center; margin: 10px;">
+    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/lib/llm_submodule/cogvlm/output_images/output_0.png" alt="Correct Instance Placement" style="width: 300px;"/>
+    <p>Correct Instance Placement</p>
+  </div>
+  <div style="text-align: center; margin: 10px;">
+    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/lib/llm_submodule/cogvlm/output_images/output_15.png" alt="Correct Instance Placement" style="width: 300px;"/>
+    <p>Correct Instance Placement</p>
+  </div>  
 
 ## Evaluation
 For evaluation, the [MSCOCO](https://cocodataset.org/#download) dataset is used. To evaluate, first make sure the MSCOCO dataset is installed using the script described in the environment installation above.
