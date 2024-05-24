@@ -81,10 +81,8 @@ pip install -r requirements_llm.txt
 ```bash
 python src/lib/llm_submodule/chatgpt/chatgpt_generate_input.py
 ```
-You will be prompted to enter your ChatGPT API key. To request an API key, click here. Next, specify the number of image descriptions you would like to generate using ChatGPT.
-
-Locate the generated image descriptions:
-The requested image descriptions will be generated and saved in a folder named with a timestamp. This folder name will be printed on the terminal and can also be found in: src/lib/llm_submodule/chatgpt/chatgpt_data
+You will be prompted to enter your ChatGPT API key. To request an API key for an existing user account, [click here](https://platform.openai.com/settings/profile?tab=api-keys). Next, specify the number of image descriptions you would like to generate using ChatGPT.
+The requested image descriptions will be generated and saved in a folder (in src/lib/llm_submodule/chatgpt/chatgpt_data) named with a timestamp. This folder name will be printed on the terminal.
 
 Next, create the images from the LLM-generated input descriptions.
 ```bash
