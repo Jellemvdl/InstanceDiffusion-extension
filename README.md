@@ -95,11 +95,11 @@ Navigate to the output directory to view the generated images:
 cd src/lib/llm_submodule/chatgpt/chatgpt_output
 ```
 Inside, you will find a folder named with the same timestamp, containing:
-(1) A visualisation of the ChatGPT-defined bounding boxes.
-(2) XXX
-(3) The InstanceDiffusion generated image.
+1. A visualisation of the ChatGPT-defined bounding boxes.
+2. The initial generated image based on the text prompt and instance-level conditions (bounding boxes), created using the main diffusion model without refinement.
+3. Initial image after further quality enhancement using the SDXL refiner.
 
-By following these steps, you will successfully generate and inspect images using the GPT-4o LLM submodule integrated with the InstanceDiffusion Model.
+By following these steps, you will successfully generate and inspect images using the GPT-4 LLM submodule integrated with the InstanceDiffusion Model. To read about a quality assessment by inspection, [click here](blogpost.md##-Evaluation-of-LLM-Submodule). The next section will proceed to explain the evaluation of the LLM-based images using CogVLM.
 
 #### Evaluation with CogVLM
 
