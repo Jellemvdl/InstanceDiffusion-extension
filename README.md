@@ -66,7 +66,7 @@ https://github.com/frank-xwang/InstanceDiffusion/assets/58996472/b161455a-6b21-4
 
 ### Extension/GPT4o LLM Submodule
 
-## Demo: Generating images with LLM GPT4o submodule
+#### Demo: Generating images with LLM GPT4o submodule
 
 XXX Text
 
@@ -104,7 +104,7 @@ Here you will find a folder, equally with your timestamp name, that contains, pe
 (3) The InstanceDiffusion generated image.
 
 
-## Evaluation with CogVLM
+#### Evaluation with CogVLM
 
 Evaluating the alignment of the generated photos with the bounding boxes made by ChatGPT using CogVLM. Once the created photos are fed into CogVLM, it uses the bounding boxes to identify and outline the instances (predicted bounding boxes) within the images. The places where the instances have been deployed by the Instance Diffusion model are represented by these expected bounding boxes. On the other hand, ChatGPT's bounding boxes, which show the locations intended for instance generation, act as the ground truth.
 
