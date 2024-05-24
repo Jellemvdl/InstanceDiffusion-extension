@@ -364,7 +364,7 @@ Subsequently, we calculate the IoU of the bounding boxes with the generated capt
     <p>Correct Instance Placement</p>
   </div>
   <div style="text-align: center; margin: 10px;">
-    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/lib/llm_submodule/cogvlm/output_images/output_30.png" alt="Correct Instance Placement" style="width: 300px;"/>
+    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/lib/llm_submodule/cogvlm/output_images/output_48.png" alt="Correct Instance Placement" style="width: 300px;"/>
     <p>Correct Instance Placement</p>
   </div>
   <div style="text-align: center; margin: 10px;">
