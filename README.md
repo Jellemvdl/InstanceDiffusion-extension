@@ -67,7 +67,7 @@ https://github.com/frank-xwang/InstanceDiffusion/assets/58996472/b161455a-6b21-4
 ### Extension/GPT4o LLM Submodule
 
 #### Demo: Generating images with LLM GPT4o submodule
-Our approach automates the generation of image descriptions and bounding boxes using a Large Language Model (LLM). This method enhances the efficiency of the InstanceDiffusion Model, which supports precise instance-level control and flexible instance location specifications. For a detailed explanation, refer to the section [Leveraging LLM's for Modular Efficiency in InstanceDiffusion](blogpost.md##-Leveraging-LLM's-for-Modular-Efficiency-in-InstanceDiffusion). This document provides instructions for setting up and using the GPT-4o LLM submodule to generate input data for InstanceDiffusion.
+Our approach automates the generation of image descriptions and bounding boxes using a Large Language Model (LLM). This method enhances the efficiency of the InstanceDiffusion Model, which supports precise instance-level control and flexible instance location specifications. For a detailed explanation, refer to the section [Leveraging LLM's for Modular Efficiency in InstanceDiffusion](blogpost.md##-Leveraging-LLM's-for-Modular-Efficiency-in-InstanceDiffusion). This following instructions demonstrate how to set up and use our LLM submodule to generate input data for InstanceDiffusion.
 
 ```bash
 conda deactivate
