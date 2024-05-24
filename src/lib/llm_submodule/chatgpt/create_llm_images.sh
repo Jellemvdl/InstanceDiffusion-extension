@@ -5,10 +5,6 @@ script_dir=$(dirname "$(realpath "$0")")
 
 # Prompt for the timestamp at which your input descriptions were generated
 read -p "Enter the timestamp (folder name in chatgpt_data) at which your input descriptions were generated: " timestamp
-read -p "Enter the number of images input JSON files: " n_desc
-
-echo "Number of images to create: $n_desc"
-echo "Timestamp: $timestamp"
 
 # Construct dynamic paths based on the script location
 input_dir="${script_dir}/chatgpt_data/${timestamp}" #directory of the input JSON files
@@ -16,6 +12,15 @@ output_dir="${script_dir}/chatgpt_output/${timestamp}" #directory of the output 
 
 # Ensure the output directory exists
 mkdir -p "$output_dir"
+if [ ! -d "$input_dir" ]; then
+  echo "Error: Input directory ${input_dir} does not exist."
+  exit 1
+fi
+
+n_desc=$(ls "$input_dir"/*.json 2>/dev/null | wc -l)
+
+echo "Number of images to create: $n_desc"
+echo "Timestamp: $timestamp"
 
 # Loop over the range of input JSONs and generate an output for each
 for ((i=1; i<=n_desc; i++))

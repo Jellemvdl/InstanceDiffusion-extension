@@ -69,7 +69,7 @@ n_prompts = int(input("Enter the number of descriptions you would like to genera
 amsterdam = pytz.timezone('Europe/Amsterdam')
 now_utc = datetime.utcnow()
 now_amsterdam = now_utc.replace(tzinfo=pytz.utc).astimezone(amsterdam)
-timestamp = now_amsterdam.strftime('%Y-%m-%d %H:%M')
+timestamp = now_amsterdam.strftime('%Y-%m-%d_%H-%M')
 
 script_dir = os.path.abspath(os.path.dirname(__file__))
 output_directory = os.path.join(script_dir, f"chatgpt_data/{timestamp}")

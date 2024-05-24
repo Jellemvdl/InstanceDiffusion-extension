@@ -7,6 +7,7 @@ import torch as th
 import torch.nn as nn
 import torch.nn.functional as F
 import torch.fft as fft
+import os
 
 from ldm.modules.diffusionmodules.util import (
     conv_nd,
@@ -470,10 +471,20 @@ class UNetModel(nn.Module):
         if self.first_conv_restorable:
             device = self.input_blocks[0][0].weight.device
 
+            script_dir = os.path.dirname(os.path.realpath(__file__))
+            instancediffusion_dir = os.path.dirname(script_dir)
+
+            while os.path.basename(instancediffusion_dir) != 'instancediffusion' and os.path.dirname(instancediffusion_dir) != instancediffusion_dir:
+                instancediffusion_dir = os.path.dirname(instancediffusion_dir)
+            
+            pretrained_dir = os.path.join(instancediffusion_dir, 'pretrained')
+            
             if not self.sd_v1_5:
-                SD_weights = th.load("pretrained/SD_input_conv_weight_bias.pth")
+                weights_path = os.path.join(pretrained_dir, "SD_input_conv_weight_bias.pth")
             else:
-                SD_weights = th.load("pretrained/SD_v1_5_input_conv_weight_bias.pth")
+                weights_path = os.path.join(pretrained_dir, "SD_v1_5_input_conv_weight_bias.pth")
+            
+            SD_weights = th.load(weights_path)
             self.first_conv_state_dict = deepcopy(self.input_blocks[0][0].state_dict())
             self.input_blocks[0][0] = conv_nd(2, 4, 320, 3, padding=1)
             self.input_blocks[0][0].load_state_dict(SD_weights)
