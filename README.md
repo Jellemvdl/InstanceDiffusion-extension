@@ -67,8 +67,7 @@ https://github.com/frank-xwang/InstanceDiffusion/assets/58996472/b161455a-6b21-4
 ### Extension/GPT4o LLM Submodule
 
 #### Demo: Generating images with LLM GPT4o submodule
-
-XXX Text
+InstanceDiffusion introduces precise instance-level control to text-to-image diffusion models, enabling free-form language conditions per instance and flexible ways to specify instance locations. Our method leverages a Large Language Model (LLM) to automate the generation of image descriptions and bounding boxes, streamlining the process and enhancing efficiency. This document provides instructions for setting up and using the GPT-4o LLM submodule to generate input data for InstanceDiffusion.
 
 ```bash
 conda deactivate
@@ -82,27 +81,27 @@ pip install -r requirements_llm.txt
 ```bash
 python src/lib/llm_submodule/chatgpt/chatgpt_generate_input.py
 ```
-XXX You will be prompted to enter your ChatGPT API key. To request one XXX click here.
-XXX Next, you are prompted to specify the number of image descriptions you would like to generate using ChatGPT.
+You will be prompted to enter your ChatGPT API key. To request an API key, click here. Next, specify the number of image descriptions you would like to generate using ChatGPT.
 
-The images descriptions you have requested will be generated now. Their folder name (a timestamp) will be printed on the terminal and/or can be found in: src/lib/llm_submodule/chatgpt/chatgpt_data
+Locate the generated image descriptions:
+The requested image descriptions will be generated and saved in a folder named with a timestamp. This folder name will be printed on the terminal and can also be found in: src/lib/llm_submodule/chatgpt/chatgpt_data
 
 Next, create the images from the LLM-generated input descriptions.
 ```bash
 ./src/lib/llm_submodule/chatgpt/create_llm_images.sh
 ```
-You will be prompted to enter the folder name (timestamp) at which your input descriptions were generated, so that your session/generated images can be chosen for the image generation.
-Images are now generated
+You will be prompted to enter the folder name (timestamp) where your input descriptions were saved. This ensures that the generated images correspond to the correct session. The images will now be generated.
 
-Navigate to the output directory to inspect the generated images:
+Navigate to the output directory to view the generated images:
 ```bash
 cd src/lib/llm_submodule/chatgpt/chatgpt_output
 ```
-Here you will find a folder, equally with your timestamp name, that contains, per image:
+Inside, you will find a folder named with the same timestamp, containing:
 (1) A visualisation of the ChatGPT-defined bounding boxes.
 (2) XXX
 (3) The InstanceDiffusion generated image.
 
+By following these steps, you will successfully generate and inspect images using the GPT-4o LLM submodule integrated with the InstanceDiffusion Model.
 
 #### Evaluation with CogVLM
 
