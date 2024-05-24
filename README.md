@@ -73,7 +73,7 @@ Evaluating the alignment of the generated photos with the bounding boxes made by
     <p>Correct Instance Placement</p>
   </div>
   <div style="text-align: center; margin: 10px;">
-    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/lib/llm_submodule/cogvlm/output_images/output_15.png" alt="Correct Instance Placement" style="width: 250px;"/>
+    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/lib/llm_submodule/cogvlm/output_images/output_30.png" alt="Correct Instance Placement" style="width: 250px;"/>
     <p>Correct Instance Placement</p>
   </div>
 </div>
