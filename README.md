@@ -105,16 +105,14 @@ By following these steps, you will successfully generate and inspect images usin
 
 Evaluating the alignment of the generated photos with the bounding boxes made by ChatGPT using CogVLM. Once the created photos are fed into CogVLM, it uses the bounding boxes to identify and outline the instances (predicted bounding boxes) within the images. The places where the instances have been deployed by the Instance Diffusion model are represented by these expected bounding boxes. On the other hand, ChatGPT's bounding boxes, which show the locations intended for instance generation, act as the ground truth.
 
-<div style="display: flex; justify-content: space-between;">
-  <div style="text-align: center; margin: 10px;">
-    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/lib/llm_submodule/cogvlm/output_images/output_0.png" alt="Correct Instance Placement" style="width: 250px;"/>
-    <p>Correct Instance Placement</p>
-  </div>
-  <div style="text-align: center; margin: 10px;">
-    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/lib/llm_submodule/cogvlm/output_images/output_30.png" alt="Correct Instance Placement" style="width: 250px;"/>
-    <p>Correct Instance Placement</p>
-  </div>
-</div>
+<table align="center">
+  <tr align="center">
+      <th><img src="InstanceDiffusion-extension\src\data\images\implementation_images_demo.png"></th>
+  </tr>
+  <tr align="left">
+    <td colspan=2>Comparison of convolution-based and transformer-based architecture output for a new "goblin" attribute without hyperparameter tuning.</td>
+  </tr>
+</table>
  
 
 ## Evaluation
