@@ -105,16 +105,14 @@ By following these steps, you will successfully generate and inspect images usin
 
 Evaluating the alignment of the generated photos with the bounding boxes made by ChatGPT using CogVLM. Once the created photos are fed into CogVLM, it uses the bounding boxes to identify and outline the instances (predicted bounding boxes) within the images. The places where the instances have been deployed by the Instance Diffusion model are represented by these expected bounding boxes. On the other hand, ChatGPT's bounding boxes, which show the locations intended for instance generation, act as the ground truth.
 
-<div style="display: flex; justify-content: space-between;">
-  <div style="text-align: center; margin: 10px;">
-    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/lib/llm_submodule/cogvlm/output_images/output_0.png" alt="Correct Instance Placement" style="width: 250px;"/>
-    <p>Correct Instance Placement</p>
-  </div>
-  <div style="text-align: center; margin: 10px;">
-    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/lib/llm_submodule/cogvlm/output_images/output_30.png" alt="Correct Instance Placement" style="width: 250px;"/>
-    <p>Correct Instance Placement</p>
-  </div>
-</div>
+<table align="center">
+  <tr align="center">
+      <th><img src="src/data/images/implementation_images_demo.png"></th>
+  </tr>
+  <tr align="left">
+    <td colspan=2>The image shows two side-by-side visualizations of bounding box predictions and ground truths for object detection, with ChatGPT's bounding boxes in green and CogVLM's bounding boxes in red, along with their respective IoU values for each detected object.</td>
+  </tr>
+</table>
  
 
 ## Evaluation
