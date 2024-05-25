@@ -141,7 +141,7 @@ git clone https://github.com/Jellemvdl/InstanceDiffusion-extension.git
 cd InstanceDiffusion-extension/
 ```
 
-To install the requirements, the coco dataset (to [`src/lib/instancediffusion/datasets/`](src/lib/instancediffusion/datasets/) and the pretrained models (to [`src/lib/instancediffusion/pretrained/`](src/lib/instancediffusion/pretrained/), run the following:
+To install the requirements, the coco dataset (to [`src/lib/instancediffusion/datasets/`](src/lib/instancediffusion/datasets/)) and the pretrained models (to [`src/lib/instancediffusion/pretrained/`](src/lib/instancediffusion/pretrained/)), run the following:
 
 ```requirements
 sbatch src/jobs/install_env.job
