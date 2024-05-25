@@ -60,10 +60,6 @@ InstanceDiffusion supports image generation by using points, with each point rep
 
 https://github.com/frank-xwang/InstanceDiffusion/assets/58996472/b161455a-6b21-4607-a59d-3a6dd19edab1
 
-### Add more/different demo examples 
-
-*Add additional self-created demo examples*
-
 ### Extension/GPT4o LLM Submodule
 
 #### Demo: Generating images with LLM GPT4o submodule
@@ -145,16 +141,10 @@ git clone https://github.com/Jellemvdl/InstanceDiffusion-extension.git
 cd InstanceDiffusion-extension/
 ```
 
-To install the requirements, run the following:
+To install the requirements, the coco dataset (to [`src/lib/instancediffusion/datasets/`](src/lib/instancediffusion/datasets/) and the pretrained models (to [`src/lib/instancediffusion/pretrained/`](src/lib/instancediffusion/pretrained/), run the following:
 
 ```requirements
 sbatch src/jobs/install_env.job
-```
-
-To download datasets (to [`src/lib/instancediffusion/datasets/`](src/lib/instancediffusion/datasets/) and pretrained models (to [`src/lib/instancediffusion/pretrained/`](src/lib/instancediffusion/pretrained/), run the following:
-
-```downloads
-TODO
 ```
 
 In order to replicate the results from the paper, run each evaluation in [`src/scripts/jobs/reproduction`](src/scripts/jobs/reproduction) jobs as follows:
