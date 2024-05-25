@@ -110,7 +110,7 @@ Evaluating the alignment of the generated photos with the bounding boxes made by
       <th><img src="src/data/images/implementation_images_demo.png"></th>
   </tr>
   <tr align="left">
-    <td colspan=2>Comparison of convolution-based and transformer-based architecture output for a new "goblin" attribute without hyperparameter tuning.</td>
+    <td colspan=2>The image shows two side-by-side visualizations of bounding box predictions and ground truths for object detection, with ChatGPT's bounding boxes in green and CogVLM's bounding boxes in red, along with their respective IoU values for each detected object.</td>
   </tr>
 </table>
  
