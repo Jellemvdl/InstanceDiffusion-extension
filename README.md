@@ -107,7 +107,7 @@ Evaluating the alignment of the generated photos with the bounding boxes made by
 
 <table align="center">
   <tr align="center">
-      <th><img src="InstanceDiffusion-extension\src\data\images\implementation_images_demo.png"></th>
+      <th><img src="src/data/images/implementation_images_demo.png"></th>
   </tr>
   <tr align="left">
     <td colspan=2>Comparison of convolution-based and transformer-based architecture output for a new "goblin" attribute without hyperparameter tuning.</td>
