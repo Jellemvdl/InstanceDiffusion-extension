@@ -56,7 +56,8 @@ q\left( x_t \mid x_{t-1} \right) := \mathcal{N}\left( x_t ; \sqrt{1-\beta_t} x_{
 \end{align}$$
 
 $$
-q\left(\mathbf{x}_1, \ldots, \mathbf{x}_T \mid \mathbf{x}_0\right)=\prod_{t=1}^T q\left(\mathbf{x}_t \mid \mathbf{x}_{t-1}\right) & \qquad \qquad \text{(Equation 1)}
+q\left(\mathbf{x}_1, \ldots, \mathbf{x}_T \mid \mathbf{x}_0\right) 
+= \prod_{t=1}^T q\left(\mathbf{x}_t \mid \mathbf{x}_{t-1}\right) \qquad \qquad \text{(Equation 1)}
 $$
 
 A distinguishable property of diffusion models can be found in the approximate posterior $$q\left(\mathbf{x}_t \mid \mathbf{x}_{t-1}\right)$$, called the forward process or diffusion process, where it is  fixed to a Markov chain that gradually adds Gaussian noise to the data according to a variance schedule (q\left(\mathbf{x}_t \mid \mathbf{x}_{t-1}\right)\)  : 
