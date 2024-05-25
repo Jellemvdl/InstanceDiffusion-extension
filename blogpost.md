@@ -379,7 +379,7 @@ By addressing its current weaknesses and leveraging its strengths, InstanceDiffu
 ## Authors' Contributions
 - Anesa:
 - Amalia:
-- Richter:
+- Richter: Assisted Jelle with reproduction results in first weeks. CogVLM submodule implementation plus visualization and evaluation. Wrote about the CogVLM evaluation in the blogpost and Readme. Did preliminary work for the background. Incorporated the jobfiles in the repository. Reproduction evaluation Readme.
 - Lisann: Environment setup, LLM submodule implementation (excluding CogVLM) and LLM blogpost section.
 - Jelle: 
 
