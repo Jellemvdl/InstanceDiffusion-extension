@@ -445,7 +445,7 @@ By addressing its current weaknesses and leveraging its strengths, InstanceDiffu
 
 ## Authors' Contributions
 - Anesa: Background & Related Work Research, assisted Lisann in integrating the LLM submodule into existing pipeline, conducted/participated in the manual evaluation of LLM submodule image-generation. Wrote the Introduction and Related work section.
-- Amalia:
+- Amalia: Researched related work and background for implementing the extension, and assisted the group by formalizing the extension to the original paper. Responsible for researching, formalizing, and simplifying the extension. Participated in the manual evaluation of the LLM submodule for image generation. Authored part of the introduction and visualized the extension and pipeline in the blog post.
 - Richter: Assisted Jelle with reproduction results in first weeks. CogVLM submodule implementation plus visualization and evaluation. Wrote about the CogVLM evaluation in the blogpost and Readme. Did preliminary work for the background. Incorporated the jobfiles in the repository. Reproduction evaluation Readme.
 - Lisann: Environment setup. LLM submodule implementation (excluding CogVLM), LLM demo, and organisation and analysis of LLM  evaluation through ratings. Wrote LLM Readme and blogpost sections (excluding CogVLM). Tested all instructions and demos described in Readme, and increased robustness of scripts and jobs (e.g., by using dynamic paths).
 - Jelle: Responsible for reproduction of original paper's results + demos and the corresponding blogpost section. Organized the github repository, including jobs and inference demo scripts, adding setup & runnable scripts to Readme. 
