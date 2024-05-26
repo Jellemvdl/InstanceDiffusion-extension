@@ -334,6 +334,23 @@ For the manual raters' assessment, we generated 100 images that were scored betw
 <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/ratings_freq.png" alt="Ratings Frequency" width="700"/>
 *Distribution of Ratings from all Rators*
 
+Additionally, we observed that not all objects described by the LLM input were generated. This was exasterbated when the LLM struggled effectively distributing objects across the scene or when arrangements were illogical. 
+
+Below are two example images demonstrating these problems:
+
+<table align="center">
+  <tr align="center">
+    <td style="text-align: center; margin: 10px;">
+      <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/129_boxes.png" alt="Bounding Boxes with Descriptions" style="width: 300px;"/>
+      <p>Bounding boxes with global and instance descriptions.</p>
+    </td>
+    <td style="text-align: center; margin: 10px;">
+      <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/129_xl_s0.4_n20.png" alt="Generated Image with Issues" style="width: 300px;"/>
+      <p>Generated image showing incomplete object generation and illogical arrangement.</p>
+    </td>
+  </tr>
+</table>
+
 
 The errors in criterion 3 indicate that the LLM struggles with generating bounding boxes for realistic scenes. While the length and width of the bounding boxes matched the proportions of the instances (e.g., a traffic light would be taller than it is wide), their relative size and arrangement were often flawed. For example, a tractor in the distance might appear larger than a nearby car, violating perspective rules. Figure [3] shows examples of differently scoring images that illustrate these generation issues.
 
