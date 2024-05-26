@@ -35,7 +35,7 @@ Existing and previous work which focus on text-conditioned diffusion models enab
 To enable a more generic and flexible scene-layout control in terms of location and attributes of the instances, the authors focused on 2 conditioning inputs for each instance (1.Location + 2. Text Caption describing the instance). The authors then used a pretrained text-to-image UNet model that is kept frozen and added the 3 above-mentioned learnable blocks (UniFusion, ScaleU,Multi-Instance
 Sampler). 
 ##### UniFusion Block
-This block is added between the self-attention and cross-attention layers of the backbone. The main aim of this block is to tokenize the per-instance conditions and fuse them together with the visual tokens obtained through the frozen text-to-image model. One of the key operations in this block is the *location parmeterization* which is responsible for converting the 4 location formats into 2D points. The *instance tokenizer* then converts these 2D point coordinates for each location using the Fourier mapping. Moreover, it encodes the text prompt using a CLIP text encoder , concatenates the location & text embeddings and feeds them into a MLP network to obtain a single token embedding for the instances.
+This block is added between the self-attention and cross-attention layers of the backbone which is crucial in leveraging the model's architecture and therefore enabling image generation that adhere to specific instance attributes and locations , similar to how Flamingo (VLM) [8] proccesses vision and language inputs. The main aim of this block is to tokenize the per-instance conditions and fuse them together with the visual tokens obtained through the frozen text-to-image model. One of the key operations in this block is the *location parmeterization* which is responsible for converting the 4 location formats into 2D points. The *instance tokenizer* then converts these 2D point coordinates for each location using the Fourier mapping. Moreover, it encodes the text prompt using a CLIP text encoder , concatenates the location & text embeddings and feeds them into a MLP network to obtain a single token embedding for the instances.
 
 ##### ScaleU Block
 This block contains 2 learnable,channel-wise scaling vectors for the main & skip connected features. These vectors are then incorporated into each of the UNet's decoder blocks which lead to an increase in the number of parameters and performance gains. 
@@ -427,7 +427,7 @@ By addressing its current weaknesses and leveraging its strengths, InstanceDiffu
 
 
 ## Authors' Contributions
-- Anesa:
+- Anesa: Background & Related Work Research, assisted Lisann in integrating the LLM submodule into existing pipeline, conducted/participated in the manual evaluation of LLM submodule image-generation. 
 - Amalia:
 - Richter: Assisted Jelle with reproduction results in first weeks. CogVLM submodule implementation plus visualization and evaluation. Wrote about the CogVLM evaluation in the blogpost and Readme. Did preliminary work for the background. Incorporated the jobfiles in the repository. Reproduction evaluation Readme.
 - Lisann: Environment setup. LLM submodule implementation (excluding CogVLM), LLM demo, and organisation and analysis of LLM  evaluation through ratings. Wrote LLM Readme and blogpost sections (excluding CogVLM). Tested all instructions and demos described in Readme, and increased robustness of scripts and jobs (e.g., by using dynamic paths).
@@ -448,5 +448,7 @@ By addressing its current weaknesses and leveraging its strengths, InstanceDiffu
 [6] L. Lian, B. Li, A. Yala, and T. Darrell, "LLM-grounded Diffusion: Enhancing Prompt Understanding of Text-to-Image Diffusion Models with Large Language Models," arXiv preprint arXiv:2305.13655, 2024.
 
 [7] T. Brooks, A. Holynski, and A. A. Efros, "InstructPix2Pix: Learning to Follow Image Editing Instructions," arXiv preprint arXiv:2211.09800, 2023.
+
+[8] J.-B. Alayrac, J. Donahue, P. Luc, A. Miech, I. Barr, Y. Hasson, K. Lenc, A. Mensch, K. Millican, M. Reynolds, R. Ring, E. Rutherford, S. Cabi, T. Han, Z. Gong, S. Samangooei, M. Monteiro, J. Menick, S. Borgeaud, A. Brock, A. Nematzadeh, S. Sharifzadeh, M. Binkowski, R. Barreira, O. Vinyals, A. Zisserman, and K. Simonyan, "Flamingo: a Visual Language Model for Few-Shot Learning," arXiv preprint arXiv:2204.14198, 2022.
 
 --- 
