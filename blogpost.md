@@ -35,7 +35,7 @@ Existing and previous work which focus on text-conditioned diffusion models enab
 To enable a more generic and flexible scene-layout control in terms of location and attributes of the instances, the authors focused on 2 conditioning inputs for each instance (1.Location + 2. Text Caption describing the instance). The authors then used a pretrained text-to-image UNet model that is kept frozen and added the 3 above-mentioned learnable blocks (UniFusion, ScaleU,Multi-Instance
 Sampler). 
 ##### UniFusion Block
-This block is added between the self-attention and cross-attention layers of the backbone. The main aim of this block is to tokenize the per-instance conditions and fuse them together with the visual tokens obtained through the frozen text-to-image model. One of the key operations in this block is the *location parmeterization* which is responsible for converting the 4 location formats into 2D points. The *instance tokenizer* then converts these 2D point coordinates for each location using the Fourier mapping. Moreover, it encodes the text prompt using a CLIP text encoder , concatenates the location & text embeddings and feeds them into a MLP network to obtain a single token embedding for the instances.
+This block is added between the self-attention and cross-attention layers of the backbone which is crucial in leveraging the model's architecture and therefore enabling image generation that adhere to specific instance attributes and locations , similar to how Flamingo (VLM) [8] proccesses vision and language inputs. The main aim of this block is to tokenize the per-instance conditions and fuse them together with the visual tokens obtained through the frozen text-to-image model. One of the key operations in this block is the *location parmeterization* which is responsible for converting the 4 location formats into 2D points. The *instance tokenizer* then converts these 2D point coordinates for each location using the Fourier mapping. Moreover, it encodes the text prompt using a CLIP text encoder , concatenates the location & text embeddings and feeds them into a MLP network to obtain a single token embedding for the instances.
 
 ##### ScaleU Block
 This block contains 2 learnable,channel-wise scaling vectors for the main & skip connected features. These vectors are then incorporated into each of the UNet's decoder blocks which lead to an increase in the number of parameters and performance gains. 
@@ -327,34 +327,39 @@ Our modular approach, facilitated by a dedicated language generation submodule, 
 
 ## Evaluation of LLM Submodule
 
-To evaluate the LLM submodule, we used two approaches: one approach involves deploying a robust Vision Language Model (VLM) called CogVLM, which determines whether the generated images fulfill the input descriptions. The second approach is a multiple raters' assessment of the realism of the generated images. The raters' evaluation focused on three main criteria: (1) how well instance types fit the global scene description (e.g., a coffee table fitting a living room scene), (2) the quality of generations, and (3) the object sizes and their arrangement into a realistic perspective.
+To evaluate the LLM submodule, we used two approaches: the first approach is a multiple raters' assessment of the realism of the generated images, and the second approach involves deploying a robust Vision Language Model (VLM) called CogVLM, which determines whether the generated images fulfill the input descriptions.
 
-For the manual raters' assessment, we generated 100 images that were scored between 1 and 5, with five being the highest. The raters perceived the image quality similarly, with an average score of 2.38 and individual raters' averages ranging between 2.20 and 2.48. Points were typically lost on criteria 2 and 3, as some generated images displayed instances with unrealistic features, such as distorted physical characteristics of humans or animals or unsmooth transitions between different types of flooring. Additionally, many images had objects that were not arranged logically in space, with object sizes not matching perspective or objects being cut off. However, the instances matched each other and the global scene well.
+For the manual raters' assessment, we generated 100 images that were scored between 1 and 5, with five being the highest. The raters' evaluation focused on three main criteria: (1) how well instance types fit the global scene description (e.g., a coffee table fitting a living room scene), (2) the quality of generations, and (3) the object sizes and their arrangement into a realistic perspective. The raters perceived the image quality similarly, with an average score of 2.38 and individual raters' averages ranging between 2.20 and 2.48. Points were typically lost on criteria 2 and 3, as some generated images displayed instances with unrealistic features, such as distorted physical characteristics of humans or animals or unsmooth transitions between different types of flooring. Additionally, many images had objects that were not arranged logically in space, with object sizes not matching perspective or objects being cut off. However, the instances matched each other and the global scene well.
 
-![image](https://github.com/Jellemvdl/InstanceDiffusion-extension/images/ratings_freq.png)
+<img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/ratings_freq.png" alt="Ratings Frequency" width="700"/>
+*Distribution of Ratings from all Rators*
+
 
 The errors in criterion 3 indicate that the LLM struggles with generating bounding boxes for realistic scenes. While the length and width of the bounding boxes matched the proportions of the instances (e.g., a traffic light would be taller than it is wide), their relative size and arrangement were often flawed. For example, a tractor in the distance might appear larger than a nearby car, violating perspective rules. Figure [3] shows examples of differently scoring images that illustrate these generation issues.
 
+
+<table align="center">
+  <tr align="center">
+    <td style="text-align: center; margin: 10px;">
+      <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/poor_image.png" alt="Poor Quality Image" style="width: 300px;"/>
+      <p>Poor Quality Image - Rating: 1</p>
+    </td>
+    <td style="text-align: center; margin: 10px;">
+      <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/medi_image.png" alt="Medium Quality Image" style="width: 300px;"/>
+      <p>Medium Quality Image - Rating: 3</p>
+    </td>
+    <td style="text-align: center; margin: 10px;">
+      <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/good_image.png" alt="Good Quality Image" style="width: 300px;"/>
+      <p>High Quality Image - Rating: 5</p>
+    </td>
+  </tr>
+</table>
+
 Errors in criterion 2 could be due to the LLM's difficulty in maintaining consistent instance quality across different scenes. The LLM might generate high-quality instances in isolation but fail to integrate them smoothly into a coherent scene, leading to mismatched textures and inconsistent lighting.
 
-The bounding box arrangement issues could stem from the LLM's limited understanding of spatial relationships and perspective in three-dimensional space. Despite explicit instructions to ensure realistic arrangements, the LLM might lack the necessary spatial reasoning to accurately place objects relative to each other in a way that maintains a realistic perspective. This is especially problematic in complex scenes with multiple objects at varying distances and orientations.
+The bounding box arrangement issues could stem from the LLM's limited understanding of spatial relationships and perspective in three-dimensional space. Despite explicit instructions to ensure realistic arrangements, the LLM often lacked the necessary spatial reasoning to accurately place objects relative to each other in a way that maintains a realistic perspective. This is especially problematic in complex scenes with multiple objects at varying distances and orientations. A possible explanation could be that LLMs, including state-of-the-art models like ChatGPT4o which we deployed, are inherently trained on predominantly language-based datasets, rather than spatially oriented ones (Lian et al., 2024), simply causing a mismatch between the bounding box generation task, and the language-focused tasks the LLM was designed ot excel at. 
 
 In conclusion, while the LLM submodule significantly enhances the efficiency and scalability of the Instance Diffusion Model, there are areas for improvement in generating realistic and well-arranged scenes. Further refinements in spatial reasoning and perspective understanding are necessary to address these challenges and improve overall image quality.
-
-<div style="display: flex; justify-content: space-between;">
-  <div style="text-align: center; margin: 10px;">
-    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/images/poor_image.png" alt="Poor Quality Image" style="width: 500px;"/>
-    <p>Poor Quality Image</p>
-  </div>
-  <div style="text-align: center; margin: 10px;">
-    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/images/medi_image.png" alt="Medium Quality Image" style="width: 500px;"/>
-    <p>Medium Quality Image</p>
-  </div>
-  <div style="text-align: center; margin: 10px;">
-    <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/images/good_image.png" alt="Good Quality Image" style="width: 500px;"/>
-    <p>Good Quality Image</p>
-  </div>
-</div>
 
 
 The second method involves using CogVLM to assess the alignment between the generated images and the bounding boxes created by ChatGPT. Initially, the generated images are input into CogVLM, which then identifies and outlines the instances within the images with bounding boxes, referred to as predicted bounding boxes. These predicted bounding boxes represent the locations where the Instance Diffusion model has placed the instances. In contrast, the bounding boxes generated by ChatGPT serve as the ground truth, indicating the intended locations for instance generation. To evaluate the accuracy of instance placement by the Instance Diffusion model, we compute the Intersection over Union (IoU) between the predicted bounding boxes from CogVLM and the ground truth bounding boxes from ChatGPT. This IoU metric helps determine the model's precision in generating instances at specific locations as dictated by the bounding boxes created by ChatGPT. 
@@ -422,11 +427,11 @@ By addressing its current weaknesses and leveraging its strengths, InstanceDiffu
 
 
 ## Authors' Contributions
-- Anesa:
+- Anesa: Background & Related Work Research, assisted Lisann in integrating the LLM submodule into existing pipeline, conducted/participated in the manual evaluation of LLM submodule image-generation. Wrote the Introduction and Related work section.
 - Amalia:
 - Richter: Assisted Jelle with reproduction results in first weeks. CogVLM submodule implementation plus visualization and evaluation. Wrote about the CogVLM evaluation in the blogpost and Readme. Did preliminary work for the background. Incorporated the jobfiles in the repository. Reproduction evaluation Readme.
-- Lisann: Environment setup, LLM submodule implementation (excluding CogVLM) and LLM blogpost section.
-- Jelle: Responsible for reproduction of original paper's results + demos and the corresponding blogpost section. Organized the github repository, including jobs and inference demo scripts, adding setup & runnable scripts to README. 
+- Lisann: Environment setup. LLM submodule implementation (excluding CogVLM), LLM demo, and organisation and analysis of LLM  evaluation through ratings. Wrote LLM Readme and blogpost sections (excluding CogVLM). Tested all instructions and demos described in Readme, and increased robustness of scripts and jobs (e.g., by using dynamic paths).
+- Jelle: Responsible for reproduction of original paper's results + demos and the corresponding blogpost section. Organized the github repository, including jobs and inference demo scripts, adding setup & runnable scripts to Readme. 
 
 ## Bibliography
 
@@ -443,5 +448,7 @@ By addressing its current weaknesses and leveraging its strengths, InstanceDiffu
 [6] L. Lian, B. Li, A. Yala, and T. Darrell, "LLM-grounded Diffusion: Enhancing Prompt Understanding of Text-to-Image Diffusion Models with Large Language Models," arXiv preprint arXiv:2305.13655, 2024.
 
 [7] T. Brooks, A. Holynski, and A. A. Efros, "InstructPix2Pix: Learning to Follow Image Editing Instructions," arXiv preprint arXiv:2211.09800, 2023.
+
+[8] J.-B. Alayrac, J. Donahue, P. Luc, A. Miech, I. Barr, Y. Hasson, K. Lenc, A. Mensch, K. Millican, M. Reynolds, R. Ring, E. Rutherford, S. Cabi, T. Han, Z. Gong, S. Samangooei, M. Monteiro, J. Menick, S. Borgeaud, A. Brock, A. Nematzadeh, S. Sharifzadeh, M. Binkowski, R. Barreira, O. Vinyals, A. Zisserman, and K. Simonyan, "Flamingo: a Visual Language Model for Few-Shot Learning," arXiv preprint arXiv:2204.14198, 2022.
 
 --- 
