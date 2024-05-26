@@ -406,7 +406,7 @@ By addressing its current weaknesses and leveraging its strengths, InstanceDiffu
 - Amalia:
 - Richter: Assisted Jelle with reproduction results in first weeks. CogVLM submodule implementation plus visualization and evaluation. Wrote about the CogVLM evaluation in the blogpost and Readme. Did preliminary work for the background. Incorporated the jobfiles in the repository. Reproduction evaluation Readme.
 - Lisann: Environment setup, LLM submodule implementation (excluding CogVLM) and LLM blogpost section.
-- Jelle: 
+- Jelle: Responsible for reproduction of original paper's results + demos and the corresponding blogpost section. Organized the github repository, including jobs and inference demo scripts, adding setup & runnable scripts to README. 
 
 ## Bibliography
 
