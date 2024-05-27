@@ -212,8 +212,8 @@ We measure the alignment performance of using scribbles as input by reporting "P
 <table align="center">
   <tr align="center">
       <th align="left" rowspan="2">Method</th>
-      <th colspan="2">Points</th>
-      <th colspan="2">Scribble</th>
+      <th colspan="1">Points</th>
+      <th colspan="1">Scribble</th>
   </tr>
   <tr align="center">
       <th>PiM</th>
