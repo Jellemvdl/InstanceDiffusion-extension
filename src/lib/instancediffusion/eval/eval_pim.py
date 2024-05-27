@@ -7,6 +7,7 @@ import skimage.draw as draw
 from pycocotools import mask
 from pycocotools.coco import COCO
 from pycocotools import _mask as coco_mask
+from skimage.transform import resize
 
 def read_json(json_file):
     with open(json_file, 'r') as f:
@@ -25,11 +26,27 @@ def poly2mask(vertex_row_coords, vertex_col_coords, shape):
     mask[fill_row_coords, fill_col_coords] = True
     return mask
 
-def calculate_iou(predicted_mask, ground_truth_mask):
-    intersection = np.logical_and(predicted_mask, ground_truth_mask)
-    union = np.logical_or(predicted_mask, ground_truth_mask)
+def calculate_iou(predicted_mask, ground_truth_mask, standard_size=(512, 512)):
+    # Resize masks to standard size
+    # predicted_mask_resized = resize(predicted_mask, standard_size, order=0, preserve_range=True, anti_aliasing=False).astype(bool)
+    # ground_truth_mask_resized = resize(ground_truth_mask, standard_size, order=0, preserve_range=True, anti_aliasing=False).astype(bool)
+    
+    # intersection = np.logical_and(predicted_mask_resized, ground_truth_mask_resized)
+    # union = np.logical_or(predicted_mask_resized, ground_truth_mask_resized)
+    # iou = np.sum(intersection) / np.sum(union) if np.sum(union) > 0 else 0
+    # return iou
+
+    predicted_mask_resized = resize(predicted_mask.astype(float), ground_truth_mask.shape, mode='constant', preserve_range=True).astype(bool)
+    
+    intersection = np.logical_and(predicted_mask_resized, ground_truth_mask)
+    union = np.logical_or(predicted_mask_resized, ground_truth_mask)
     iou = np.sum(intersection) / np.sum(union)
     return iou
+
+    # intersection = np.logical_and(predicted_mask, ground_truth_mask)
+    # union = np.logical_or(predicted_mask, ground_truth_mask)
+    # iou = np.sum(intersection) / np.sum(union)
+    # return iou
 
 def mask_2_box_point(binary_mask):
     segmentation = np.where(binary_mask == 1)
@@ -44,25 +61,67 @@ def mask_2_box_point(binary_mask):
     center_point = (int((x_min + x_max) / 2), int((y_min + y_max) / 2))
     return bbox, center_point
 
+# def calculate_scribble_inside_or_not(predicted_mask, scribbles):
+#     inside = []
+#     for scribble in scribbles:
+#         # check if the center point of the ground-truth mask is inside the predicted mask
+#         if predicted_mask[scribble[1], scribble[0]] == 1:
+#             inside.append(1)
+#         else:
+#             inside.append(0)
+#     return np.mean(inside)
+
 def calculate_scribble_inside_or_not(predicted_mask, scribbles):
     inside = []
+    mask_height, mask_width = predicted_mask.shape  # Dimensions of the mask
+
     for scribble in scribbles:
-        # check if the center point of the ground-truth mask is inside the predicted mask
-        if predicted_mask[scribble[1], scribble[0]] == 1:
+        x, y = scribble  # Assume scribble = [x_coordinate, y_coordinate]
+        
+        # Ensure coordinates are within the bounds of the mask
+        # if x > 511:
+        #     x = 511
+        # if y > 511:
+        #     y = 511
+        # if predicted_mask[y, x] == 1:
+        #     inside.append(1)
+        # else:
+        #     inside.append(0)
+        if 0 <= y < mask_height and 0 <= x < mask_width:
+            if predicted_mask[y, x] == 1:
+                inside.append(1)
+            else:
+                inside.append(0)
+        else: 
             inside.append(1)
-        else:
-            inside.append(0)
+        
+    # Check if there are any points to avoid 'mean of empty slice' warning
     return np.mean(inside)
+
+# def calculate_point_inside_or_not(predicted_mask, ground_truth_mask):
+#     _, gt_center_point = mask_2_box_point(ground_truth_mask)
+#     if gt_center_point is None:
+#         return None
+#     # check if the center point of the ground-truth mask is inside the predicted mask
+#     if predicted_mask[gt_center_point[1], gt_center_point[0]] == 1:
+#         return 1
+#     else:
+#         return 0
 
 def calculate_point_inside_or_not(predicted_mask, ground_truth_mask):
     _, gt_center_point = mask_2_box_point(ground_truth_mask)
     if gt_center_point is None:
         return None
-    # check if the center point of the ground-truth mask is inside the predicted mask
-    if predicted_mask[gt_center_point[1], gt_center_point[0]] == 1:
-        return 1
+    # Ensure that the point coordinates are within the bounds of the mask dimensions
+    y, x = gt_center_point  # assuming gt_center_point = (x_coordinate, y_coordinate)
+    if y >= 0 and y < predicted_mask.shape[0] and x >= 0 and x < predicted_mask.shape[1]:
+        if predicted_mask[y, x] == 1:
+            return 1
+        else:
+            return 0
     else:
-        return 0
+        return np.nan # or other appropriate value if the center point is out of bounds
+
 
 def match_masks(masks1, masks2, iou_threshold):
     matched_pairs = []
@@ -119,7 +178,7 @@ def sample_random_points_from_mask(mask, k):
         xy_points.append([int(x[1]), int(x[0])])
     return xy_points
 
-def show(j, acc=0, size=5000):
+def show(j, acc=0, size=500):
     print("[{}/{}: {}]".format(j, size, acc), end='\r', file=sys.stdout, flush=True)
 
 if __name__ == "__main__":
@@ -132,9 +191,12 @@ if __name__ == "__main__":
     # load ground-truth annotations and get image ids
     coco_gt = COCO('datasets/coco/annotations/instances_val2017.json')
     img_ids = coco_gt.getImgIds()
+
+    # Take only the first 500 images:
+    img_ids = img_ids[:500]
     test_scribble = args.test_scribble
 
-    # read model prediction using coco api
+    # read model prediction using coco apiimg_ids
     # read model prediction for scribble/point based image generation
     pred_json = args.pred_json
     coco_pred = coco_gt.loadRes(pred_json)

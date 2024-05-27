@@ -183,7 +183,7 @@ As part of our reproduction study, we succesfully replicated the YOLO results ac
     <td>+15.7</td>
   </tr>
   <tr align="left">
-    <td colspan=4><b>Table 1.</b> Evaluating different location formats as input when generating images of reproduction experiments Boxes.</td>
+    <td colspan=4><b>Table 1.</b> Evaluating different location formats when generating images of reproduction experiments using Bounding Boxes as input.</td>
   </tr>
 </table>
 
@@ -213,11 +213,11 @@ As part of our reproduction study, we succesfully replicated the YOLO results ac
     <td>+17.9</td>
   </tr>
   <tr align="left">
-    <td colspan=4><b>Table 2.</b> Evaluating different location formats as input when generating images of reproduction experiments Instance Masks.</td>
+    <td colspan=4><b>Table 2.</b> Evaluating different location formats when generating images of reproduction experiments using Instance Masks as input.</td>
   </tr>
 </table>
 
-In the same manner we reproduced the PiM values for scribble-/point-based image generation:**NOT YET ACTUALLY**
+In the same manner we reproduced the PiM values for scribble-/point-based image generation:
 <table align="center">
   <tr align="center">
       <th align="left" rowspan="2">Method</th>
@@ -236,12 +236,12 @@ In the same manner we reproduced the PiM values for scribble-/point-based image 
   <tr align="center">
     <td align="left">Our Reproduction</td>
     <td>..</td>
-    <td>..</td>
+    <td>63.6</td>
   </tr>
   <tr align="center">
     <td align="left">Difference</td>
     <td>+..</td>
-    <td>+..</td>
+    <td>-8.8</td>
   </tr>
   <tr align="left">
     <td colspan=3><b>Table 3.</b> Evaluating different location formats as input when generating images of reproduction experiments for points and scribbles.</td>
