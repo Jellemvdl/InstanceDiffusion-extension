@@ -303,7 +303,7 @@ Our approach aligns closely with the techniques presented by Derakhshani et al \
 
 Similarly, our methodology leverages a Large Language Model (LLM) to automate the generation of image descriptions and bounding boxes. By integrating these into the Instance Diffusion Model, we enable precise control over the spatial arrangement and attributes of individual instances in the generated images. Like CompFuser, our approach addresses the challenge of understanding and executing complex prompts involving multiple objects and their spatial relationships. 
 
-![image](https://github.com/Jellemvdl/InstanceDiffusion-extension/assets/71041391/7ab2afaa-8746-4e78-9ebb-e8abe6450181)
+![image](https://github.com/Jellemvdl/InstanceDiffusion-extension/assets/71041391/a75de5fe-ebbf-439b-a0be-488aed425710)
 
 Our modular approach, facilitated by a dedicated language generation submodule, enhances efficiency and allows for scalability and adaptability within the model architecture. Incorporating an LLM for generating image descriptions enriches the model's capabilities, enabling it to produce nuanced and contextually relevant single points. This methodology represents a robust and comprehensive solution for image generation tasks, promising advancements in both research and practical applications.
 
