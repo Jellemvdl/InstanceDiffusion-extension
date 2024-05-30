@@ -313,19 +313,19 @@ In summary, implementing the dedicated language generation submodule, enhances e
 To evaluate the LLM submodule's input data generation, we used three approaches: firstly is a multiple raters assessed the realism of the generated images, secondly, we scored the global description-to-image alignment using CLIP. The third approach involved deploying a robust Vision Language Model (VLM) called CogVLM, which determines whether the generated images match the input descriptions and bounding boxes.
 
 **Human evaluation: Image realism.** For the human evaluation, we generated 100 images that were scored for realism between 1 and 5, with 5 being the highest possible score. The raters' evaluation focused on three main criteria: (1) how well instance types fit the global scene description (e.g., a coffee table fitting a living room scene), (2) the quality of generations, and (3) the object sizes and their arrangement into a realistic perspective. The raters perceived the image quality similarly, with an average score of 2.38 and individual raters' average scores being closely aligned, namely falling between 2.20 and 2.48. Points were typically lost on criteria 2 and 3, as some generated images displayed instances with unrealistic features, such as distorted physical characteristics of humans or animals or unsmooth transitions between different types of flooring. Additionally, many images showed objects that were not arranged logically in space, with object sizes not matching perspective or objects being cut off.  However, the instances consistently matched each other and the global scene well.
-<br>
+<br><br>
 _Distribution of scores assigned to the 100 images by human raters:_
 
 <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/ratings_freq.png" alt="Ratings Frequency" width="500"/>
 
 Moreover, we observed that not all objects described by the LLM input were generated. This was exasterbated when the LLM struggled effectively distributing objects across the scene or when arrangements were illogical. 
-<br>
+<br><br>
 The following are two example images demonstrate these problems:
 
 <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/bbox_vs_generation.png" alt="" width="700"/>
 
 The errors in criterion 3 indicate that the LLM struggles with generating bounding boxes for realistic scenes. While the length and width of the bounding boxes matched the proportions of the instances (e.g., a traffic light would be taller than it is wide), their relative size and arrangement were often flawed. For example, a tractor in the distance might appear larger than a nearby car, violating perspective rules. The following figure shows examples of differently scoring images that illustrate these generation issues:
-<br>
+<br><br>
 ![](https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/poor-medium-high.png?raw=true)
 
 Errors in criterion 2 could be due to the LLM's difficulty in maintaining consistent instance quality across different scenes. The LLM might generate high-quality instances in isolation but fail to integrate them smoothly into a coherent scene, leading to mismatched textures and inconsistent lighting.
