@@ -314,7 +314,7 @@ To evaluate the LLM submodule's input data generation, we used three approaches:
 
 **Human evaluation: Image realism.** For the human evaluation, we generated 100 images that were scored for realism between 1 and 5, with 5 being the highest possible score. The raters' evaluation focused on three main criteria: (1) how well instance types fit the global scene description (e.g., a coffee table fitting a living room scene), (2) the quality of generations, and (3) the object sizes and their arrangement into a realistic perspective. The raters perceived the image quality similarly, with an average score of 2.38 and individual raters' average scores being closely aligned, namely falling between 2.20 and 2.48. Points were typically lost on criteria 2 and 3, as some generated images displayed instances with unrealistic features, such as distorted physical characteristics of humans or animals or unsmooth transitions between different types of flooring. Additionally, many images showed objects that were not arranged logically in space, with object sizes not matching perspective or objects being cut off.  However, the instances consistently matched each other and the global scene well.
 <br><br>
-_Distribution of scores assigned to the 100 images by human raters:_
+Distribution of scores assigned to the 100 images by human raters:
 
 <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/ratings_freq.png" alt="Ratings Frequency" width="500"/>
 
