@@ -1,4 +1,4 @@
-# A Deep Dive Into "InstanceDiffusion: Instance-level Control for Image Generation"
+# InstanceDiffusion, Fully Automated: Leveraging LLMs for Efficiency in Image Generation.
 
 --- 
 
