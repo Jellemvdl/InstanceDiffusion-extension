@@ -97,6 +97,12 @@ Inside, you will find a folder named with the same timestamp, containing:
 
 By following these steps, you will successfully generate and inspect images using the GPT-4 LLM submodule integrated with the InstanceDiffusion Model. To read about a quality assessment by inspection, [click here](blogpost.md##-Evaluation-of-LLM-Submodule). The next section will proceed to explain the evaluation of the LLM-based images using CogVLM.
 
+#### Global Text-To-Image Alignment Evaluation with CLIP
+To retrieve the CLIP-score between the global input text prompt and the generated image, run the following command in the root directory:
+```bash
+python src/lib/llm_submodule/chatgpt/eval_clip.py
+```
+
 #### Evaluation with CogVLM
 
 Evaluating the alignment of the generated photos with the bounding boxes made by ChatGPT using CogVLM. Once the created photos are fed into CogVLM, it uses the bounding boxes to identify and outline the instances (predicted bounding boxes) within the images. The places where the instances have been deployed by the Instance Diffusion model are represented by these expected bounding boxes. On the other hand, ChatGPT's bounding boxes, which show the locations intended for instance generation, act as the ground truth.
