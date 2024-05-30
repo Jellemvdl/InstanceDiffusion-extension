@@ -320,7 +320,7 @@ Additionally, we observed that not all objects described by the LLM input were g
 
 Below are two example images demonstrating these problems:
 
-<img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/bbox_vs_generation.png" alt="" width="700"/>
+<img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/bbox_vs_generation.png" alt="" width="500"/>
 
 The errors in criterion 3 indicate that the LLM struggles with generating bounding boxes for realistic scenes. While the length and width of the bounding boxes matched the proportions of the instances (e.g., a traffic light would be taller than it is wide), their relative size and arrangement were often flawed. For example, a tractor in the distance might appear larger than a nearby car, violating perspective rules. Figure [3] shows examples of differently scoring images that illustrate these generation issues.
 
