@@ -100,6 +100,8 @@ By following these steps, you will successfully generate and inspect images usin
 #### Global Text-To-Image Alignment Evaluation with CLIP
 To retrieve the CLIP-score between the global input text prompt and the generated image, run the following command in the root directory:
 ```bash
+conda activate instdiff
+
 python src/lib/llm_submodule/chatgpt/eval_clip.py
 ```
 
