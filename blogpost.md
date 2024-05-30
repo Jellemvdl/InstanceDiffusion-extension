@@ -304,7 +304,7 @@ Similarly, our methodology leverages a Large Language Model (LLM) to automate th
 
 ![image](https://github.com/Jellemvdl/InstanceDiffusion-extension/assets/71041391/a75de5fe-ebbf-439b-a0be-488aed425710)
 
-Our modular approach, facilitated by a dedicated language generation submodule, enhances efficiency and allows for scalability and adaptability within the model architecture. Incorporating an LLM for generating image descriptions enriches the model's capabilities, enabling it to produce nuanced and contextually relevant single points. This methodology represents a robust and comprehensive solution for image generation tasks, promising advancements in both research and practical applications.
+Our modular approach, facilitated by a dedicated language generation submodule, enhances efficiency and allows for scalability and adaptability within the model architecture. Incorporating an LLM for generating image descriptions enriches the model's capabilities, enabling it to produce nuanced and contextually relevant bounding boxes. This methodology represents a robust and comprehensive solution for image generation tasks, promising advancements in both research and practical applications.
 
 
 
@@ -433,6 +433,8 @@ By addressing its current weaknesses and leveraging its strengths, InstanceDiffu
 - Lisann: Environment setup. LLM submodule implementation (excluding CogVLM), LLM demo, and organisation and analysis of LLM  evaluation through ratings. Wrote LLM Readme and blogpost sections (excluding CogVLM). Tested all instructions and demos described in Readme, and increased robustness of scripts and jobs (e.g., by using dynamic paths).
 - Jelle: Responsible for reproduction of original paper's results + demos and the corresponding blogpost section, helped with environment setup. Organized the github repository, including jobs and inference demo scripts, adding setup & runnable scripts to Readme. 
 
+## CO2 Impact
+Utilizing approximately 8,900 GPU hours on the Snellius supercomputer to run our experiments has a notable CO2 impact. Diffusion models are computationally intensive, this combined with the structure of the used data, attributed significantly to this environmental footprint. We acknowledge the substantial carbon emissions associated with these high-performance computations and recognize their detrimental effect on the planet. That is why we have taken careful consideration not to retrain the entire model but to inject our extension into the existing model. Our commitment to advancing machine learning research is paralleled by our awareness of the environmental costs.
 ## Bibliography
 
 [1] L. Yang, Z. Zhang, Y. Song, S. Hong, R. Xu, Y. Zhao, W. Zhang, B. Cui, and M.-H. Yang, "Diffusion models: A comprehensive survey of methods and applications," ACM Computing Surveys, vol. 56, no. 4, pp. 1-39, 2023.
