@@ -324,8 +324,8 @@ The following are two example images demonstrate these problems:
 
 <img src="https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/LLM/bbox_vs_generation.png" alt="" width="700"/>
 
-The errors in criterion 3 indicate that the LLM struggles with generating bounding boxes for realistic scenes. While the length and width of the bounding boxes matched the proportions of the instances (e.g., a traffic light would be taller than it is wide), their relative size and arrangement were often flawed. For example, a tractor in the distance might appear larger than a nearby car, violating perspective rules. The following figure shows examples of differently scoring images that illustrate these generation issues:
-<br><br>
+The errors in criterion 3 indicate that the LLM struggles with generating bounding boxes for realistic scenes. While the length and width of the bounding boxes matched the proportions of the instances (e.g., a traffic light would be taller than it is wide), their relative size and arrangement were often flawed. For example, a tractor in the distance might appear larger than a nearby car, violating perspective rules. <br><br>The following figure shows examples of differently scoring images that illustrate these generation issues:
+<br>
 ![](https://github.com/Jellemvdl/InstanceDiffusion-extension/blob/main/src/data/images/poor-medium-high.png?raw=true)
 
 Errors in criterion 2 could be due to the LLM's difficulty in maintaining consistent instance quality across different scenes. The LLM might generate high-quality instances in isolation but fail to integrate them smoothly into a coherent scene, leading to mismatched textures and inconsistent lighting.
