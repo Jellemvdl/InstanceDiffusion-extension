@@ -235,17 +235,17 @@ In the same manner we reproduced the PiM values for scribble-/point-based image 
   </tr>
   <tr align="center">
     <td align="left">Our Reproduction</td>
-    <td>..</td>
-    <td>63.6</td>
+    <td>33.66</td>
+    <td>23.56</td>
   </tr>
   <tr align="center">
     <td align="left">Difference</td>
-    <td>+..</td>
-    <td>-8.8</td>
+    <td>-47.44</td>
+    <td>-48.84</td>
   </tr>
-  <tr align="left">
-    <td colspan=3><b>Table 3.</b> Evaluating different location formats as input when generating images of reproduction experiments for points and scribbles.</td>
-  </tr>
+      <tr align="left">
+        <td colspan=7><b>Table 3.</b> Evaluating different location formats as input when generating images of reproduction experiments for points and scribbles.</td>
+      </tr>
 </table>
 
 Moreover, succesfully replicated the attribute binding results for colors and texture:
