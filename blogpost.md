@@ -425,6 +425,13 @@ As shown in the images Instance Diffusion can generate an instance a majority of
 
 By addressing its current weaknesses and leveraging its strengths, InstanceDiffusion has the potential to set new standards in the field of instance-level controlled image generation, paving the way for more sophisticated and user-friendly generative models.
 
+## Conclusion
+The instance-diffusion method, expounded upon in depth within the original paper and comprehensively detailed in the associated blog post, stands as a testament to the adept utilization of advanced methodologies in the realm of image generation. Our meticulous replication study, anchored by the COCO dataset, serves as a robust validation of the method's efficacy and potential. However, despite our conscientious efforts to adhere closely to the original study's protocols, we encountered notable disparities in certain results. These discrepancies primarily stem from our deliberate decision to operate within the constraints of a subset of the dataset, a choice motivated by computational constraints and resource availability. This limitation, while acknowledged, underscores the inherent complexity of replicating experimental findings in real-world contexts. 
+
+Our exploration aimed to address a limitation of the original model by adopting a modular framework and leveraging GPT-4o for generating bounding boxes, thereby mitigating the need for an additional image dataset. While this approach proved convenient and valuable, enabling seamless integration with the model, it revealed a constraint of the Language Model (LLM): the absence of spatial awareness. Consequently, this deficiency yielded suboptimal results in certain instances.
+
+To further scrutinize the capabilities of the LLM, we conducted a comparative analysis with CogVLM and employed human annotators for evaluation. Although our approach has demonstrated merits revealed through rigorous examination, significant opportunities for improvement in image generation remain. These findings underscore the fertile ground for future research in exploring techniques to enhance the collaborative interaction between LLms and image generation models such as InstanceDiffusion
+
 
 ## Authors' Contributions
 - Anesa: Background & Related Work Research, assisted Lisann in integrating the LLM submodule into existing pipeline, conducted/participated in the manual evaluation of LLM submodule image-generation. Wrote the Introduction and Related work section.
